@@ -92,3 +92,4 @@ NSString * zodiac_sign_short(const double rasc);
 NSString * rasc_to_zodiac(const double rasc);
 NSString * rasc_string(const double rasc);
 NSString * decl_string(const double decl);
+
