@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DAF3C88F186A7C9700AA2E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C88E186A7C9700AA2E24 /* Foundation.framework */; };
+		DAF3C891186A7C9700AA2E24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */; };
+		DAF3C893186A7C9700AA2E24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C892186A7C9700AA2E24 /* UIKit.framework */; };
+		DAF3C899186A7C9700AA2E24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C897186A7C9700AA2E24 /* InfoPlist.strings */; };
+		DAF3C89B186A7C9700AA2E24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C89A186A7C9700AA2E24 /* main.m */; };
+		DAF3C89F186A7C9700AA2E24 /* PlanetPositionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */; };
+		DAF3C8A2186A7C9700AA2E24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */; };
+		DAF3C8A5186A7C9700AA2E24 /* PlanetPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8A4186A7C9700AA2E24 /* PlanetPositionViewController.m */; };
+		DAF3C8A7186A7C9700AA2E24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */; };
+		DAF3C8AE186A7C9700AA2E24 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C8AD186A7C9700AA2E24 /* XCTest.framework */; };
+		DAF3C8AF186A7C9700AA2E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C88E186A7C9700AA2E24 /* Foundation.framework */; };
+		DAF3C8B0186A7C9700AA2E24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C892186A7C9700AA2E24 /* UIKit.framework */; };
+		DAF3C8B8186A7C9700AA2E24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8B6186A7C9700AA2E24 /* InfoPlist.strings */; };
+		DAF3C8BA186A7C9700AA2E24 /* PlanetPositionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8B9186A7C9700AA2E24 /* PlanetPositionTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DAF3C8B1186A7C9700AA2E24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAF3C883186A7C9700AA2E24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAF3C88A186A7C9700AA2E24;
+			remoteInfo = PlanetPosition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetPosition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF3C88E186A7C9700AA2E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DAF3C892186A7C9700AA2E24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DAF3C896186A7C9700AA2E24 /* PlanetPosition-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlanetPosition-Info.plist"; sourceTree = "<group>"; };
+		DAF3C898186A7C9700AA2E24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAF3C89A186A7C9700AA2E24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DAF3C89C186A7C9700AA2E24 /* PlanetPosition-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlanetPosition-Prefix.pch"; sourceTree = "<group>"; };
+		DAF3C89D186A7C9700AA2E24 /* PlanetPositionAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanetPositionAppDelegate.h; sourceTree = "<group>"; };
+		DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionAppDelegate.m; sourceTree = "<group>"; };
+		DAF3C8A1186A7C9700AA2E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DAF3C8A3186A7C9700AA2E24 /* PlanetPositionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanetPositionViewController.h; sourceTree = "<group>"; };
+		DAF3C8A4186A7C9700AA2E24 /* PlanetPositionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionViewController.m; sourceTree = "<group>"; };
+		DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DAF3C8AC186A7C9700AA2E24 /* PlanetPositionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetPositionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF3C8AD186A7C9700AA2E24 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DAF3C8B5186A7C9700AA2E24 /* PlanetPositionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlanetPositionTests-Info.plist"; sourceTree = "<group>"; };
+		DAF3C8B7186A7C9700AA2E24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAF3C8B9186A7C9700AA2E24 /* PlanetPositionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAF3C888186A7C9700AA2E24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAF3C891186A7C9700AA2E24 /* CoreGraphics.framework in Frameworks */,
+				DAF3C893186A7C9700AA2E24 /* UIKit.framework in Frameworks */,
+				DAF3C88F186A7C9700AA2E24 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAF3C8A9186A7C9700AA2E24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAF3C8AE186A7C9700AA2E24 /* XCTest.framework in Frameworks */,
+				DAF3C8B0186A7C9700AA2E24 /* UIKit.framework in Frameworks */,
+				DAF3C8AF186A7C9700AA2E24 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAF3C882186A7C9700AA2E24 = {
+			isa = PBXGroup;
+			children = (
+				DAF3C894186A7C9700AA2E24 /* PlanetPosition */,
+				DAF3C8B3186A7C9700AA2E24 /* PlanetPositionTests */,
+				DAF3C88D186A7C9700AA2E24 /* Frameworks */,
+				DAF3C88C186A7C9700AA2E24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAF3C88C186A7C9700AA2E24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */,
+				DAF3C8AC186A7C9700AA2E24 /* PlanetPositionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAF3C88D186A7C9700AA2E24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3C88E186A7C9700AA2E24 /* Foundation.framework */,
+				DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */,
+				DAF3C892186A7C9700AA2E24 /* UIKit.framework */,
+				DAF3C8AD186A7C9700AA2E24 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAF3C894186A7C9700AA2E24 /* PlanetPosition */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3C89D186A7C9700AA2E24 /* PlanetPositionAppDelegate.h */,
+				DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */,
+				DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */,
+				DAF3C8A3186A7C9700AA2E24 /* PlanetPositionViewController.h */,
+				DAF3C8A4186A7C9700AA2E24 /* PlanetPositionViewController.m */,
+				DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */,
+				DAF3C895186A7C9700AA2E24 /* Supporting Files */,
+			);
+			path = PlanetPosition;
+			sourceTree = "<group>";
+		};
+		DAF3C895186A7C9700AA2E24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3C896186A7C9700AA2E24 /* PlanetPosition-Info.plist */,
+				DAF3C897186A7C9700AA2E24 /* InfoPlist.strings */,
+				DAF3C89A186A7C9700AA2E24 /* main.m */,
+				DAF3C89C186A7C9700AA2E24 /* PlanetPosition-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAF3C8B3186A7C9700AA2E24 /* PlanetPositionTests */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3C8B9186A7C9700AA2E24 /* PlanetPositionTests.m */,
+				DAF3C8B4186A7C9700AA2E24 /* Supporting Files */,
+			);
+			path = PlanetPositionTests;
+			sourceTree = "<group>";
+		};
+		DAF3C8B4186A7C9700AA2E24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3C8B5186A7C9700AA2E24 /* PlanetPositionTests-Info.plist */,
+				DAF3C8B6186A7C9700AA2E24 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAF3C88A186A7C9700AA2E24 /* PlanetPosition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAF3C8BD186A7C9700AA2E24 /* Build configuration list for PBXNativeTarget "PlanetPosition" */;
+			buildPhases = (
+				DAF3C887186A7C9700AA2E24 /* Sources */,
+				DAF3C888186A7C9700AA2E24 /* Frameworks */,
+				DAF3C889186A7C9700AA2E24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlanetPosition;
+			productName = PlanetPosition;
+			productReference = DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DAF3C8AB186A7C9700AA2E24 /* PlanetPositionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAF3C8C0186A7C9700AA2E24 /* Build configuration list for PBXNativeTarget "PlanetPositionTests" */;
+			buildPhases = (
+				DAF3C8A8186A7C9700AA2E24 /* Sources */,
+				DAF3C8A9186A7C9700AA2E24 /* Frameworks */,
+				DAF3C8AA186A7C9700AA2E24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAF3C8B2186A7C9700AA2E24 /* PBXTargetDependency */,
+			);
+			name = PlanetPositionTests;
+			productName = PlanetPositionTests;
+			productReference = DAF3C8AC186A7C9700AA2E24 /* PlanetPositionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAF3C883186A7C9700AA2E24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PlanetPosition;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Paul Griffiths";
+				TargetAttributes = {
+					DAF3C8AB186A7C9700AA2E24 = {
+						TestTargetID = DAF3C88A186A7C9700AA2E24;
+					};
+				};
+			};
+			buildConfigurationList = DAF3C886186A7C9700AA2E24 /* Build configuration list for PBXProject "PlanetPosition" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DAF3C882186A7C9700AA2E24;
+			productRefGroup = DAF3C88C186A7C9700AA2E24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAF3C88A186A7C9700AA2E24 /* PlanetPosition */,
+				DAF3C8AB186A7C9700AA2E24 /* PlanetPositionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAF3C889186A7C9700AA2E24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAF3C8A7186A7C9700AA2E24 /* Images.xcassets in Resources */,
+				DAF3C899186A7C9700AA2E24 /* InfoPlist.strings in Resources */,
+				DAF3C8A2186A7C9700AA2E24 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAF3C8AA186A7C9700AA2E24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAF3C8B8186A7C9700AA2E24 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAF3C887186A7C9700AA2E24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAF3C89B186A7C9700AA2E24 /* main.m in Sources */,
+				DAF3C8A5186A7C9700AA2E24 /* PlanetPositionViewController.m in Sources */,
+				DAF3C89F186A7C9700AA2E24 /* PlanetPositionAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAF3C8A8186A7C9700AA2E24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAF3C8BA186A7C9700AA2E24 /* PlanetPositionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAF3C8B2186A7C9700AA2E24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAF3C88A186A7C9700AA2E24 /* PlanetPosition */;
+			targetProxy = DAF3C8B1186A7C9700AA2E24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DAF3C897186A7C9700AA2E24 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAF3C898186A7C9700AA2E24 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAF3C8A1186A7C9700AA2E24 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DAF3C8B6186A7C9700AA2E24 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAF3C8B7186A7C9700AA2E24 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DAF3C8BB186A7C9700AA2E24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DAF3C8BC186A7C9700AA2E24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAF3C8BE186A7C9700AA2E24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
+				INFOPLIST_FILE = "PlanetPosition/PlanetPosition-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DAF3C8BF186A7C9700AA2E24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
+				INFOPLIST_FILE = "PlanetPosition/PlanetPosition-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DAF3C8C1186A7C9700AA2E24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PlanetPosition.app/PlanetPosition";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PlanetPositionTests/PlanetPositionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DAF3C8C2186A7C9700AA2E24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PlanetPosition.app/PlanetPosition";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
+				INFOPLIST_FILE = "PlanetPositionTests/PlanetPositionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAF3C886186A7C9700AA2E24 /* Build configuration list for PBXProject "PlanetPosition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAF3C8BB186A7C9700AA2E24 /* Debug */,
+				DAF3C8BC186A7C9700AA2E24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAF3C8BD186A7C9700AA2E24 /* Build configuration list for PBXNativeTarget "PlanetPosition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAF3C8BE186A7C9700AA2E24 /* Debug */,
+				DAF3C8BF186A7C9700AA2E24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DAF3C8C0186A7C9700AA2E24 /* Build configuration list for PBXNativeTarget "PlanetPositionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAF3C8C1186A7C9700AA2E24 /* Debug */,
+				DAF3C8C2186A7C9700AA2E24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DAF3C883186A7C9700AA2E24 /* Project object */;
+}
