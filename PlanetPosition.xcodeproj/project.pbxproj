@@ -21,6 +21,15 @@
 		DAF3C8B0186A7C9700AA2E24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C892186A7C9700AA2E24 /* UIKit.framework */; };
 		DAF3C8B8186A7C9700AA2E24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8B6186A7C9700AA2E24 /* InfoPlist.strings */; };
 		DAF3C8BA186A7C9700AA2E24 /* PlanetPositionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8B9186A7C9700AA2E24 /* PlanetPositionTests.m */; };
+		DAF3C8C5186A80F800AA2E24 /* PGAstroGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8C4186A80F800AA2E24 /* PGAstroGeneral.m */; };
+		DAF3C8C6186A80F800AA2E24 /* PGAstroGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8C4186A80F800AA2E24 /* PGAstroGeneral.m */; };
+		DAF3C8C8186A916800AA2E24 /* TestNormalizeDegrees.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8C7186A916800AA2E24 /* TestNormalizeDegrees.m */; };
+		DAF3C8CA186A932800AA2E24 /* TestKepler.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8C9186A932800AA2E24 /* TestKepler.m */; };
+		DAF3C8CC186A95B700AA2E24 /* TestRascToZodiac.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8CB186A95B700AA2E24 /* TestRascToZodiac.m */; };
+		DAF3C8CE186A96D900AA2E24 /* TestZodiacNames.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8CD186A96D900AA2E24 /* TestZodiacNames.m */; };
+		DAF3C8D0186A990600AA2E24 /* TestJulianDay.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8CF186A990600AA2E24 /* TestJulianDay.m */; };
+		DAF3C8D3186AA00300AA2E24 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8D1186AA00200AA2E24 /* LICENSE */; };
+		DAF3C8D4186AA00300AA2E24 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8D2186AA00200AA2E24 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,15 @@
 		DAF3C8B5186A7C9700AA2E24 /* PlanetPositionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlanetPositionTests-Info.plist"; sourceTree = "<group>"; };
 		DAF3C8B7186A7C9700AA2E24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DAF3C8B9186A7C9700AA2E24 /* PlanetPositionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionTests.m; sourceTree = "<group>"; };
+		DAF3C8C3186A80F800AA2E24 /* PGAstroGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAstroGeneral.h; sourceTree = "<group>"; };
+		DAF3C8C4186A80F800AA2E24 /* PGAstroGeneral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAstroGeneral.m; sourceTree = "<group>"; };
+		DAF3C8C7186A916800AA2E24 /* TestNormalizeDegrees.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNormalizeDegrees.m; sourceTree = "<group>"; };
+		DAF3C8C9186A932800AA2E24 /* TestKepler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestKepler.m; sourceTree = "<group>"; };
+		DAF3C8CB186A95B700AA2E24 /* TestRascToZodiac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRascToZodiac.m; sourceTree = "<group>"; };
+		DAF3C8CD186A96D900AA2E24 /* TestZodiacNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestZodiacNames.m; sourceTree = "<group>"; };
+		DAF3C8CF186A990600AA2E24 /* TestJulianDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestJulianDay.m; sourceTree = "<group>"; };
+		DAF3C8D1186AA00200AA2E24 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DAF3C8D2186AA00200AA2E24 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +130,13 @@
 		DAF3C894186A7C9700AA2E24 /* PlanetPosition */ = {
 			isa = PBXGroup;
 			children = (
+				DAF3C8D1186AA00200AA2E24 /* LICENSE */,
+				DAF3C8D2186AA00200AA2E24 /* README.md */,
 				DAF3C89D186A7C9700AA2E24 /* PlanetPositionAppDelegate.h */,
 				DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */,
 				DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */,
+				DAF3C8C3186A80F800AA2E24 /* PGAstroGeneral.h */,
+				DAF3C8C4186A80F800AA2E24 /* PGAstroGeneral.m */,
 				DAF3C8A3186A7C9700AA2E24 /* PlanetPositionViewController.h */,
 				DAF3C8A4186A7C9700AA2E24 /* PlanetPositionViewController.m */,
 				DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */,
@@ -137,6 +159,11 @@
 		DAF3C8B3186A7C9700AA2E24 /* PlanetPositionTests */ = {
 			isa = PBXGroup;
 			children = (
+				DAF3C8CF186A990600AA2E24 /* TestJulianDay.m */,
+				DAF3C8CD186A96D900AA2E24 /* TestZodiacNames.m */,
+				DAF3C8CB186A95B700AA2E24 /* TestRascToZodiac.m */,
+				DAF3C8C9186A932800AA2E24 /* TestKepler.m */,
+				DAF3C8C7186A916800AA2E24 /* TestNormalizeDegrees.m */,
 				DAF3C8B9186A7C9700AA2E24 /* PlanetPositionTests.m */,
 				DAF3C8B4186A7C9700AA2E24 /* Supporting Files */,
 			);
@@ -231,6 +258,8 @@
 			files = (
 				DAF3C8A7186A7C9700AA2E24 /* Images.xcassets in Resources */,
 				DAF3C899186A7C9700AA2E24 /* InfoPlist.strings in Resources */,
+				DAF3C8D4186AA00300AA2E24 /* README.md in Resources */,
+				DAF3C8D3186AA00300AA2E24 /* LICENSE in Resources */,
 				DAF3C8A2186A7C9700AA2E24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF3C89B186A7C9700AA2E24 /* main.m in Sources */,
+				DAF3C8C5186A80F800AA2E24 /* PGAstroGeneral.m in Sources */,
 				DAF3C8A5186A7C9700AA2E24 /* PlanetPositionViewController.m in Sources */,
 				DAF3C89F186A7C9700AA2E24 /* PlanetPositionAppDelegate.m in Sources */,
 			);
@@ -260,7 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF3C8CC186A95B700AA2E24 /* TestRascToZodiac.m in Sources */,
+				DAF3C8C8186A916800AA2E24 /* TestNormalizeDegrees.m in Sources */,
+				DAF3C8CE186A96D900AA2E24 /* TestZodiacNames.m in Sources */,
 				DAF3C8BA186A7C9700AA2E24 /* PlanetPositionTests.m in Sources */,
+				DAF3C8D0186A990600AA2E24 /* TestJulianDay.m in Sources */,
+				DAF3C8CA186A932800AA2E24 /* TestKepler.m in Sources */,
+				DAF3C8C6186A80F800AA2E24 /* PGAstroGeneral.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

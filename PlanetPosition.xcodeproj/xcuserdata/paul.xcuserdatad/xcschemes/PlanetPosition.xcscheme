@@ -37,6 +37,11 @@
                BlueprintName = "PlanetPositionTests"
                ReferencedContainer = "container:PlanetPosition.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "PlanetPositionTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
