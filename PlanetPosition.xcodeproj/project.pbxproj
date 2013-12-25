@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA03303C186AA57000C95162 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DA03303A186AA57000C95162 /* LICENSE */; };
+		DA03303D186AA57000C95162 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA03303B186AA57000C95162 /* README.md */; };
 		DAF3C88F186A7C9700AA2E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C88E186A7C9700AA2E24 /* Foundation.framework */; };
 		DAF3C891186A7C9700AA2E24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */; };
 		DAF3C893186A7C9700AA2E24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C892186A7C9700AA2E24 /* UIKit.framework */; };
@@ -28,8 +30,6 @@
 		DAF3C8CC186A95B700AA2E24 /* TestRascToZodiac.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8CB186A95B700AA2E24 /* TestRascToZodiac.m */; };
 		DAF3C8CE186A96D900AA2E24 /* TestZodiacNames.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8CD186A96D900AA2E24 /* TestZodiacNames.m */; };
 		DAF3C8D0186A990600AA2E24 /* TestJulianDay.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8CF186A990600AA2E24 /* TestJulianDay.m */; };
-		DAF3C8D3186AA00300AA2E24 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8D1186AA00200AA2E24 /* LICENSE */; };
-		DAF3C8D4186AA00300AA2E24 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8D2186AA00200AA2E24 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA03303A186AA57000C95162 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DA03303B186AA57000C95162 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetPosition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF3C88E186A7C9700AA2E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,8 +71,6 @@
 		DAF3C8CB186A95B700AA2E24 /* TestRascToZodiac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRascToZodiac.m; sourceTree = "<group>"; };
 		DAF3C8CD186A96D900AA2E24 /* TestZodiacNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestZodiacNames.m; sourceTree = "<group>"; };
 		DAF3C8CF186A990600AA2E24 /* TestJulianDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestJulianDay.m; sourceTree = "<group>"; };
-		DAF3C8D1186AA00200AA2E24 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		DAF3C8D2186AA00200AA2E24 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,8 @@
 		DAF3C882186A7C9700AA2E24 = {
 			isa = PBXGroup;
 			children = (
+				DA03303A186AA57000C95162 /* LICENSE */,
+				DA03303B186AA57000C95162 /* README.md */,
 				DAF3C894186A7C9700AA2E24 /* PlanetPosition */,
 				DAF3C8B3186A7C9700AA2E24 /* PlanetPositionTests */,
 				DAF3C88D186A7C9700AA2E24 /* Frameworks */,
@@ -130,8 +132,6 @@
 		DAF3C894186A7C9700AA2E24 /* PlanetPosition */ = {
 			isa = PBXGroup;
 			children = (
-				DAF3C8D1186AA00200AA2E24 /* LICENSE */,
-				DAF3C8D2186AA00200AA2E24 /* README.md */,
 				DAF3C89D186A7C9700AA2E24 /* PlanetPositionAppDelegate.h */,
 				DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */,
 				DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */,
@@ -258,8 +258,8 @@
 			files = (
 				DAF3C8A7186A7C9700AA2E24 /* Images.xcassets in Resources */,
 				DAF3C899186A7C9700AA2E24 /* InfoPlist.strings in Resources */,
-				DAF3C8D4186AA00300AA2E24 /* README.md in Resources */,
-				DAF3C8D3186AA00300AA2E24 /* LICENSE in Resources */,
+				DA03303D186AA57000C95162 /* README.md in Resources */,
+				DA03303C186AA57000C95162 /* LICENSE in Resources */,
 				DAF3C8A2186A7C9700AA2E24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +497,7 @@
 				DAF3C8BF186A7C9700AA2E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAF3C8C0186A7C9700AA2E24 /* Build configuration list for PBXNativeTarget "PlanetPositionTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +506,7 @@
 				DAF3C8C2186A7C9700AA2E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
