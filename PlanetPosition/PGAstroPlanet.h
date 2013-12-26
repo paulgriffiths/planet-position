@@ -16,9 +16,13 @@
 
 
 @interface PGAstroPlanet : NSObject {
-    PGAstroOrbElem * _oes;              //  Orbital elements
     NSDate * _calcDate;                 //  Calculation date
 }
+
+
+//  Property
+
+@property (strong, nonatomic) PGAstroOrbElem * oes;
 
 
 //  Public methods

@@ -96,7 +96,8 @@
 @end
 
 
-//  Earth class, used only for calculating positions of other planets
+//  Earth class, used only for calculating positions of other planets. Users
+//  should not instantiate this class.
 
 @interface PGAstroEarth : PGAstroMajorBody
 

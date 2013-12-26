@@ -22,7 +22,7 @@
 -(PGAstroPlanet *)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes {
     if ( (self = [super init]) ) {
         _calcDate = calcDate;
-        _oes = oes;
+        self.oes = oes;
     }
     
     return self;

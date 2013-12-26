@@ -13,7 +13,7 @@
 
 
 #import <XCTest/XCTest.h>
-#import "PGAstroPlanets.h"
+#import "PGAstro.h"
 
 @interface TestPlanetPositions : XCTestCase
 
@@ -201,6 +201,21 @@
     
     expected_result = 30.5130260187628;
     XCTAssertEqualWithAccuracy([pluto distance], expected_result, di_accuracy);
+}
+
+
+- (void)testMoon
+{
+    NSDate * testDate = get_utc_date(1988, 8, 10, 0, 0, 0);
+    PGAstroMoon * moon = [[PGAstroMoon alloc] initWithDate:testDate];
+    const double ra_accuracy = 0.3;
+    const double de_accuracy = 0.1;
+    
+    double expected_result = 112.130708333333;
+    XCTAssertEqualWithAccuracy([moon rightAscension], expected_result, ra_accuracy);
+    
+    expected_result = 26.1949444444444;
+    XCTAssertEqualWithAccuracy([moon declination], expected_result, de_accuracy);
 }
 
 

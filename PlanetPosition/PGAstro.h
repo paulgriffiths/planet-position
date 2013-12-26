@@ -44,3 +44,4 @@
 
 #import "PGAstroGeneral.h"
 #import "PGAstroPlanets.h"
+#import "PGAstroMoon.h"
