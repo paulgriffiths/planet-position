@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		DA03303C186AA57000C95162 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DA03303A186AA57000C95162 /* LICENSE */; };
 		DA03303D186AA57000C95162 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA03303B186AA57000C95162 /* README.md */; };
+		DA0BF4F7186C775D00EBF1AE /* PGAstroPlanet.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF4F6186C775D00EBF1AE /* PGAstroPlanet.m */; };
+		DA0BF4F8186C775D00EBF1AE /* PGAstroPlanet.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF4F6186C775D00EBF1AE /* PGAstroPlanet.m */; };
+		DA0BF4FB186C79A400EBF1AE /* PGAstroMajorBody.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF4FA186C79A400EBF1AE /* PGAstroMajorBody.m */; };
+		DA0BF4FC186C79A400EBF1AE /* PGAstroMajorBody.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF4FA186C79A400EBF1AE /* PGAstroMajorBody.m */; };
+		DA0BF4FF186C79BE00EBF1AE /* PGAstroPlanets.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF4FE186C79BE00EBF1AE /* PGAstroPlanets.m */; };
+		DA0BF500186C79BE00EBF1AE /* PGAstroPlanets.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF4FE186C79BE00EBF1AE /* PGAstroPlanets.m */; };
+		DA13CA19186C8E8B00F8280A /* TestPlanetPositions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA18186C8E8B00F8280A /* TestPlanetPositions.m */; };
 		DAF3C88F186A7C9700AA2E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C88E186A7C9700AA2E24 /* Foundation.framework */; };
 		DAF3C891186A7C9700AA2E24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */; };
 		DAF3C893186A7C9700AA2E24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C892186A7C9700AA2E24 /* UIKit.framework */; };
@@ -45,6 +52,14 @@
 /* Begin PBXFileReference section */
 		DA03303A186AA57000C95162 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DA03303B186AA57000C95162 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		DA0BF4F5186C775D00EBF1AE /* PGAstroPlanet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAstroPlanet.h; sourceTree = "<group>"; };
+		DA0BF4F6186C775D00EBF1AE /* PGAstroPlanet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAstroPlanet.m; sourceTree = "<group>"; };
+		DA0BF4F9186C79A400EBF1AE /* PGAstroMajorBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAstroMajorBody.h; sourceTree = "<group>"; };
+		DA0BF4FA186C79A400EBF1AE /* PGAstroMajorBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAstroMajorBody.m; sourceTree = "<group>"; };
+		DA0BF4FD186C79BE00EBF1AE /* PGAstroPlanets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAstroPlanets.h; sourceTree = "<group>"; };
+		DA0BF4FE186C79BE00EBF1AE /* PGAstroPlanets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAstroPlanets.m; sourceTree = "<group>"; };
+		DA13CA18186C8E8B00F8280A /* TestPlanetPositions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlanetPositions.m; sourceTree = "<group>"; };
+		DA13CA1B186CD25C00F8280A /* PGAstro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGAstro.h; sourceTree = "<group>"; };
 		DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetPosition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF3C88E186A7C9700AA2E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +112,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA13CA1A186CD24400F8280A /* PGAstro */ = {
+			isa = PBXGroup;
+			children = (
+				DA13CA1B186CD25C00F8280A /* PGAstro.h */,
+				DAF3C8C3186A80F800AA2E24 /* PGAstroGeneral.h */,
+				DAF3C8C4186A80F800AA2E24 /* PGAstroGeneral.m */,
+				DA0BF4F5186C775D00EBF1AE /* PGAstroPlanet.h */,
+				DA0BF4F6186C775D00EBF1AE /* PGAstroPlanet.m */,
+				DA0BF4F9186C79A400EBF1AE /* PGAstroMajorBody.h */,
+				DA0BF4FA186C79A400EBF1AE /* PGAstroMajorBody.m */,
+				DA0BF4FD186C79BE00EBF1AE /* PGAstroPlanets.h */,
+				DA0BF4FE186C79BE00EBF1AE /* PGAstroPlanets.m */,
+			);
+			name = PGAstro;
+			sourceTree = "<group>";
+		};
 		DAF3C882186A7C9700AA2E24 = {
 			isa = PBXGroup;
 			children = (
@@ -135,8 +166,7 @@
 				DAF3C89D186A7C9700AA2E24 /* PlanetPositionAppDelegate.h */,
 				DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */,
 				DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */,
-				DAF3C8C3186A80F800AA2E24 /* PGAstroGeneral.h */,
-				DAF3C8C4186A80F800AA2E24 /* PGAstroGeneral.m */,
+				DA13CA1A186CD24400F8280A /* PGAstro */,
 				DAF3C8A3186A7C9700AA2E24 /* PlanetPositionViewController.h */,
 				DAF3C8A4186A7C9700AA2E24 /* PlanetPositionViewController.m */,
 				DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */,
@@ -159,6 +189,7 @@
 		DAF3C8B3186A7C9700AA2E24 /* PlanetPositionTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA13CA18186C8E8B00F8280A /* TestPlanetPositions.m */,
 				DAF3C8CF186A990600AA2E24 /* TestJulianDay.m */,
 				DAF3C8CD186A96D900AA2E24 /* TestZodiacNames.m */,
 				DAF3C8CB186A95B700AA2E24 /* TestRascToZodiac.m */,
@@ -279,9 +310,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0BF4FB186C79A400EBF1AE /* PGAstroMajorBody.m in Sources */,
 				DAF3C89B186A7C9700AA2E24 /* main.m in Sources */,
 				DAF3C8C5186A80F800AA2E24 /* PGAstroGeneral.m in Sources */,
+				DA0BF4FF186C79BE00EBF1AE /* PGAstroPlanets.m in Sources */,
 				DAF3C8A5186A7C9700AA2E24 /* PlanetPositionViewController.m in Sources */,
+				DA0BF4F7186C775D00EBF1AE /* PGAstroPlanet.m in Sources */,
 				DAF3C89F186A7C9700AA2E24 /* PlanetPositionAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,12 +324,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0BF4FC186C79A400EBF1AE /* PGAstroMajorBody.m in Sources */,
 				DAF3C8CC186A95B700AA2E24 /* TestRascToZodiac.m in Sources */,
 				DAF3C8C8186A916800AA2E24 /* TestNormalizeDegrees.m in Sources */,
+				DA13CA19186C8E8B00F8280A /* TestPlanetPositions.m in Sources */,
 				DAF3C8CE186A96D900AA2E24 /* TestZodiacNames.m in Sources */,
 				DAF3C8BA186A7C9700AA2E24 /* PlanetPositionTests.m in Sources */,
 				DAF3C8D0186A990600AA2E24 /* TestJulianDay.m in Sources */,
 				DAF3C8CA186A932800AA2E24 /* TestKepler.m in Sources */,
+				DA0BF4F8186C775D00EBF1AE /* PGAstroPlanet.m in Sources */,
+				DA0BF500186C79BE00EBF1AE /* PGAstroPlanets.m in Sources */,
 				DAF3C8C6186A80F800AA2E24 /* PGAstroGeneral.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,8 +453,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
+				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = "PlanetPosition/PlanetPosition-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -428,8 +468,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
+				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = "PlanetPosition/PlanetPosition-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

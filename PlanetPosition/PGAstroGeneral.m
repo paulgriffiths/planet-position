@@ -1,43 +1,70 @@
-//
-//  PGAstroGeneral.m
-//  PlanetPosition
-//
-//  Created by Paul Griffiths on 12/24/13.
-//  Copyright (c) 2013 Paul Griffiths. All rights reserved.
-//
+/*
+ *  PGAstroGeneral.m
+ *  ================
+ *  Copyright 2013 Paul Griffiths
+ *  Email: mail@paulgriffiths.net
+ *
+ *  Implementation of astronomical utility classes and helper functions.
+ *
+ *  Distributed under the terms of the GNU General Public License.
+ *  http://www.gnu.org/licenses/
+ */
+
 
 #import "PGAstroGeneral.h"
 
+
+//  Class to store an hours, minutes and seconds representation
 
 @implementation PGAstroHMS
 
 @end
 
 
+//  Class to store a degrees, minutes and seconds representation
+
 @implementation PGAstroDMS
 
 @end
 
+
+//  Class to store information about the zodiacal position of a right ascension measurement
 
 @implementation PGAstroZodiacInfo
 
 @end
 
 
+//  Class to store spherical coordinates
+
 @implementation PGAstroSphCoords
 
 @end
 
 
+//  Class to store three-dimensional rectangular coordinates
+
 @implementation PGAstroRectCoords
 
 
-/*
- *  Converts rectangular coordinates to spherical coordinates.
- */
+//  Initializer method
+
+- (PGAstroRectCoords *)initWithX:(double)x Y:(double)y Z:(double)z {
+    if ( (self = [super init]) ) {
+        self.x = x;
+        self.y = y;
+        self.z = z;
+    }
+    
+    return self;
+}
+
+
+//  Method to convert to spherical coordinates.
 
 - (PGAstroSphCoords *)toSpherical {
     PGAstroSphCoords * scd = [PGAstroSphCoords new];
+    
     scd.rightAscension = degrees(atan2(self.y, self.x));
     scd.declination = degrees(atan(self.z / hypot(self.x, self.y)));
     scd.distance = sqrt(pow(self.x, 2) + pow(self.y, 2) + pow(self.z, 2));
@@ -45,52 +72,84 @@
     return scd;
 }
 
+
 @end
 
+
+//  Class to store a set of Keplerian elements
 
 @implementation PGAstroOrbElem
 
+
+//  Initializer method
+
+-(PGAstroOrbElem *)initWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan {
+    if ( (self = [super init]) ) {
+        self.sma = sma;
+        self.ecc = ecc;
+        self.inc = inc;
+        self.ml = ml;
+        self.lp = lp;
+        self.lan = lan;
+        self.man = self.ml - self.lp;
+        self.arp = self.lp - self.lan;
+    }
+    
+    return self;
+}
+
+
 @end
 
 
-/*
- *  Returns a double representing an angle in degrees in the
- *  range 0 <= d < 360, when the supplied angle may or may
- *  not be outside of this range.
- */
+//  Returns a double representing an angle in degrees in the
+//  range 0 <= d < 360, when the supplied angle may or may
+//  not be outside of this range.
 
 double normalize_degrees(const double angle) {
     return angle - 360 * floor(angle / 360);
 }
 
 
-/*
- *  Converts radians to degrees.
- */
+//  Converts radians to degrees.
 
 double degrees(const double rads) {
     return rads / (M_PI / 180);
 }
 
 
-/*
- *  Converts degrees to radians.
- */
+//  Converts degrees to radians.
 
 double radians(const double degs) {
     return degs * (M_PI / 180);
 }
 
 
-/*
- *  Converts a degree angle to hours, minutes and seconds
-*/
+//  Convenience function to return an NSDate for the specified UTC time
+//  under the Gregorian Calendar.
+
+NSDate * get_utc_date(int year, int month, int day, int hour, int minute, int second) {
+    NSDateComponents * epochComponents = [NSDateComponents new];
+    [epochComponents setYear:year];
+    [epochComponents setMonth:month];
+    [epochComponents setDay:day];
+    [epochComponents setHour:hour];
+    [epochComponents setMinute:minute];
+    [epochComponents setSecond:second];
+    [epochComponents setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    
+    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    return [gregorian dateFromComponents:epochComponents];
+}
+
+
+//  Converts the supplied degree angle to hours, minutes and seconds
 
 PGAstroHMS * deg_to_hms(const double degrees) {
     static const double secs_in_a_day = 86400;
     static const double secs_in_an_hour = 3600;
     const double norm_degs = normalize_degrees(degrees);
-    const int total_seconds = floor((norm_degs / 360) * secs_in_a_day);
+    const int total_seconds = (int) floor((norm_degs / 360) * secs_in_a_day);
     
     PGAstroHMS * hmsOut = [PGAstroHMS new];
     hmsOut.hours = total_seconds / secs_in_an_hour;
@@ -108,14 +167,12 @@ PGAstroHMS * deg_to_hms(const double degrees) {
 }
 
 
-/*
- *  Converts a degree angle to degrees, minutes and seconds
- */
+//  Converts the supplied degree angle to degrees, minutes and seconds
 
 PGAstroDMS * deg_to_dms(const double degrees) {
     static const double secs_in_an_hour = 3600;
-    const int total_seconds = degrees > 0 ? floor(degrees * secs_in_an_hour) :
-    ceil(degrees * secs_in_an_hour);
+    const int total_seconds = (int) (degrees > 0 ? floor(degrees * secs_in_an_hour) :
+    ceil(degrees * secs_in_an_hour));
     
     PGAstroDMS * dmsOut = [PGAstroDMS new];
     dmsOut.degrees = total_seconds / secs_in_an_hour;
@@ -132,19 +189,8 @@ PGAstroDMS * deg_to_dms(const double degrees) {
 }
 
 
-/*
- *  Calculates the length of the hypotenuse using Pythagoras.
- */
-/*
-double hypot(const double opp, const double adj) {
-    return sqrt(pow(opp, 2) + pow(adj, 2));
-}
-*/
-
-/*
- *  Calculates information pertaining to the zodiacal position
- *  of the supplied right ascension.
- */
+//  Calculates information pertaining to the zodiacal position
+//  of the supplied right ascension in degrees.
 
 PGAstroZodiacInfo * get_zodiac_info(const double rasc) {
     static const char * const zodiac_signs[] = {
@@ -178,9 +224,7 @@ PGAstroZodiacInfo * get_zodiac_info(const double rasc) {
 }
 
 
-/*
- *  Calculates the Julian Date for the provided NSDate.
- */
+//  Calculates the Julian Day for the provided NSDate.
 
 double julian_day(const NSDate * dateObject) {
     static const double epoch_j2000 = 2451545;
@@ -188,18 +232,7 @@ double julian_day(const NSDate * dateObject) {
     static NSDate * epochDate;
     
     if ( !epochDate ) {
-        NSDateComponents * epochComponents = [NSDateComponents new];
-        [epochComponents setYear:2000];
-        [epochComponents setMonth:1];
-        [epochComponents setDay:1];
-        [epochComponents setHour:12];
-        [epochComponents setMinute:0];
-        [epochComponents setSecond:0];
-        [epochComponents setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-        
-        NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-        
-        epochDate = [gregorian dateFromComponents:epochComponents];
+        epochDate = get_utc_date(2000, 1, 1, 12, 0, 0);
     }
     
     NSTimeInterval secondsSinceEpoch = [dateObject timeIntervalSinceDate:epochDate];
@@ -209,16 +242,7 @@ double julian_day(const NSDate * dateObject) {
 }
 
 
-/*
- *  Solves Kepler's equation.
- *
- *  Arguments:
- *    m_anom - mean anomaly, in radians
- *    ecc - eccentricity
- *
- *  Returns:
- *    the eccentric anomaly, in radians.
- */
+//  Solves Kepler's equation for the provided mean anomaly and eccentricity, in radians
 
 double kepler(const double m_anom, const double ecc) {
     const double desired_accuracy = 1e-6;
@@ -238,11 +262,8 @@ double kepler(const double m_anom, const double ecc) {
 }
 
 
-/*
- *  Returns a pointer to a C string representation of the
- *  of the name of the zodiac sign which contains the supplied
- *  right ascension.
- */
+//  Returns an NSString representation of the name of the zodiac
+//  sign which contains the right ascension supplied in degrees.
 
 NSString * zodiac_sign(const double rasc) {
     PGAstroZodiacInfo * zInfo = get_zodiac_info(rasc);
@@ -250,11 +271,9 @@ NSString * zodiac_sign(const double rasc) {
 }
 
 
-/*
- *  Returns a pointer to a C string representation of the
- *  of the short name of the zodiac sign which contains the supplied
- *  right ascension.
- */
+//  Returns an NSString representation of the short name of the zodiac
+//  sign which contains the right ascension supplied in degrees,
+//  e.g. "GE" for Gemini.
 
 NSString * zodiac_sign_short(const double rasc) {
     PGAstroZodiacInfo * zInfo = get_zodiac_info(rasc);
@@ -262,10 +281,9 @@ NSString * zodiac_sign_short(const double rasc) {
 }
 
 
-/*
- *  Returns a zodiacal coordinate of the form 20GE19 for
- *  the supplied right ascension.
- */
+//  Returns an NSString containing a representation of the zodiacal coordinate
+//  of the form 20GE19 for the right ascension supplied in degrees, where 20GE19
+//  is 20 degrees and 19 minutes into the sign of Gemini.
 
 NSString * rasc_to_zodiac(const double rasc) {
     PGAstroZodiacInfo * zInfo = get_zodiac_info(rasc);
@@ -273,11 +291,9 @@ NSString * rasc_to_zodiac(const double rasc) {
 }
 
 
-/*
- *  Returns a string representation in the form "12h 10m 30s" of
- *  the hours-minutes-seconds representation of the supplied right
- *  ascension.
- */
+//  Returns a string representation in the form "12h 10m 30s" of
+//  the hours-minutes-seconds representation of the right
+//  ascension supplied in degrees.
 
 NSString * rasc_string(const double rasc) {
     PGAstroHMS * hms = deg_to_hms(rasc);
@@ -285,19 +301,12 @@ NSString * rasc_string(const double rasc) {
 }
 
 
-/*
- *  Returns a string representation in the form "+12d 10m 30s" of
- *  the degrees-minutes-seconds representation of the supplied
- *  declination.
- */
+//  Returns a string representation in the form "+12d 10m 30s" of
+//  the degrees-minutes-seconds representation of the declination
+//  supplied in degrees.
 
 NSString * decl_string(const double decl) {
     PGAstroDMS * dms = deg_to_dms(decl);
     return [NSString stringWithFormat:@"%@%02id %02im %02is",
             (dms.degrees >= 0 ? @"+" : @""), dms.degrees, dms.minutes, dms.seconds];
 }
-
-
-@implementation PGAstroGeneral
-
-@end
