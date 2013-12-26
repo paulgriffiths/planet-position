@@ -44,7 +44,6 @@
 }
 
 
-
 //  Public initialization method
 
 - (PGAstroMoonBase *)initWithDate:(NSDate *)calcDate
