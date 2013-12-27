@@ -40,7 +40,7 @@
     
     self.rightAscensionLabel.text = rasc_string([self.planet rightAscension]);
     self.declinationLabel.text = decl_string([self.planet declination]);
-    self.distanceLabel.text = @"Placeholder";
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.3f %@", [self.planet distance], ([[self.planet name] isEqualToString:@"Moon"] ? @"Earth Radii" : @"AU")];
     
     self.zodiacSignLabel.text = zInfo.signName;
     NSString * decan;
