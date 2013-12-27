@@ -98,6 +98,7 @@ double normalize_degrees(const double angle);
 double degrees(const double rads);
 double radians(const double degs);
 NSDate * get_utc_date(int year, int month, int day, int hour, int minute, int second);
+NSDateComponents * get_utc_components_from_date(NSDate * calcDate);
 PGAstroHMS * deg_to_hms(const double degrees);
 PGAstroDMS * deg_to_dms(const double degrees);
 PGAstroZodiacInfo * get_zodiac_info(const double rasc);
@@ -108,4 +109,7 @@ NSString * zodiac_sign_short(const double rasc);
 NSString * rasc_to_zodiac(const double rasc);
 NSString * rasc_string(const double rasc);
 NSString * decl_string(const double decl);
+NSString * make_roman(const int num);
+NSString * get_thelemic_year(NSDate * date);
+
 

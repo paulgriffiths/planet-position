@@ -12,6 +12,7 @@
 
 
 #import "PGAstroGeneral.h"
+#import "PGAstroPlanets.h"
 
 
 //  Class to store an hours, minutes and seconds representation
@@ -140,6 +141,20 @@ NSDate * get_utc_date(int year, int month, int day, int hour, int minute, int se
     
     NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     return [gregorian dateFromComponents:epochComponents];
+}
+
+
+//  Convenience function to return an NSDateComponents object in UTC values under the
+//  Gregorian Calendar from the specified NSDate.
+
+NSDateComponents * get_utc_components_from_date(NSDate * calcDate) {
+    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [gregorian setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit |
+                           NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    
+    return [gregorian components:unitFlags fromDate:calcDate];
 }
 
 
@@ -303,10 +318,68 @@ NSString * rasc_string(const double rasc) {
 
 //  Returns a string representation in the form "+12d 10m 30s" of
 //  the degrees-minutes-seconds representation of the declination
-//  supplied in degrees.
+//  supplied in degrees. Uses a degree sign instead of 'd'.
 
 NSString * decl_string(const double decl) {
     PGAstroDMS * dms = deg_to_dms(decl);
-    return [NSString stringWithFormat:@"%@%02id %02im %02is",
-            (dms.degrees >= 0 ? @"+" : @""), dms.degrees, abs(dms.minutes), abs(dms.seconds)];
+    return [NSString stringWithFormat:@"%@%02i%@ %02im %02is",
+            (dms.degrees >= 0 ? @"+" : @""), dms.degrees, @"\u00B0", abs(dms.minutes), abs(dms.seconds)];
+}
+
+
+//  Converts a number between 0 and 4,999 inclusive to Roman numerals
+
+NSString * make_roman(const int num) {
+    static const char * ones_roman[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+    static const char * tens_roman[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+    static const char * cents_roman[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    static const char * thous_roman[] = {"", "M", "MM", "MMM", "MMMM"};
+    
+    if ( num < 0 || num > 4999 ) {
+        return nil;
+    } else if ( num == 0 ) {
+        return @"0";
+    }
+    
+    const int ones = num % 10;
+    const int tens = ((num % 100) - ones) / 10;
+    const int cents = ((num % 1000) - tens - ones) / 100;
+    const int thous = ((num % 10000) - cents - tens - ones) / 1000;
+    
+    return [NSString stringWithFormat:@"%s%s%s%s", thous_roman[thous], cents_roman[cents], tens_roman[tens], ones_roman[ones]];
+}
+
+
+//  Returns a string representation of the Thelemic year corresponding to a given NSDate.
+//  Thelemic years are represented in the form XX:YY, where XX is a Roman numeral equal to
+//  the number of full 22 solar year cycles between the spring equinox of 1904 and the current
+//  date (this is left blank if zero) and YY is the number of full solar years since the
+//  beginning of the current 22 year cycle. For instance, a date in May 1904 would have the
+//  Thelemic year "0", a date in August 1925 would have the Thelemic year "21", and a date in
+//  April 1926 would have the Thelemic year "I:0".
+
+NSString * get_thelemic_year(NSDate * date) {
+    NSDateComponents * components = get_utc_components_from_date(date);
+    int year = [components year] - 1904;
+    
+    double rasc = normalize_degrees([[[PGAstroSun alloc] initWithDate:date] rightAscension]);
+    if ( rasc > 270 && [components month] <= 3 ) {
+        year -= 1;
+    }
+    
+    if ( year < 0 ) {
+        return @"Before New Era";
+    }
+    
+    int cycle = (year / 22);
+    int cycle_year = year - (cycle * 22);
+    
+    NSString * cycleString;
+    if ( cycle == 0 ) {
+        cycleString = @"";
+    } else {
+        cycleString = [NSString stringWithFormat:@"%@:", make_roman(cycle)];
+    }
+    
+    return [NSString stringWithFormat:@"%@%i", cycleString, cycle_year];
 }
