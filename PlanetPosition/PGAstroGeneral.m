@@ -308,5 +308,5 @@ NSString * rasc_string(const double rasc) {
 NSString * decl_string(const double decl) {
     PGAstroDMS * dms = deg_to_dms(decl);
     return [NSString stringWithFormat:@"%@%02id %02im %02is",
-            (dms.degrees >= 0 ? @"+" : @""), dms.degrees, dms.minutes, dms.seconds];
+            (dms.degrees >= 0 ? @"+" : @""), dms.degrees, abs(dms.minutes), abs(dms.seconds)];
 }

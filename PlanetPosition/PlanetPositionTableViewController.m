@@ -10,6 +10,7 @@
 #import "PlanetPositionPlanetsGroup.h"
 #import "PlanetPositionPlanetListTableViewCell.h"
 #import "PGAstro.h"
+#import "PlanetDetailsViewController.h"
 
 @interface PlanetPositionTableViewController () {
     PlanetPositionPlanetsGroup * _planetsGroup;
@@ -46,6 +47,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ( [[segue identifier] isEqualToString:@"planetDetailsSegue"] ) {
+        PlanetDetailsViewController * controller = [segue destinationViewController];
+        NSIndexPath * idxPath = [self.tableView indexPathForSelectedRow];
+        long row = [idxPath row];
+        PGAstroPlanet * planet = [_planetsGroup planetAtIndex:row];
+        controller.planet = planet;
+    }
 }
 
 #pragma mark - Table view data source
