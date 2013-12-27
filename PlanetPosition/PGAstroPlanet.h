@@ -20,7 +20,7 @@
 }
 
 
-//  Property
+//  Properties
 
 @property (strong, nonatomic) PGAstroOrbElem * oes;
 
@@ -37,6 +37,7 @@
 -(double)rightAscension;
 -(double)declination;
 -(double)distance;
+-(NSString *)name;
 
 
 @end

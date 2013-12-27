@@ -20,6 +20,12 @@
 		DA13CA1F186CD56000F8280A /* PGAstroMoonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA1D186CD56000F8280A /* PGAstroMoonBase.m */; };
 		DA13CA22186CE0F200F8280A /* PGAstroMoon.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA21186CE0F200F8280A /* PGAstroMoon.m */; };
 		DA13CA23186CE0F200F8280A /* PGAstroMoon.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA21186CE0F200F8280A /* PGAstroMoon.m */; };
+		DA13CA26186D011C00F8280A /* PlanetPositionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA25186D011C00F8280A /* PlanetPositionTableViewController.m */; };
+		DA13CA27186D011C00F8280A /* PlanetPositionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA25186D011C00F8280A /* PlanetPositionTableViewController.m */; };
+		DA13CA2A186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA29186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m */; };
+		DA13CA2B186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA29186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m */; };
+		DA13CA2E186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */; };
+		DA13CA2F186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */; };
 		DAF3C88F186A7C9700AA2E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C88E186A7C9700AA2E24 /* Foundation.framework */; };
 		DAF3C891186A7C9700AA2E24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */; };
 		DAF3C893186A7C9700AA2E24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C892186A7C9700AA2E24 /* UIKit.framework */; };
@@ -27,7 +33,6 @@
 		DAF3C89B186A7C9700AA2E24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C89A186A7C9700AA2E24 /* main.m */; };
 		DAF3C89F186A7C9700AA2E24 /* PlanetPositionAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */; };
 		DAF3C8A2186A7C9700AA2E24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */; };
-		DAF3C8A5186A7C9700AA2E24 /* PlanetPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C8A4186A7C9700AA2E24 /* PlanetPositionViewController.m */; };
 		DAF3C8A7186A7C9700AA2E24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */; };
 		DAF3C8AE186A7C9700AA2E24 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C8AD186A7C9700AA2E24 /* XCTest.framework */; };
 		DAF3C8AF186A7C9700AA2E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C88E186A7C9700AA2E24 /* Foundation.framework */; };
@@ -68,6 +73,12 @@
 		DA13CA1D186CD56000F8280A /* PGAstroMoonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAstroMoonBase.m; sourceTree = "<group>"; };
 		DA13CA20186CE0F200F8280A /* PGAstroMoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAstroMoon.h; sourceTree = "<group>"; };
 		DA13CA21186CE0F200F8280A /* PGAstroMoon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAstroMoon.m; sourceTree = "<group>"; };
+		DA13CA24186D011C00F8280A /* PlanetPositionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetPositionTableViewController.h; sourceTree = "<group>"; };
+		DA13CA25186D011C00F8280A /* PlanetPositionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionTableViewController.m; sourceTree = "<group>"; };
+		DA13CA28186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetPositionPlanetListTableViewCell.h; sourceTree = "<group>"; };
+		DA13CA29186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionPlanetListTableViewCell.m; sourceTree = "<group>"; };
+		DA13CA2C186D048100F8280A /* PlanetPositionPlanetsGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetPositionPlanetsGroup.h; sourceTree = "<group>"; };
+		DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionPlanetsGroup.m; sourceTree = "<group>"; };
 		DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetPosition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF3C88E186A7C9700AA2E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,8 +90,6 @@
 		DAF3C89D186A7C9700AA2E24 /* PlanetPositionAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanetPositionAppDelegate.h; sourceTree = "<group>"; };
 		DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionAppDelegate.m; sourceTree = "<group>"; };
 		DAF3C8A1186A7C9700AA2E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DAF3C8A3186A7C9700AA2E24 /* PlanetPositionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanetPositionViewController.h; sourceTree = "<group>"; };
-		DAF3C8A4186A7C9700AA2E24 /* PlanetPositionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionViewController.m; sourceTree = "<group>"; };
 		DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DAF3C8AC186A7C9700AA2E24 /* PlanetPositionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetPositionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF3C8AD186A7C9700AA2E24 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -175,12 +184,16 @@
 		DAF3C894186A7C9700AA2E24 /* PlanetPosition */ = {
 			isa = PBXGroup;
 			children = (
+				DA13CA1A186CD24400F8280A /* PGAstro */,
 				DAF3C89D186A7C9700AA2E24 /* PlanetPositionAppDelegate.h */,
 				DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */,
 				DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */,
-				DA13CA1A186CD24400F8280A /* PGAstro */,
-				DAF3C8A3186A7C9700AA2E24 /* PlanetPositionViewController.h */,
-				DAF3C8A4186A7C9700AA2E24 /* PlanetPositionViewController.m */,
+				DA13CA2C186D048100F8280A /* PlanetPositionPlanetsGroup.h */,
+				DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */,
+				DA13CA28186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.h */,
+				DA13CA29186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m */,
+				DA13CA24186D011C00F8280A /* PlanetPositionTableViewController.h */,
+				DA13CA25186D011C00F8280A /* PlanetPositionTableViewController.m */,
 				DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */,
 				DAF3C895186A7C9700AA2E24 /* Supporting Files */,
 			);
@@ -322,13 +335,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA13CA26186D011C00F8280A /* PlanetPositionTableViewController.m in Sources */,
 				DA13CA1E186CD56000F8280A /* PGAstroMoonBase.m in Sources */,
 				DA0BF4FB186C79A400EBF1AE /* PGAstroMajorBody.m in Sources */,
+				DA13CA2E186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */,
 				DAF3C89B186A7C9700AA2E24 /* main.m in Sources */,
+				DA13CA2A186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m in Sources */,
 				DAF3C8C5186A80F800AA2E24 /* PGAstroGeneral.m in Sources */,
 				DA0BF4FF186C79BE00EBF1AE /* PGAstroPlanets.m in Sources */,
 				DA13CA22186CE0F200F8280A /* PGAstroMoon.m in Sources */,
-				DAF3C8A5186A7C9700AA2E24 /* PlanetPositionViewController.m in Sources */,
 				DA0BF4F7186C775D00EBF1AE /* PGAstroPlanet.m in Sources */,
 				DAF3C89F186A7C9700AA2E24 /* PlanetPositionAppDelegate.m in Sources */,
 			);
@@ -342,6 +357,9 @@
 				DA0BF4FC186C79A400EBF1AE /* PGAstroMajorBody.m in Sources */,
 				DAF3C8CC186A95B700AA2E24 /* TestRascToZodiac.m in Sources */,
 				DAF3C8C8186A916800AA2E24 /* TestNormalizeDegrees.m in Sources */,
+				DA13CA2F186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */,
+				DA13CA2B186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m in Sources */,
+				DA13CA27186D011C00F8280A /* PlanetPositionTableViewController.m in Sources */,
 				DA13CA19186C8E8B00F8280A /* TestPlanetPositions.m in Sources */,
 				DAF3C8CE186A96D900AA2E24 /* TestZodiacNames.m in Sources */,
 				DAF3C8BA186A7C9700AA2E24 /* PlanetPositionTests.m in Sources */,

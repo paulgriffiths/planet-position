@@ -37,6 +37,13 @@
 }
 
 
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Mercury";
+}
+
+
 @end
 
 
@@ -60,6 +67,13 @@
     
     self = [super initWithDate:date andJ2000OEs:j2000OEs andCenturyOEs:centOEs];
     return self;
+}
+
+
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Venus";
 }
 
 
@@ -100,6 +114,13 @@
 }
 
 
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Sun";
+}
+
+
 @end
 
 
@@ -123,6 +144,13 @@
     
     self = [super initWithDate:date andJ2000OEs:j2000OEs andCenturyOEs:centOEs];
     return self;
+}
+
+
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Mars";
 }
 
 
@@ -152,6 +180,13 @@
 }
 
 
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Jupiter";
+}
+
+
 @end
 
 
@@ -175,6 +210,13 @@
     
     self = [super initWithDate:date andJ2000OEs:j2000OEs andCenturyOEs:centOEs];
     return self;
+}
+
+
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Saturn";
 }
 
 
@@ -204,6 +246,13 @@
 }
 
 
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Uranus";
+}
+
+
 @end
 
 
@@ -230,6 +279,13 @@
 }
 
 
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Neptune";
+}
+
+
 @end
 
 
@@ -253,6 +309,13 @@
     
     self = [super initWithDate:date andJ2000OEs:j2000OEs andCenturyOEs:centOEs];
     return self;
+}
+
+
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Pluto";
 }
 
 

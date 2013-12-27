@@ -114,4 +114,11 @@
 }
 
 
+//  Returns a fake name
+
+-(NSString *)name {
+    return @"Do not instantiate this!";
+}
+
+
 @end

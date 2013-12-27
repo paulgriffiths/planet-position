@@ -37,6 +37,13 @@
 }
 
 
+//  Method returns the name of the planet
+
+-(NSString *)name {
+    return @"Moon";
+}
+
+
 @end
 
 
