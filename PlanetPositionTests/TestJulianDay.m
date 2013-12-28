@@ -14,6 +14,7 @@
 
 #import <XCTest/XCTest.h>
 #import "PGAstroGeneral.h"
+#import "PGDateHelpers.h"
 
 @interface TestJulianDay : XCTestCase
 
@@ -37,18 +38,7 @@
 {
     const double accuracy = 0.000001;
     
-    NSDateComponents * epochComponents = [NSDateComponents new];
-    [epochComponents setYear:2013];
-    [epochComponents setMonth:6];
-    [epochComponents setDay:2];
-    [epochComponents setHour:0];
-    [epochComponents setMinute:0];
-    [epochComponents setSecond:0];
-    [epochComponents setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate * testDate = [gregorian dateFromComponents:epochComponents];
-    
-    const double jday = julian_day(testDate);
+    const double jday = julian_day(getUTCDate(2013, 6, 2, 0, 0, 0));
     XCTAssertEqualWithAccuracy(2456445.5, jday, accuracy);
 }
 
@@ -57,18 +47,7 @@
 {
     const double accuracy = 0.000001;
     
-    NSDateComponents * epochComponents = [NSDateComponents new];
-    [epochComponents setYear:1980];
-    [epochComponents setMonth:1];
-    [epochComponents setDay:1];
-    [epochComponents setHour:0];
-    [epochComponents setMinute:0];
-    [epochComponents setSecond:0];
-    [epochComponents setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate * testDate = [gregorian dateFromComponents:epochComponents];
-    
-    const double jday = julian_day(testDate);
+    const double jday = julian_day(getUTCDate(1980, 1, 1, 0, 0, 0));
     XCTAssertEqualWithAccuracy(2444239.5, jday, accuracy);
 }
 
@@ -78,18 +57,7 @@
     const double accuracy = 0.001;   //  Unknown why accuracy is lower here, other than date is more in the past,
                                      //  and result is a fraction.
     
-    NSDateComponents * epochComponents = [NSDateComponents new];
-    [epochComponents setYear:1918];
-    [epochComponents setMonth:11];
-    [epochComponents setDay:11];
-    [epochComponents setHour:11];
-    [epochComponents setMinute:11];
-    [epochComponents setSecond:0];
-    [epochComponents setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate * testDate = [gregorian dateFromComponents:epochComponents];
-    
-    const double jday = julian_day(testDate);
+    const double jday = julian_day(getUTCDate(1918, 11, 11, 11, 11, 0));
     XCTAssertEqualWithAccuracy(2421908.9661, jday, accuracy);
 }
 
