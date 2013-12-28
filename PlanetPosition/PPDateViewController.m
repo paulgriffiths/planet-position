@@ -10,6 +10,7 @@
 #import "PPDateViewController.h"
 #import "PGAstro.h"
 #import "PGDateHelpers.h"
+#import "AstroDateGroup.h"
 
 
 @interface PPDateViewController ()
@@ -32,24 +33,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
-    NSDate * currentDate = [NSDate new];
     
-    NSDateComponents * cDC = getUTCComponentsFromDate(currentDate);
-    NSString * dateString = [NSString stringWithFormat:@"%i/%i/%i %i:%i:%i", [cDC year], [cDC month], [cDC day],
-                             [cDC hour], [cDC minute], [cDC second]];
-    self.dateLabel.text = dateString;
-    
-    NSNumberFormatter * nf = [NSNumberFormatter new];
-    nf.numberStyle = NSNumberFormatterDecimalStyle;
-    [nf setMaximumFractionDigits:2];
-    NSNumber * julianDay = [NSNumber numberWithDouble:julian_day(currentDate)];
-    self.julianDayLabel.text = [NSString stringWithFormat:@"%@", [nf stringFromNumber:julianDay]];
-    
-    PGAstroSun * sun = [PGAstroSun new];
-    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:sun.rightAscension];
-    self.thelemicDateLabel.text = [NSString stringWithFormat:@"Sol in %i%@ %@, Anno %@", zInfo.zodiacDMS.degrees, @"\u00B0", zInfo.signShortName, get_thelemic_year(currentDate)];
-
+    AstroDateGroup * dateGroup = [AstroDateGroup new];
+    self.dateLabel.text = dateGroup.dateStringUTC;
+    self.julianDayLabel.text = dateGroup.dateStringJulian;
+    self.thelemicDateLabel.text = dateGroup.dateStringThelemic;
 }
 
 
