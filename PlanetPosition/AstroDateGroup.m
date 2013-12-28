@@ -18,23 +18,35 @@
 
 - (AstroDateGroup *)initWithDate:(NSDate *)date {
     if ( (self = [super init]) ) {
-        NSDateFormatter *dateFormatter = [NSDateFormatter new];
-        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-        _dateStringUTC = [dateFormatter stringFromDate:date];
-        
-        NSNumberFormatter * nf = [NSNumberFormatter new];
-        nf.numberStyle = NSNumberFormatterDecimalStyle;
-        [nf setMaximumFractionDigits:2];
-        NSNumber * julianDay = [NSNumber numberWithDouble:julian_day(date)];
-        _dateStringJulian = [NSString stringWithFormat:@"%@", [nf stringFromNumber:julianDay]];
-        
-        PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:[PGAstroSun new].rightAscension];
-        _dateStringThelemic = [NSString stringWithFormat:@"Sol in %i%@ %@, Anno %@", zInfo.zodiacDMS.degrees, @"\u00B0", zInfo.signShortName, get_thelemic_year(date)];
+        [self updateDataWithDate:date];
     }
     return self;
 }
+
+
+- (void)updateData {
+    [self updateDataWithDate:[NSDate date]];
+}
+
+
+- (void)updateDataWithDate:(NSDate *)date {
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    _dateStringUTC = [dateFormatter stringFromDate:date];
+    
+    NSNumberFormatter * nf = [NSNumberFormatter new];
+    nf.numberStyle = NSNumberFormatterDecimalStyle;
+    [nf setMaximumFractionDigits:2];
+    NSNumber * julianDay = [NSNumber numberWithDouble:julian_day(date)];
+    _dateStringJulian = [NSString stringWithFormat:@"%@", [nf stringFromNumber:julianDay]];
+    
+    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:[PGAstroSun new].rightAscension];
+    _dateStringThelemic = [NSString stringWithFormat:@"Sol in %i%@ %@, Anno %@", zInfo.zodiacDMS.degrees, @"\u00B0", zInfo.signShortName, get_thelemic_year(date)];
+   
+}
+
 
 - (AstroDateGroup *)init {
     return [self initWithDate:[NSDate date]];

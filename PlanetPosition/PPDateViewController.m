@@ -18,7 +18,10 @@
 @end
 
 
-@implementation PPDateViewController
+@implementation PPDateViewController {
+    NSTimer * _timer;
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,11 +36,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self updateData];
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:60.0f target:self
+                                            selector:@selector(updateData) userInfo:nil repeats:YES];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_timer invalidate];
+}
+
+
+- (void)updateData {
     AstroDateGroup * dateGroup = [AstroDateGroup new];
     self.dateLabel.text = dateGroup.dateStringUTC;
+    [self.dateLabel sizeToFit];
     self.julianDayLabel.text = dateGroup.dateStringJulian;
+    [self.julianDayLabel sizeToFit];
     self.thelemicDateLabel.text = dateGroup.dateStringThelemic;
+    [self.thelemicDateLabel sizeToFit];
 }
 
 

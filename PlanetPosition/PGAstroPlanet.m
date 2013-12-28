@@ -43,6 +43,13 @@
 }
 
 
+//  Method to clone a planet with the current time
+
+- (PGAstroPlanet *)clone {
+    return [[self class] new];
+}
+
+
 //  Calculates the planet's heliocentric ecliptic coordinates
 
 -(PGMathRectCoords *)helioEclCoords {

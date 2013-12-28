@@ -14,7 +14,9 @@
 
 @end
 
-@implementation PlanetDetailsViewController
+@implementation PlanetDetailsViewController {
+    NSTimer * _timer;
+}
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -31,18 +33,50 @@
 {
     [super viewDidLoad];
 
+    [self updateData];
+}
+
+
+- (void)updateData {
     PGPlanetDetails * planetDetails = [PGPlanetDetails objectWithPlanet:self.planet];
-    
+
     self.planetNameLabel.text = planetDetails.name;
+    [self.planetNameLabel sizeToFit];
     self.planetImage.image = planetDetails.imageLarge;
     
     self.rightAscensionLabel.text = planetDetails.rascString;
+    [self.rightAscensionLabel sizeToFit];
     self.declinationLabel.text = planetDetails.declString;
+    [self.declinationLabel sizeToFit];
     self.distanceLabel.text = planetDetails.distString;
+    [self.distanceLabel sizeToFit];
     
     self.zodiacSignLabel.text = planetDetails.zodSignName;
+    [self.zodiacSignLabel sizeToFit];
     self.zodiacDecanLabel.text = planetDetails.zodDecan;
+    [self.zodiacDecanLabel sizeToFit];
     self.zodiacCoordsLabel.text = planetDetails.zodCoords;
+    [self.zodiacCoordsLabel sizeToFit];
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self refreshOnTimer];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:60.0f target:self
+                                            selector:@selector(refreshOnTimer) userInfo:nil repeats:YES];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_timer invalidate];
+}
+
+
+-(void)refreshOnTimer {
+    self.planet = [self.planet clone];
+    [self updateData];
 }
 
 

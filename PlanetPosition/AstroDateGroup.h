@@ -16,6 +16,8 @@
 
 + (AstroDateGroup *)objectWithDate:(NSDate *)date;
 - (AstroDateGroup *)initWithDate:(NSDate *)date;
+- (void)updateDataWithDate:(NSDate *)date;
+- (void)updateData;
 
 
 @end

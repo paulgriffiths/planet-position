@@ -22,6 +22,7 @@
 
 @implementation PlanetPositionTableViewController {
     PlanetPositionPlanetsGroup * _planetsGroup;
+    NSTimer * _timer;
 }
 
 
@@ -38,9 +39,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    _planetsGroup = [PlanetPositionPlanetsGroup new];
     
+    _planetsGroup = [PlanetPositionPlanetsGroup new];
 }
 
 
@@ -53,11 +53,33 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ( [[segue identifier] isEqualToString:@"planetDetailsSegue"] ) {
+        [_planetsGroup update];
         PlanetDetailsViewController * controller = [segue destinationViewController];
         long row = [[self.tableView indexPathForSelectedRow] row];
         controller.planet = [_planetsGroup planetAtIndex:row];
     }
 }
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self refreshOnTimer];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:60.0f target:self
+                                   selector:@selector(refreshOnTimer) userInfo:nil repeats:YES];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_timer invalidate];
+}
+
+
+-(void)refreshOnTimer {
+    [_planetsGroup update];
+    [self.tableView reloadData];
+}
+
 
 #pragma mark - Table view data source
 

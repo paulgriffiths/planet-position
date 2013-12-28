@@ -32,15 +32,13 @@
 //  Public methods
 
 -(PGAstroPlanet *)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes;
+-(PGAstroPlanet *)clone;
 
 -(PGMathRectCoords *)helioOrbCoords;
 -(PGMathRectCoords *)helioEclCoords;
 -(PGMathRectCoords *)geoEclCoords;
 -(PGMathRectCoords *)geoEquCoords;
 
-/*-(double)rightAscension;
--(double)declination;
--(double)distance;*/
 -(NSString *)name;
 
 
