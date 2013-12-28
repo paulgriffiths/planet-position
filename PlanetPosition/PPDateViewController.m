@@ -42,6 +42,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self updateData];
     _timer = [NSTimer scheduledTimerWithTimeInterval:60.0f target:self
                                             selector:@selector(updateData) userInfo:nil repeats:YES];
 }
