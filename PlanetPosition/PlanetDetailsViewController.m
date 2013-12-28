@@ -7,12 +7,15 @@
 //
 
 #import "PlanetDetailsViewController.h"
+#import "PGPlanetDetails.h"
+
 
 @interface PlanetDetailsViewController ()
 
 @end
 
 @implementation PlanetDetailsViewController
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,37 +26,25 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    PGPlanetDetails * planetDetails = [PGPlanetDetails objectWithPlanet:self.planet];
     
-    self.planetImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_large", [self.planet name]]];
-    self.planetNameLabel.text = [self.planet name];
+    self.planetNameLabel.text = planetDetails.name;
+    self.planetImage.image = planetDetails.imageLarge;
     
-    PGAstroZodiacInfo * zInfo = get_zodiac_info([self.planet rightAscension]);
+    self.rightAscensionLabel.text = planetDetails.rascString;
+    self.declinationLabel.text = planetDetails.declString;
+    self.distanceLabel.text = planetDetails.distString;
     
-    self.rightAscensionLabel.text = rasc_string([self.planet rightAscension]);
-    self.declinationLabel.text = decl_string([self.planet declination]);
-    self.distanceLabel.text = [NSString stringWithFormat:@"%.3f %@", [self.planet distance], ([[self.planet name] isEqualToString:@"Moon"] ? @"Earth Radii" : @"AU")];
-    
-    self.zodiacSignLabel.text = zInfo.signName;
-    NSString * decan;
-    if ( zInfo.zodiacDMS.degrees < 10 ) {
-        decan = @"Ascendant";
-    } else if ( zInfo.zodiacDMS.degrees < 20 ) {
-        decan = @"Succedent";
-    } else {
-        decan = @"Cadent";
-    }
-    self.zodiacDecanLabel.text = decan;
-    self.zodiacCoordsLabel.text = rasc_to_zodiac(zInfo.rightAscension);
+    self.zodiacSignLabel.text = planetDetails.zodSignName;
+    self.zodiacDecanLabel.text = planetDetails.zodDecan;
+    self.zodiacCoordsLabel.text = planetDetails.zodCoords;
 }
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -24,6 +24,11 @@
 @property (strong, nonatomic) NSString * signName;
 @property (strong, nonatomic) NSString * signShortName;
 @property (strong, nonatomic) PGMathDMS * zodiacDMS;
+@property (strong, nonatomic) NSString * zodiacDecan;
+
++(PGAstroZodiacInfo *)objectWithRasc:(double)rasc;
+-(PGAstroZodiacInfo *)initWithRasc:(double)rasc;
+
 
 @end
 
@@ -50,7 +55,6 @@
 
 //  C helper function prototypes
 
-PGAstroZodiacInfo * get_zodiac_info(const double rasc);
 double julian_day(const NSDate * dateObject);
 double kepler(const double m_anom, const double ecc);
 NSString * zodiac_sign(const double rasc);

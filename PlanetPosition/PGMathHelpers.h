@@ -22,6 +22,10 @@
 @property (nonatomic) int minutes;
 @property (nonatomic) int seconds;
 
++(PGMathHMS *)objectWithDegrees:(double)degrees;
+-(PGMathHMS *)initWithDegrees:(double)degrees;
+
+
 @end
 
 
@@ -32,6 +36,10 @@
 @property (nonatomic) int degrees;
 @property (nonatomic) int minutes;
 @property (nonatomic) int seconds;
+
++(PGMathDMS *)objectWithDegrees:(double)degrees;
+-(PGMathDMS *)initWithDegrees:(double)degrees;
+
 
 @end
 
@@ -68,7 +76,5 @@
 double normalizeDegrees(const double angle);
 double radToDeg(const double rads);
 double degToRad(const double degs);
-PGMathHMS * degToHms(const double degrees);
-PGMathDMS * degToDms(const double degrees);
 NSString * makeRoman(const int num);
 

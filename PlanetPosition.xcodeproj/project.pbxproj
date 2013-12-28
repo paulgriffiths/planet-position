@@ -34,6 +34,8 @@
 		DABE3C6C186E4EE5003C93E9 /* PGMathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */; };
 		DABE3C71186E58D0003C93E9 /* PGDateHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C70186E58D0003C93E9 /* PGDateHelpers.m */; };
 		DABE3C72186E58D0003C93E9 /* PGDateHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C70186E58D0003C93E9 /* PGDateHelpers.m */; };
+		DABE3C76186E5F78003C93E9 /* PGPlanetDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C75186E5F78003C93E9 /* PGPlanetDetails.m */; };
+		DABE3C77186E5F78003C93E9 /* PGPlanetDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C75186E5F78003C93E9 /* PGPlanetDetails.m */; };
 		DAF3C88F186A7C9700AA2E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C88E186A7C9700AA2E24 /* Foundation.framework */; };
 		DAF3C891186A7C9700AA2E24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */; };
 		DAF3C893186A7C9700AA2E24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3C892186A7C9700AA2E24 /* UIKit.framework */; };
@@ -97,6 +99,8 @@
 		DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGMathHelpers.m; sourceTree = "<group>"; };
 		DABE3C6F186E58D0003C93E9 /* PGDateHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDateHelpers.h; sourceTree = "<group>"; };
 		DABE3C70186E58D0003C93E9 /* PGDateHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDateHelpers.m; sourceTree = "<group>"; };
+		DABE3C74186E5F78003C93E9 /* PGPlanetDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGPlanetDetails.h; sourceTree = "<group>"; };
+		DABE3C75186E5F78003C93E9 /* PGPlanetDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGPlanetDetails.m; sourceTree = "<group>"; };
 		DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetPosition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF3C88E186A7C9700AA2E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -185,6 +189,8 @@
 				DA621AD5186D58BB0092C293 /* PlanetDetailsViewController.m */,
 				DA13CA24186D011C00F8280A /* PlanetPositionTableViewController.h */,
 				DA13CA25186D011C00F8280A /* PlanetPositionTableViewController.m */,
+				DA13CA28186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.h */,
+				DA13CA29186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -196,6 +202,17 @@
 				DABE3C70186E58D0003C93E9 /* PGDateHelpers.m */,
 			);
 			name = PGDateHelpers;
+			sourceTree = "<group>";
+		};
+		DABE3C78186E6341003C93E9 /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				DA13CA2C186D048100F8280A /* PlanetPositionPlanetsGroup.h */,
+				DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */,
+				DABE3C74186E5F78003C93E9 /* PGPlanetDetails.h */,
+				DABE3C75186E5F78003C93E9 /* PGPlanetDetails.m */,
+			);
+			name = "Model Objects";
 			sourceTree = "<group>";
 		};
 		DAF3C882186A7C9700AA2E24 = {
@@ -237,13 +254,10 @@
 				DABE3C6D186E4EEE003C93E9 /* PGMathHelpers */,
 				DA13CA1A186CD24400F8280A /* PGAstro */,
 				DABE3C6E186E563D003C93E9 /* View Controllers */,
+				DABE3C78186E6341003C93E9 /* Model Objects */,
 				DAF3C89D186A7C9700AA2E24 /* PlanetPositionAppDelegate.h */,
 				DAF3C89E186A7C9700AA2E24 /* PlanetPositionAppDelegate.m */,
 				DAF3C8A0186A7C9700AA2E24 /* Main.storyboard */,
-				DA13CA2C186D048100F8280A /* PlanetPositionPlanetsGroup.h */,
-				DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */,
-				DA13CA28186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.h */,
-				DA13CA29186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m */,
 				DAF3C8A6186A7C9700AA2E24 /* Images.xcassets */,
 				DAF3C895186A7C9700AA2E24 /* Supporting Files */,
 			);
@@ -400,6 +414,7 @@
 				DA13CA22186CE0F200F8280A /* PGAstroMoon.m in Sources */,
 				DA0CFE3D186DEC1C0031629C /* PPDateViewController.m in Sources */,
 				DA0BF4F7186C775D00EBF1AE /* PGAstroPlanet.m in Sources */,
+				DABE3C76186E5F78003C93E9 /* PGPlanetDetails.m in Sources */,
 				DAF3C89F186A7C9700AA2E24 /* PlanetPositionAppDelegate.m in Sources */,
 				DABE3C71186E58D0003C93E9 /* PGDateHelpers.m in Sources */,
 			);
@@ -413,6 +428,7 @@
 				DA0BF4FC186C79A400EBF1AE /* PGAstroMajorBody.m in Sources */,
 				DAF3C8CC186A95B700AA2E24 /* TestRascToZodiac.m in Sources */,
 				DAF3C8C8186A916800AA2E24 /* TestNormalizeDegrees.m in Sources */,
+				DABE3C77186E5F78003C93E9 /* PGPlanetDetails.m in Sources */,
 				DA13CA2F186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */,
 				DA0CFE41186E12860031629C /* TestThelemicYear.m in Sources */,
 				DA13CA2B186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m in Sources */,

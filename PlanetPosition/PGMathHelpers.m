@@ -18,12 +18,61 @@
 
 @implementation PGMathHMS
 
+
+//  Public class method to create object with provided degrees
+
++ (PGMathHMS *)objectWithDegrees:(double)degrees {
+    return [[PGMathHMS alloc] initWithDegrees:degrees];
+}
+
+
+//  Initialization method to initialize object with provided degrees
+
+- (PGMathHMS *)initWithDegrees:(double)degrees {
+    if ( (self = [super init]) ) {
+        static const int secs_in_a_day = 86400;
+        static const int secs_in_an_hour = 3600;
+        const double norm_degs = normalizeDegrees(degrees);
+        const int total_seconds = (int) floor((norm_degs / 360) * secs_in_a_day);
+        
+        _hours = total_seconds / secs_in_an_hour;
+        _minutes = (total_seconds - _hours * secs_in_an_hour) / 60;
+        _seconds = total_seconds - _hours * secs_in_an_hour - _minutes * 60;
+   }
+    return self;
+}
+
+
 @end
 
 
 //  Class to store a degrees, minutes and seconds representation
 
 @implementation PGMathDMS
+
+
+//  Public class method to create object with provided degrees
+
++ (PGMathDMS *)objectWithDegrees:(double)degrees {
+    return [[PGMathDMS alloc] initWithDegrees:degrees];
+}
+
+
+//  Initialization method to initialize object with provided degrees
+
+- (PGMathDMS *)initWithDegrees:(double)degrees {
+    if ( (self = [super init]) ) {
+        static const int secs_in_an_hour = 3600;
+        const int total_seconds = (int) (degrees > 0 ? floor(degrees * secs_in_an_hour) :
+                                         ceil(degrees * secs_in_an_hour));
+        
+        _degrees = total_seconds / secs_in_an_hour;
+        _minutes = (total_seconds - _degrees * secs_in_an_hour) / 60;
+        _seconds = total_seconds - _degrees * secs_in_an_hour - _minutes * 60;
+    }
+    return self;
+}
+
 
 @end
 
@@ -42,7 +91,7 @@
 
 //  Public class convenience method for creating new object
 
-+(PGMathRectCoords *)objectWithX:(double)x Y:(double)y Z:(double)z {
++ (PGMathRectCoords *)objectWithX:(double)x Y:(double)y Z:(double)z {
     return [[PGMathRectCoords alloc] initWithX:x Y:y Z:x];
 }
 
@@ -93,52 +142,6 @@ double radToDeg(const double radians) {
 
 double degToRad(const double degrees) {
     return degrees * (M_PI / 180);
-}
-
-
-//  Converts the supplied degree angle to hours, minutes and seconds
-
-PGMathHMS * degToHms(const double degrees) {
-    static const double secs_in_a_day = 86400;
-    static const double secs_in_an_hour = 3600;
-    const double norm_degs = normalizeDegrees(degrees);
-    const int total_seconds = (int) floor((norm_degs / 360) * secs_in_a_day);
-    
-    PGMathHMS * hmsOut = [PGMathHMS new];
-    hmsOut.hours = total_seconds / secs_in_an_hour;
-    hmsOut.minutes = (total_seconds - hmsOut.hours * secs_in_an_hour) / 60;
-    hmsOut.seconds = total_seconds - hmsOut.hours * secs_in_an_hour - hmsOut.minutes * 60;
-    
-    assert(hmsOut.hours >= 0);
-    assert(hmsOut.hours < 24);
-    assert(hmsOut.minutes >= 0);
-    assert(hmsOut.minutes < 60);
-    assert(hmsOut.seconds >= 0);
-    assert(hmsOut.seconds < 60);
-    
-    return hmsOut;
-}
-
-
-//  Converts the supplied degree angle to degrees, minutes and seconds
-
-PGMathDMS * degToDms(const double degrees) {
-    static const double secs_in_an_hour = 3600;
-    const int total_seconds = (int) (degrees > 0 ? floor(degrees * secs_in_an_hour) :
-                                     ceil(degrees * secs_in_an_hour));
-    
-    PGMathDMS * dmsOut = [PGMathDMS new];
-    dmsOut.degrees = total_seconds / secs_in_an_hour;
-    dmsOut.minutes = (total_seconds - dmsOut.degrees * secs_in_an_hour) / 60;
-    dmsOut.seconds = total_seconds - dmsOut.degrees * secs_in_an_hour -
-    dmsOut.minutes * 60;
-    
-    assert(dmsOut.minutes > -60);
-    assert(dmsOut.minutes < 60);
-    assert(dmsOut.seconds > -60);
-    assert(dmsOut.seconds < 60);
-    
-    return dmsOut;
 }
 
 

@@ -6,13 +6,16 @@
 //  Copyright (c) 2013 Paul Griffiths. All rights reserved.
 //
 
+
 #import "PPDateViewController.h"
 #import "PGAstro.h"
 #import "PGDateHelpers.h"
 
+
 @interface PPDateViewController ()
 
 @end
+
 
 @implementation PPDateViewController
 
@@ -25,20 +28,14 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+   
     NSDate * currentDate = [NSDate new];
     
     NSDateComponents * cDC = getUTCComponentsFromDate(currentDate);
-    
     NSString * dateString = [NSString stringWithFormat:@"%i/%i/%i %i:%i:%i", [cDC year], [cDC month], [cDC day],
                              [cDC hour], [cDC minute], [cDC second]];
     self.dateLabel.text = dateString;
@@ -50,10 +47,11 @@
     self.julianDayLabel.text = [NSString stringWithFormat:@"%@", [nf stringFromNumber:julianDay]];
     
     PGAstroSun * sun = [PGAstroSun new];
-    PGAstroZodiacInfo * zInfo = get_zodiac_info([sun rightAscension]);
+    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:sun.rightAscension];
     self.thelemicDateLabel.text = [NSString stringWithFormat:@"Sol in %i%@ %@, Anno %@", zInfo.zodiacDMS.degrees, @"\u00B0", zInfo.signShortName, get_thelemic_year(currentDate)];
 
 }
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -16,9 +16,56 @@
 #import "PGDateHelpers.h"
 
 
+//  Static file-scope data
+
+static const char * const zodiac_signs[] = {
+    "Aries", "Taurus", "Gemini", "Cancer",
+    "Leo", "Virgo", "Libra", "Scorpio",
+    "Sagittarius", "Capricorn", "Aquarius", "Pisces"
+};
+static const char * const zodiac_signs_short[] = {
+    "AR", "TA", "GE", "CN", "LE", "VI",
+    "LI", "SC", "SG", "CP", "AQ", "PI"
+};
+
+
 //  Class to store information about the zodiacal position of a right ascension measurement
 
 @implementation PGAstroZodiacInfo
+
+
+//  Class method to create object based on provided right ascension
+
++ (PGAstroZodiacInfo *)objectWithRasc:(double)rasc {
+    return [[PGAstroZodiacInfo alloc] initWithRasc:rasc];
+}
+
+
+//  Initializer method to initialize object based on provided right ascension
+
+- (PGAstroZodiacInfo *)initWithRasc:(double)rasc {
+    if ( (self = [super init]) ) {
+        self.rightAscension = normalizeDegrees(rasc);
+        
+        self.zodiacDMS = [PGMathDMS objectWithDegrees:self.rightAscension];
+        self.signIndex = self.zodiacDMS.degrees / 30;
+        self.zodiacDMS.degrees %= 30;
+        
+        self.signName = [NSString stringWithFormat:@"%s", zodiac_signs[self.signIndex]];
+        self.signShortName = [NSString stringWithFormat:@"%s", zodiac_signs_short[self.signIndex]];
+        
+        if ( self.zodiacDMS.degrees < 10 ) {
+            self.zodiacDecan = @"Ascendant";
+        } else if ( self.zodiacDMS.degrees < 20 ) {
+            self.zodiacDecan = @"Succedent";
+        } else {
+            self.zodiacDecan = @"Cadent";
+        }
+    }
+    
+    return self;
+}
+
 
 @end
 
@@ -56,41 +103,6 @@
 @end
 
 
-//  Calculates information pertaining to the zodiacal position
-//  of the supplied right ascension in degrees.
-
-PGAstroZodiacInfo * get_zodiac_info(const double rasc) {
-    static const char * const zodiac_signs[] = {
-        "Aries", "Taurus", "Gemini", "Cancer",
-        "Leo", "Virgo", "Libra", "Scorpio",
-        "Sagittarius", "Capricorn", "Aquarius", "Pisces"
-    };
-    static const char * const zodiac_signs_short[] = {
-        "AR", "TA", "GE", "CN", "LE", "VI",
-        "LI", "SC", "SG", "CP", "AQ", "PI"
-    };
-    
-    const double norm_degs = normalizeDegrees(rasc);
-    
-    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo new];
-    zInfo.zodiacDMS = degToDms(norm_degs);
-    zInfo.rightAscension = norm_degs;
-    zInfo.signIndex = zInfo.zodiacDMS.degrees / 30;
-    zInfo.zodiacDMS.degrees %= 30;
-    
-    assert(zInfo.signIndex >= 0);
-    assert(zInfo.signIndex < 12);
-    
-    zInfo.signName = [NSString stringWithFormat:@"%s", zodiac_signs[zInfo.signIndex]];
-    zInfo.signShortName = [NSString stringWithFormat:@"%s", zodiac_signs_short[zInfo.signIndex]];
-    
-    assert(zInfo.zodiacDMS.degrees >= 0);
-    assert(zInfo.zodiacDMS.degrees < 30);
-    
-    return zInfo;
-}
-
-
 //  Calculates the Julian Day for the provided NSDate.
 
 double julian_day(const NSDate * dateObject) {
@@ -102,7 +114,7 @@ double julian_day(const NSDate * dateObject) {
         epochDate = getUTCDate(2000, 1, 1, 12, 0, 0);
     }
     
-    NSTimeInterval secondsSinceEpoch = [dateObject timeIntervalSinceDate:epochDate];
+    const NSTimeInterval secondsSinceEpoch = [dateObject timeIntervalSinceDate:epochDate];
     
     const double days_since_j2000 = secondsSinceEpoch / secs_in_a_day;
     return epoch_j2000 + days_since_j2000;
@@ -133,7 +145,7 @@ double kepler(const double m_anom, const double ecc) {
 //  sign which contains the right ascension supplied in degrees.
 
 NSString * zodiac_sign(const double rasc) {
-    PGAstroZodiacInfo * zInfo = get_zodiac_info(rasc);
+    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:rasc];
     return zInfo.signName;
 }
 
@@ -143,7 +155,7 @@ NSString * zodiac_sign(const double rasc) {
 //  e.g. "GE" for Gemini.
 
 NSString * zodiac_sign_short(const double rasc) {
-    PGAstroZodiacInfo * zInfo = get_zodiac_info(rasc);
+    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:rasc];
     return zInfo.signShortName;
 }
 
@@ -153,7 +165,7 @@ NSString * zodiac_sign_short(const double rasc) {
 //  is 20 degrees and 19 minutes into the sign of Gemini.
 
 NSString * rasc_to_zodiac(const double rasc) {
-    PGAstroZodiacInfo * zInfo = get_zodiac_info(rasc);
+    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:rasc];
     return [NSString stringWithFormat:@"%02i%@%02i", zInfo.zodiacDMS.degrees, zInfo.signShortName, zInfo.zodiacDMS.minutes];
 }
 
@@ -163,7 +175,7 @@ NSString * rasc_to_zodiac(const double rasc) {
 //  ascension supplied in degrees.
 
 NSString * rasc_string(const double rasc) {
-    PGMathHMS * hms = degToHms(rasc);
+    PGMathHMS * hms = [PGMathHMS objectWithDegrees:rasc];
     return [NSString stringWithFormat:@"%02ih %02im %02is", hms.hours, hms.minutes, hms.seconds];
 }
 
@@ -173,7 +185,7 @@ NSString * rasc_string(const double rasc) {
 //  supplied in degrees. Uses a degree sign instead of 'd'.
 
 NSString * decl_string(const double decl) {
-    PGMathDMS * dms = degToDms(decl);
+    PGMathDMS * dms = [PGMathDMS objectWithDegrees:decl];
     return [NSString stringWithFormat:@"%@%02i%@ %02im %02is",
             (dms.degrees >= 0 ? @"+" : @"-"), abs(dms.degrees), @"\u00B0", abs(dms.minutes), abs(dms.seconds)];
 }
@@ -191,7 +203,7 @@ NSString * get_thelemic_year(NSDate * date) {
     NSDateComponents * components = getUTCComponentsFromDate(date);
     long year = [components year] - 1904;
     
-    double rasc = normalizeDegrees([[[PGAstroSun alloc] initWithDate:date] rightAscension]);
+    double rasc = normalizeDegrees([[PGAstroSun planetWithDate:date] rightAscension]);
     if ( rasc > 270 && [components month] <= 3 ) {
         year -= 1;
     }
