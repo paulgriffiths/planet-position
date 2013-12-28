@@ -105,7 +105,7 @@
 		DABE3C75186E5F78003C93E9 /* PGPlanetDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGPlanetDetails.m; sourceTree = "<group>"; };
 		DABE3C79186E75C6003C93E9 /* AstroDateGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstroDateGroup.h; sourceTree = "<group>"; };
 		DABE3C7A186E75C6003C93E9 /* AstroDateGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstroDateGroup.m; sourceTree = "<group>"; };
-		DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetPosition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF3C88B186A7C9700AA2E24 /* Planet Pos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Planet Pos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF3C88E186A7C9700AA2E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAF3C890186A7C9700AA2E24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DAF3C892186A7C9700AA2E24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -236,7 +236,7 @@
 		DAF3C88C186A7C9700AA2E24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */,
+				DAF3C88B186A7C9700AA2E24 /* Planet Pos.app */,
 				DAF3C8AC186A7C9700AA2E24 /* PlanetPositionTests.xctest */,
 			);
 			name = Products;
@@ -324,7 +324,7 @@
 			);
 			name = PlanetPosition;
 			productName = PlanetPosition;
-			productReference = DAF3C88B186A7C9700AA2E24 /* PlanetPosition.app */;
+			productReference = DAF3C88B186A7C9700AA2E24 /* Planet Pos.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DAF3C8AB186A7C9700AA2E24 /* PlanetPositionTests */ = {
@@ -355,12 +355,15 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Paul Griffiths";
 				TargetAttributes = {
+					DAF3C88A186A7C9700AA2E24 = {
+						DevelopmentTeam = 4P8U8AF888;
+					};
 					DAF3C8AB186A7C9700AA2E24 = {
 						TestTargetID = DAF3C88A186A7C9700AA2E24;
 					};
 				};
 			};
-			buildConfigurationList = DAF3C886186A7C9700AA2E24 /* Build configuration list for PBXProject "PlanetPosition" */;
+			buildConfigurationList = DAF3C886186A7C9700AA2E24 /* Build configuration list for PBXProject "planet-pos" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -572,11 +575,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
 				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = "PlanetPosition/PlanetPosition-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Planet Pos";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -587,11 +593,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
 				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = "PlanetPosition/PlanetPosition-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Planet Pos";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -641,7 +650,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAF3C886186A7C9700AA2E24 /* Build configuration list for PBXProject "PlanetPosition" */ = {
+		DAF3C886186A7C9700AA2E24 /* Build configuration list for PBXProject "planet-pos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAF3C8BB186A7C9700AA2E24 /* Debug */,

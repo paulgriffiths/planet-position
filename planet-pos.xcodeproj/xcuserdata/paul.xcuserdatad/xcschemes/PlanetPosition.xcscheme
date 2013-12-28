@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DAF3C88A186A7C9700AA2E24"
-               BuildableName = "PlanetPosition.app"
+               BuildableName = "Planet Pos.app"
                BlueprintName = "PlanetPosition"
-               ReferencedContainer = "container:PlanetPosition.xcodeproj">
+               ReferencedContainer = "container:planet-pos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "DAF3C8AB186A7C9700AA2E24"
                BuildableName = "PlanetPositionTests.xctest"
                BlueprintName = "PlanetPositionTests"
-               ReferencedContainer = "container:PlanetPosition.xcodeproj">
+               ReferencedContainer = "container:planet-pos.xcodeproj">
             </BuildableReference>
             <SkippedTests>
                <Test
@@ -48,9 +48,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DAF3C88A186A7C9700AA2E24"
-            BuildableName = "PlanetPosition.app"
+            BuildableName = "Planet Pos.app"
             BlueprintName = "PlanetPosition"
-            ReferencedContainer = "container:PlanetPosition.xcodeproj">
+            ReferencedContainer = "container:planet-pos.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DAF3C88A186A7C9700AA2E24"
-            BuildableName = "PlanetPosition.app"
+            BuildableName = "Planet Pos.app"
             BlueprintName = "PlanetPosition"
-            ReferencedContainer = "container:PlanetPosition.xcodeproj">
+            ReferencedContainer = "container:planet-pos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DAF3C88A186A7C9700AA2E24"
-            BuildableName = "PlanetPosition.app"
+            BuildableName = "Planet Pos.app"
             BlueprintName = "PlanetPosition"
-            ReferencedContainer = "container:PlanetPosition.xcodeproj">
+            ReferencedContainer = "container:planet-pos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

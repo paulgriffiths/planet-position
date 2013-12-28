@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:PlanetPosition.xcodeproj">
+      location = "self:planet-pos.xcodeproj">
    </FileRef>
 </Workspace>
