@@ -36,32 +36,32 @@
 {
     const double accuracy = 0.00001;
     
-    double expectedResult = radians(37.40006);
-    double testResult = kepler(radians(20), 0.5);
+    double expectedResult = degToRad(37.40006);
+    double testResult = kepler(degToRad(20), 0.5);
     XCTAssertEqualWithAccuracy(expectedResult, testResult, accuracy);
 
-    expectedResult = radians(48.43418);
-    testResult = kepler(radians(27), 0.5);
+    expectedResult = degToRad(48.43418);
+    testResult = kepler(degToRad(27), 0.5);
     XCTAssertEqualWithAccuracy(expectedResult, testResult, accuracy);
     
-    expectedResult = radians(226.66512);
-    testResult = kepler(radians(235), 0.2);
+    expectedResult = degToRad(226.66512);
+    testResult = kepler(degToRad(235), 0.2);
     XCTAssertEqualWithAccuracy(expectedResult, testResult, accuracy);
     
-    expectedResult = radians(0);
-    testResult = kepler(radians(0), 0);
+    expectedResult = degToRad(0);
+    testResult = kepler(degToRad(0), 0);
     XCTAssertEqualWithAccuracy(expectedResult, testResult, accuracy);
     
-    expectedResult = radians(360);
-    testResult = kepler(radians(360), 0);
+    expectedResult = degToRad(360);
+    testResult = kepler(degToRad(360), 0);
     XCTAssertEqualWithAccuracy(expectedResult, testResult, accuracy);
     
-    expectedResult = radians(300);
-    testResult = kepler(radians(300), 0);
+    expectedResult = degToRad(300);
+    testResult = kepler(degToRad(300), 0);
     XCTAssertEqualWithAccuracy(expectedResult, testResult, accuracy);
     
-    expectedResult = radians(96.25884);
-    testResult = kepler(radians(45), 0.9);
+    expectedResult = degToRad(96.25884);
+    testResult = kepler(degToRad(45), 0.9);
     XCTAssertEqualWithAccuracy(expectedResult, testResult, accuracy);
 }
 

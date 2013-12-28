@@ -13,20 +13,7 @@
 
 #import "PGAstroGeneral.h"
 #import "PGAstroPlanets.h"
-
-
-//  Class to store an hours, minutes and seconds representation
-
-@implementation PGAstroHMS
-
-@end
-
-
-//  Class to store a degrees, minutes and seconds representation
-
-@implementation PGAstroDMS
-
-@end
+#import "PGDateHelpers.h"
 
 
 //  Class to store information about the zodiacal position of a right ascension measurement
@@ -36,50 +23,16 @@
 @end
 
 
-//  Class to store spherical coordinates
-
-@implementation PGAstroSphCoords
-
-@end
-
-
-//  Class to store three-dimensional rectangular coordinates
-
-@implementation PGAstroRectCoords
-
-
-//  Initializer method
-
-- (PGAstroRectCoords *)initWithX:(double)x Y:(double)y Z:(double)z {
-    if ( (self = [super init]) ) {
-        self.x = x;
-        self.y = y;
-        self.z = z;
-    }
-    
-    return self;
-}
-
-
-//  Method to convert to spherical coordinates.
-
-- (PGAstroSphCoords *)toSpherical {
-    PGAstroSphCoords * scd = [PGAstroSphCoords new];
-    
-    scd.rightAscension = degrees(atan2(self.y, self.x));
-    scd.declination = degrees(atan(self.z / hypot(self.x, self.y)));
-    scd.distance = sqrt(pow(self.x, 2) + pow(self.y, 2) + pow(self.z, 2));
-    
-    return scd;
-}
-
-
-@end
-
-
 //  Class to store a set of Keplerian elements
 
 @implementation PGAstroOrbElem
+
+
+//  Public convenience class method to instantiate an object with a date
+
++(PGAstroOrbElem *)objectWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan {
+    return [[PGAstroOrbElem alloc] initWithSma:sma Ecc:ecc Inc:inc Ml:ml Lp:lp Lan:lan];
+}
 
 
 //  Initializer method
@@ -103,107 +56,6 @@
 @end
 
 
-//  Returns a double representing an angle in degrees in the
-//  range 0 <= d < 360, when the supplied angle may or may
-//  not be outside of this range.
-
-double normalize_degrees(const double angle) {
-    return angle - 360 * floor(angle / 360);
-}
-
-
-//  Converts radians to degrees.
-
-double degrees(const double rads) {
-    return rads / (M_PI / 180);
-}
-
-
-//  Converts degrees to radians.
-
-double radians(const double degs) {
-    return degs * (M_PI / 180);
-}
-
-
-//  Convenience function to return an NSDate for the specified UTC time
-//  under the Gregorian Calendar.
-
-NSDate * get_utc_date(int year, int month, int day, int hour, int minute, int second) {
-    NSDateComponents * epochComponents = [NSDateComponents new];
-    [epochComponents setYear:year];
-    [epochComponents setMonth:month];
-    [epochComponents setDay:day];
-    [epochComponents setHour:hour];
-    [epochComponents setMinute:minute];
-    [epochComponents setSecond:second];
-    [epochComponents setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-    
-    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    return [gregorian dateFromComponents:epochComponents];
-}
-
-
-//  Convenience function to return an NSDateComponents object in UTC values under the
-//  Gregorian Calendar from the specified NSDate.
-
-NSDateComponents * get_utc_components_from_date(NSDate * calcDate) {
-    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    [gregorian setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-    
-    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit |
-                           NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    
-    return [gregorian components:unitFlags fromDate:calcDate];
-}
-
-
-//  Converts the supplied degree angle to hours, minutes and seconds
-
-PGAstroHMS * deg_to_hms(const double degrees) {
-    static const double secs_in_a_day = 86400;
-    static const double secs_in_an_hour = 3600;
-    const double norm_degs = normalize_degrees(degrees);
-    const int total_seconds = (int) floor((norm_degs / 360) * secs_in_a_day);
-    
-    PGAstroHMS * hmsOut = [PGAstroHMS new];
-    hmsOut.hours = total_seconds / secs_in_an_hour;
-    hmsOut.minutes = (total_seconds - hmsOut.hours * secs_in_an_hour) / 60;
-    hmsOut.seconds = total_seconds - hmsOut.hours * secs_in_an_hour - hmsOut.minutes * 60;
-    
-    assert(hmsOut.hours >= 0);
-    assert(hmsOut.hours < 24);
-    assert(hmsOut.minutes >= 0);
-    assert(hmsOut.minutes < 60);
-    assert(hmsOut.seconds >= 0);
-    assert(hmsOut.seconds < 60);
-    
-    return hmsOut;
-}
-
-
-//  Converts the supplied degree angle to degrees, minutes and seconds
-
-PGAstroDMS * deg_to_dms(const double degrees) {
-    static const double secs_in_an_hour = 3600;
-    const int total_seconds = (int) (degrees > 0 ? floor(degrees * secs_in_an_hour) :
-    ceil(degrees * secs_in_an_hour));
-    
-    PGAstroDMS * dmsOut = [PGAstroDMS new];
-    dmsOut.degrees = total_seconds / secs_in_an_hour;
-    dmsOut.minutes = (total_seconds - dmsOut.degrees * secs_in_an_hour) / 60;
-    dmsOut.seconds = total_seconds - dmsOut.degrees * secs_in_an_hour -
-    dmsOut.minutes * 60;
-    
-    assert(dmsOut.minutes > -60);
-    assert(dmsOut.minutes < 60);
-    assert(dmsOut.seconds > -60);
-    assert(dmsOut.seconds < 60);
-    
-    return dmsOut;
-}
-
-
 //  Calculates information pertaining to the zodiacal position
 //  of the supplied right ascension in degrees.
 
@@ -218,10 +70,10 @@ PGAstroZodiacInfo * get_zodiac_info(const double rasc) {
         "LI", "SC", "SG", "CP", "AQ", "PI"
     };
     
-    const double norm_degs = normalize_degrees(rasc);
+    const double norm_degs = normalizeDegrees(rasc);
     
     PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo new];
-    zInfo.zodiacDMS = deg_to_dms(norm_degs);
+    zInfo.zodiacDMS = degToDms(norm_degs);
     zInfo.rightAscension = norm_degs;
     zInfo.signIndex = zInfo.zodiacDMS.degrees / 30;
     zInfo.zodiacDMS.degrees %= 30;
@@ -247,7 +99,7 @@ double julian_day(const NSDate * dateObject) {
     static NSDate * epochDate;
     
     if ( !epochDate ) {
-        epochDate = get_utc_date(2000, 1, 1, 12, 0, 0);
+        epochDate = getUTCDate(2000, 1, 1, 12, 0, 0);
     }
     
     NSTimeInterval secondsSinceEpoch = [dateObject timeIntervalSinceDate:epochDate];
@@ -311,7 +163,7 @@ NSString * rasc_to_zodiac(const double rasc) {
 //  ascension supplied in degrees.
 
 NSString * rasc_string(const double rasc) {
-    PGAstroHMS * hms = deg_to_hms(rasc);
+    PGMathHMS * hms = degToHms(rasc);
     return [NSString stringWithFormat:@"%02ih %02im %02is", hms.hours, hms.minutes, hms.seconds];
 }
 
@@ -321,32 +173,9 @@ NSString * rasc_string(const double rasc) {
 //  supplied in degrees. Uses a degree sign instead of 'd'.
 
 NSString * decl_string(const double decl) {
-    PGAstroDMS * dms = deg_to_dms(decl);
+    PGMathDMS * dms = degToDms(decl);
     return [NSString stringWithFormat:@"%@%02i%@ %02im %02is",
-            (dms.degrees >= 0 ? @"+" : @""), dms.degrees, @"\u00B0", abs(dms.minutes), abs(dms.seconds)];
-}
-
-
-//  Converts a number between 0 and 4,999 inclusive to Roman numerals
-
-NSString * make_roman(const int num) {
-    static const char * ones_roman[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-    static const char * tens_roman[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-    static const char * cents_roman[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-    static const char * thous_roman[] = {"", "M", "MM", "MMM", "MMMM"};
-    
-    if ( num < 0 || num > 4999 ) {
-        return nil;
-    } else if ( num == 0 ) {
-        return @"0";
-    }
-    
-    const int ones = num % 10;
-    const int tens = ((num % 100) - ones) / 10;
-    const int cents = ((num % 1000) - tens - ones) / 100;
-    const int thous = ((num % 10000) - cents - tens - ones) / 1000;
-    
-    return [NSString stringWithFormat:@"%s%s%s%s", thous_roman[thous], cents_roman[cents], tens_roman[tens], ones_roman[ones]];
+            (dms.degrees >= 0 ? @"+" : @"-"), abs(dms.degrees), @"\u00B0", abs(dms.minutes), abs(dms.seconds)];
 }
 
 
@@ -359,10 +188,10 @@ NSString * make_roman(const int num) {
 //  April 1926 would have the Thelemic year "I:0".
 
 NSString * get_thelemic_year(NSDate * date) {
-    NSDateComponents * components = get_utc_components_from_date(date);
-    int year = [components year] - 1904;
+    NSDateComponents * components = getUTCComponentsFromDate(date);
+    long year = [components year] - 1904;
     
-    double rasc = normalize_degrees([[[PGAstroSun alloc] initWithDate:date] rightAscension]);
+    double rasc = normalizeDegrees([[[PGAstroSun alloc] initWithDate:date] rightAscension]);
     if ( rasc > 270 && [components month] <= 3 ) {
         year -= 1;
     }
@@ -371,15 +200,15 @@ NSString * get_thelemic_year(NSDate * date) {
         return @"Before New Era";
     }
     
-    int cycle = (year / 22);
-    int cycle_year = year - (cycle * 22);
+    long cycle = (year / 22);
+    long cycle_year = year - (cycle * 22);
     
     NSString * cycleString;
     if ( cycle == 0 ) {
         cycleString = @"";
     } else {
-        cycleString = [NSString stringWithFormat:@"%@:", make_roman(cycle)];
+        cycleString = [NSString stringWithFormat:@"%@:", makeRoman((int) cycle)];
     }
     
-    return [NSString stringWithFormat:@"%@%i", cycleString, cycle_year];
+    return [NSString stringWithFormat:@"%@%li", cycleString, cycle_year];
 }

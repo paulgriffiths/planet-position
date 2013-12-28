@@ -13,6 +13,7 @@
 
 #import "PGAstroMoonBase.h"
 #import "PGAstroMoon.h"
+#import "PGDateHelpers.h"
 
 
 @implementation PGAstroMoonBase
@@ -25,7 +26,7 @@
 
 + (PGAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
                                    andY2000OEs:(PGAstroOrbElem *)y2000Oes andDayOEs:(PGAstroOrbElem *)dayOes {
-    NSDate * y2000 = get_utc_date(1999, 12, 31, 0, 0, 0);
+    NSDate * y2000 = getUTCDate(1999, 12, 31, 0, 0, 0);
     static const double secsInADay = 86400;
     const double days = [calcDate timeIntervalSinceDate:y2000] / secsInADay;
     
@@ -33,10 +34,10 @@
     
     oes.sma = y2000Oes.sma + dayOes.sma * days;
     oes.ecc = y2000Oes.ecc + dayOes.ecc * days;
-    oes.inc = radians(y2000Oes.inc + dayOes.inc * days);
-    oes.ml = radians(y2000Oes.ml + dayOes.ml * days);
-    oes.lp = radians(y2000Oes.lp + dayOes.lp * days);
-    oes.lan = radians(y2000Oes.lan + dayOes.lan * days);
+    oes.inc = degToRad(y2000Oes.inc + dayOes.inc * days);
+    oes.ml = degToRad(y2000Oes.ml + dayOes.ml * days);
+    oes.lp = degToRad(y2000Oes.lp + dayOes.lp * days);
+    oes.lan = degToRad(y2000Oes.lan + dayOes.lan * days);
     oes.man = oes.ml - oes.lp;
     oes.arp = oes.lp - oes.lan;
     
@@ -56,10 +57,10 @@
 
 //  Overriden public instance method to calculate the planet's geocentric ecliptic coordinates
 
-- (PGAstroRectCoords *)geoEclCoords {
-    PGAstroRectCoords * hoc = [self helioOrbCoords];
-    PGAstroRectCoords * hec = [self helioEclCoords];
-    PGAstroRectCoords * gec = [PGAstroRectCoords new];
+- (PGMathRectCoords *)geoEclCoords {
+    PGMathRectCoords * hoc = [self helioOrbCoords];
+    PGMathRectCoords * hec = [self helioEclCoords];
+    PGMathRectCoords * gec = [PGMathRectCoords new];
     
     double lon = atan2(hec.y, hec.x);
     double lat = atan2(hec.z, hypot(hec.x, hec.y));
@@ -87,7 +88,7 @@
     dlon -= 0.031 * sin(self.oes.man + sunForMoon.oes.man);
     dlon -= 0.015 * sin(2 * arl - 2 * mel);
     dlon += 0.011 * sin(self.oes.man - 4 * mel);
-    lon = radians(dlon) + lon;
+    lon = degToRad(dlon) + lon;
     
     //  Adjust for latitude perturbations
     
@@ -96,7 +97,7 @@
     dlat -= 0.046 * sin(self.oes.man + arl - 2 * mel);
     dlat += 0.033 * sin(arl + 2 * mel);
     dlat += 0.017 * sin(2 * self.oes.man + arl);
-    lat = radians(dlat) + lat;
+    lat = degToRad(dlat) + lat;
     
     //  Adjust for rhc perturbations
     

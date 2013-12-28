@@ -18,6 +18,8 @@
 
 @interface PGAstroMoon : PGAstroMoonBase
 
++(PGAstroMoon *)planetWithDate:(NSDate *)date;
+
 -(PGAstroMoon *)initWithDate:(NSDate *)date;
 
 @end
@@ -27,6 +29,8 @@
 //  the Moon. Users should not instantiate this class.
 
 @interface PGAstroSunForMoon : PGAstroMoonBase
+
++(PGAstroSunForMoon *)planetWithDate:(NSDate *)date;
 
 -(PGAstroSunForMoon *)initWithDate:(NSDate *)date;
 

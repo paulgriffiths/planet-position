@@ -31,8 +31,8 @@
 
 //  Calculates the planet's heliocentric orbital coordinates
 
--(PGAstroRectCoords *)helioOrbCoords {
-    PGAstroRectCoords * hoc = [PGAstroRectCoords new];
+-(PGMathRectCoords *)helioOrbCoords {
+    PGMathRectCoords * hoc = [PGMathRectCoords new];
     const double eAnom = kepler(_oes.man, _oes.ecc);
     
     hoc.x = _oes.sma * (cos(eAnom) - _oes.ecc);
@@ -45,9 +45,9 @@
 
 //  Calculates the planet's heliocentric ecliptic coordinates
 
--(PGAstroRectCoords *)helioEclCoords {
-    PGAstroRectCoords * hoc = [self helioOrbCoords];
-    PGAstroRectCoords * hec = [PGAstroRectCoords new];
+-(PGMathRectCoords *)helioEclCoords {
+    PGMathRectCoords * hoc = [self helioOrbCoords];
+    PGMathRectCoords * hec = [PGMathRectCoords new];
     
     hec.x = (((cos(_oes.arp) * cos(_oes.lan) -
                sin(_oes.arp) * sin(_oes.lan) * cos(_oes.inc)) * hoc.x) +
@@ -67,17 +67,17 @@
 //  Calculates the planet's geocentric ecliptic coordinates. This is a
 //  placeholder method, which subclasses should override.
 
--(PGAstroRectCoords *)geoEclCoords {
-    return [[PGAstroRectCoords alloc] initWithX:0 Y:0 Z:0];
+-(PGMathRectCoords *)geoEclCoords {
+    return [PGMathRectCoords objectWithX:0 Y:0 Z:0];
 }
 
 
 //  Calculates the planet's geocentric equatorial coordinates.
 
--(PGAstroRectCoords *)geoEquCoords {
+-(PGMathRectCoords *)geoEquCoords {
     static const double obliquity = 0.40909261029685;
-    PGAstroRectCoords * gec = [self geoEclCoords];
-    PGAstroRectCoords * gqc = [PGAstroRectCoords new];
+    PGMathRectCoords * gec = [self geoEclCoords];
+    PGMathRectCoords * gqc = [PGMathRectCoords new];
     
     gqc.x = gec.x;
     gqc.y = gec.y * cos(obliquity) - gec.z * sin(obliquity);
@@ -90,8 +90,8 @@
 //  Calculates the planet's right ascension
 
 - (double)rightAscension {
-    PGAstroRectCoords * gqc = [self geoEquCoords];
-    PGAstroSphCoords * sph = [gqc toSpherical];
+    PGMathRectCoords * gqc = [self geoEquCoords];
+    PGMathSphCoords * sph = [gqc toSpherical];
     return sph.rightAscension;
 }
 
@@ -99,8 +99,8 @@
 //  Calculates the planet's declination
 
 -(double)declination {
-    PGAstroRectCoords * gqc = [self geoEquCoords];
-    PGAstroSphCoords * sph = [gqc toSpherical];
+    PGMathRectCoords * gqc = [self geoEquCoords];
+    PGMathSphCoords * sph = [gqc toSpherical];
     return sph.declination;
 }
 
@@ -108,8 +108,8 @@
 //  Calculates the planet's distance
 
 -(double)distance {
-    PGAstroRectCoords * gqc = [self geoEquCoords];
-    PGAstroSphCoords * sph = [gqc toSpherical];
+    PGMathRectCoords * gqc = [self geoEquCoords];
+    PGMathSphCoords * sph = [gqc toSpherical];
     return sph.distance;
 }
 

@@ -14,6 +14,7 @@
 
 #import <XCTest/XCTest.h>
 #import "PGAstro.h"
+#import "PGDateHelpers.h"
 
 @interface TestPlanetPositions : XCTestCase
 
@@ -35,7 +36,7 @@
 
 - (void)testSun
 {
-    NSDate * testDate = get_utc_date(2013, 6, 4, 1, 15, 0);
+    NSDate * testDate = getUTCDate(2013, 6, 4, 1, 15, 0);
     PGAstroSun * sun = [[PGAstroSun alloc] initWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
@@ -54,7 +55,7 @@
 
 - (void)testMercury
 {
-    NSDate * testDate = get_utc_date(1980, 5, 5, 20, 23, 0);
+    NSDate * testDate = getUTCDate(1980, 5, 5, 20, 23, 0);
     PGAstroMercury * mercury = [[PGAstroMercury alloc] initWithDate:testDate];
     const double ra_accuracy = 0.1;
     const double de_accuracy = 0.01;
@@ -73,7 +74,7 @@
 
 - (void)testVenus
 {
-    NSDate * testDate = get_utc_date(1982, 6, 14, 8, 30, 0);
+    NSDate * testDate = getUTCDate(1982, 6, 14, 8, 30, 0);
     PGAstroVenus * venus = [[PGAstroVenus alloc] initWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
@@ -92,14 +93,14 @@
 
 - (void)testMars
 {
-    NSDate * testDate = get_utc_date(1997, 6, 21, 0, 0, 0);
+    NSDate * testDate = getUTCDate(1997, 6, 21, 0, 0, 0);
     PGAstroMars * mars = [[PGAstroMars alloc] initWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.0001;
     
     double expected_result = 180.840541666667;
-    XCTAssertEqualWithAccuracy(normalize_degrees([mars rightAscension]), expected_result, ra_accuracy);
+    XCTAssertEqualWithAccuracy(normalizeDegrees([mars rightAscension]), expected_result, ra_accuracy);
     
     expected_result = 0.03566666666667;
     XCTAssertEqualWithAccuracy([mars declination], expected_result, de_accuracy);
@@ -111,7 +112,7 @@
 
 - (void)testJupiter
 {
-    NSDate * testDate = get_utc_date(1991, 6, 17, 0, 0, 0);
+    NSDate * testDate = getUTCDate(1991, 6, 17, 0, 0, 0);
     PGAstroJupiter * jupiter = [[PGAstroJupiter alloc] initWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
@@ -130,7 +131,7 @@
 
 - (void)testSaturn
 {
-    NSDate * testDate = get_utc_date(1947, 12, 1, 12, 0, 0);
+    NSDate * testDate = getUTCDate(1947, 12, 1, 12, 0, 0);
     PGAstroSaturn * saturn = [[PGAstroSaturn alloc] initWithDate:testDate];
     const double ra_accuracy = 0.02;
     const double de_accuracy = 0.01;
@@ -149,14 +150,14 @@
 
 - (void)testUranus
 {
-    NSDate * testDate = get_utc_date(1975, 10, 31, 8, 0, 0);
+    NSDate * testDate = getUTCDate(1975, 10, 31, 8, 0, 0);
     PGAstroUranus * uranus = [[PGAstroUranus alloc] initWithDate:testDate];
     const double ra_accuracy = 0.02;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.01;
     
     double expected_result = 211.38025;
-    XCTAssertEqualWithAccuracy(normalize_degrees([uranus rightAscension]), expected_result, ra_accuracy);
+    XCTAssertEqualWithAccuracy(normalizeDegrees([uranus rightAscension]), expected_result, ra_accuracy);
     
     expected_result = -12.21186111111110;
     XCTAssertEqualWithAccuracy([uranus declination], expected_result, de_accuracy);
@@ -168,14 +169,14 @@
 
 - (void)testNeptune
 {
-    NSDate * testDate = get_utc_date(1966, 9, 15, 9, 0, 0);
+    NSDate * testDate = getUTCDate(1966, 9, 15, 9, 0, 0);
     PGAstroNeptune * neptune = [[PGAstroNeptune alloc] initWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.01;
     
     double expected_result = 228.44925;
-    XCTAssertEqualWithAccuracy(normalize_degrees([neptune rightAscension]), expected_result, ra_accuracy);
+    XCTAssertEqualWithAccuracy(normalizeDegrees([neptune rightAscension]), expected_result, ra_accuracy);
     
     expected_result = -16.2009444444444;
     XCTAssertEqualWithAccuracy([neptune declination], expected_result, de_accuracy);
@@ -187,14 +188,14 @@
 
 - (void)testPluto
 {
-    NSDate * testDate = get_utc_date(2001, 9, 11, 14, 0, 0);
+    NSDate * testDate = getUTCDate(2001, 9, 11, 14, 0, 0);
     PGAstroPluto * pluto = [[PGAstroPluto alloc] initWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.01;
     
     double expected_result = 252.494583333333;
-    XCTAssertEqualWithAccuracy(normalize_degrees([pluto rightAscension]), expected_result, ra_accuracy);
+    XCTAssertEqualWithAccuracy(normalizeDegrees([pluto rightAscension]), expected_result, ra_accuracy);
     
     expected_result = -12.1994722222222;
     XCTAssertEqualWithAccuracy([pluto declination], expected_result, de_accuracy);
@@ -206,7 +207,7 @@
 
 - (void)testMoon
 {
-    NSDate * testDate = get_utc_date(1988, 8, 10, 0, 0, 0);
+    NSDate * testDate = getUTCDate(1988, 8, 10, 0, 0, 0);
     PGAstroMoon * moon = [[PGAstroMoon alloc] initWithDate:testDate];
     const double ra_accuracy = 0.3;
     const double de_accuracy = 0.1;

@@ -8,6 +8,7 @@
 
 #import "PPDateViewController.h"
 #import "PGAstro.h"
+#import "PGDateHelpers.h"
 
 @interface PPDateViewController ()
 
@@ -36,7 +37,7 @@
     
     NSDate * currentDate = [NSDate new];
     
-    NSDateComponents * cDC = get_utc_components_from_date(currentDate);
+    NSDateComponents * cDC = getUTCComponentsFromDate(currentDate);
     
     NSString * dateString = [NSString stringWithFormat:@"%i/%i/%i %i:%i:%i", [cDC year], [cDC month], [cDC day],
                              [cDC hour], [cDC minute], [cDC second]];

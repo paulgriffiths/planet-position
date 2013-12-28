@@ -13,4 +13,5 @@
 @property (strong, nonatomic) IBOutlet UIImageView *planetImage;
 @property (strong, nonatomic) IBOutlet UILabel *planetLabel;
 @property (strong, nonatomic) IBOutlet UILabel *coordsLabel;
+
 @end

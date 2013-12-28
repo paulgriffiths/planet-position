@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PGAstro.h"
+#import "PGMathHelpers.h"
 
 @interface TestMakeRoman : XCTestCase
 
@@ -28,47 +28,47 @@
 }
 
 
-//  Test make_roman() returns the correct numeral for the range 0-4,999
+//  Test makeRoman() returns the correct numeral for the range 0-4,999
 
 - (void)testConversion
 {
-    XCTAssertTrue([@"0" isEqualToString:make_roman(0)]);
-    XCTAssertTrue([@"I" isEqualToString:make_roman(1)]);
-    XCTAssertTrue([@"III" isEqualToString:make_roman(3)]);
-    XCTAssertTrue([@"VI" isEqualToString:make_roman(6)]);
-    XCTAssertTrue([@"VIII" isEqualToString:make_roman(8)]);
-    XCTAssertTrue([@"IX" isEqualToString:make_roman(9)]);
-    XCTAssertTrue([@"X" isEqualToString:make_roman(10)]);
-    XCTAssertTrue([@"XI" isEqualToString:make_roman(11)]);
-    XCTAssertTrue([@"XIV" isEqualToString:make_roman(14)]);
-    XCTAssertTrue([@"XVII" isEqualToString:make_roman(17)]);
-    XCTAssertTrue([@"XIX" isEqualToString:make_roman(19)]);
-    XCTAssertTrue([@"XX" isEqualToString:make_roman(20)]);
-    XCTAssertTrue([@"XXXIV" isEqualToString:make_roman(34)]);
-    XCTAssertTrue([@"XLIX" isEqualToString:make_roman(49)]);
-    XCTAssertTrue([@"L" isEqualToString:make_roman(50)]);
-    XCTAssertTrue([@"LXIX" isEqualToString:make_roman(69)]);
-    XCTAssertTrue([@"LXXIII" isEqualToString:make_roman(73)]);
-    XCTAssertTrue([@"LXXXV" isEqualToString:make_roman(85)]);
-    XCTAssertTrue([@"XCIII" isEqualToString:make_roman(93)]);
-    XCTAssertTrue([@"C" isEqualToString:make_roman(100)]);
-    XCTAssertTrue([@"CI" isEqualToString:make_roman(101)]);
-    XCTAssertTrue([@"CXXX" isEqualToString:make_roman(130)]);
-    XCTAssertTrue([@"CDXVIII" isEqualToString:make_roman(418)]);
-    XCTAssertTrue([@"DCCLXXVII" isEqualToString:make_roman(777)]);
-    XCTAssertTrue([@"MCMLXXXIV" isEqualToString:make_roman(1984)]);
-    XCTAssertTrue([@"MMI" isEqualToString:make_roman(2001)]);
-    XCTAssertTrue([@"MMMCCCI" isEqualToString:make_roman(3301)]);
-    XCTAssertTrue([@"MMMMD" isEqualToString:make_roman(4500)]);
-    XCTAssertTrue([@"MMMMCMXCIX" isEqualToString:make_roman(4999)]);
+    XCTAssertTrue([@"0" isEqualToString:makeRoman(0)]);
+    XCTAssertTrue([@"I" isEqualToString:makeRoman(1)]);
+    XCTAssertTrue([@"III" isEqualToString:makeRoman(3)]);
+    XCTAssertTrue([@"VI" isEqualToString:makeRoman(6)]);
+    XCTAssertTrue([@"VIII" isEqualToString:makeRoman(8)]);
+    XCTAssertTrue([@"IX" isEqualToString:makeRoman(9)]);
+    XCTAssertTrue([@"X" isEqualToString:makeRoman(10)]);
+    XCTAssertTrue([@"XI" isEqualToString:makeRoman(11)]);
+    XCTAssertTrue([@"XIV" isEqualToString:makeRoman(14)]);
+    XCTAssertTrue([@"XVII" isEqualToString:makeRoman(17)]);
+    XCTAssertTrue([@"XIX" isEqualToString:makeRoman(19)]);
+    XCTAssertTrue([@"XX" isEqualToString:makeRoman(20)]);
+    XCTAssertTrue([@"XXXIV" isEqualToString:makeRoman(34)]);
+    XCTAssertTrue([@"XLIX" isEqualToString:makeRoman(49)]);
+    XCTAssertTrue([@"L" isEqualToString:makeRoman(50)]);
+    XCTAssertTrue([@"LXIX" isEqualToString:makeRoman(69)]);
+    XCTAssertTrue([@"LXXIII" isEqualToString:makeRoman(73)]);
+    XCTAssertTrue([@"LXXXV" isEqualToString:makeRoman(85)]);
+    XCTAssertTrue([@"XCIII" isEqualToString:makeRoman(93)]);
+    XCTAssertTrue([@"C" isEqualToString:makeRoman(100)]);
+    XCTAssertTrue([@"CI" isEqualToString:makeRoman(101)]);
+    XCTAssertTrue([@"CXXX" isEqualToString:makeRoman(130)]);
+    XCTAssertTrue([@"CDXVIII" isEqualToString:makeRoman(418)]);
+    XCTAssertTrue([@"DCCLXXVII" isEqualToString:makeRoman(777)]);
+    XCTAssertTrue([@"MCMLXXXIV" isEqualToString:makeRoman(1984)]);
+    XCTAssertTrue([@"MMI" isEqualToString:makeRoman(2001)]);
+    XCTAssertTrue([@"MMMCCCI" isEqualToString:makeRoman(3301)]);
+    XCTAssertTrue([@"MMMMD" isEqualToString:makeRoman(4500)]);
+    XCTAssertTrue([@"MMMMCMXCIX" isEqualToString:makeRoman(4999)]);
 }
 
 
-//  Test make_roman() returns nil when the argument is outside of the range 0-4,999
+//  Test makeRoman() returns nil when the argument is outside of the range 0-4,999
 
 - (void)testConversionNil
 {
-    XCTAssertNil(make_roman(-1));
-    XCTAssertNil(make_roman(5000));
+    XCTAssertNil(makeRoman(-1));
+    XCTAssertNil(makeRoman(5000));
 }
 @end

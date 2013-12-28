@@ -19,6 +19,8 @@
 
 @interface PGAstroMercury : PGAstroMajorBody
 
++(PGAstroMercury *)planetWithDate:(NSDate *)date;
+
 -(PGAstroMercury *)initWithDate:(NSDate *)date;
 
 @end
@@ -27,6 +29,8 @@
 //  Venus class
 
 @interface PGAstroVenus : PGAstroMajorBody
+
++(PGAstroVenus *)planetWithDate:(NSDate *)date;
 
 -(PGAstroVenus *)initWithDate:(NSDate *)date;
 
@@ -37,6 +41,8 @@
 
 @interface PGAstroSun : PGAstroMajorBody
 
++(PGAstroSun *)planetWithDate:(NSDate *)date;
+
 -(PGAstroSun *)initWithDate:(NSDate *)date;
 
 @end
@@ -45,6 +51,8 @@
 //  Mars class
 
 @interface PGAstroMars : PGAstroMajorBody
+
++(PGAstroMars *)planetWithDate:(NSDate *)date;
 
 -(PGAstroMars *)initWithDate:(NSDate *)date;
 
@@ -55,6 +63,8 @@
 
 @interface PGAstroJupiter : PGAstroMajorBody
 
++(PGAstroJupiter *)planetWithDate:(NSDate *)date;
+
 -(PGAstroJupiter *)initWithDate:(NSDate *)date;
 
 @end
@@ -63,6 +73,8 @@
 //  Saturn class
 
 @interface PGAstroSaturn : PGAstroMajorBody
+
++(PGAstroSaturn *)planetWithDate:(NSDate *)date;
 
 -(PGAstroSaturn *)initWithDate:(NSDate *)date;
 
@@ -73,6 +85,8 @@
 
 @interface PGAstroUranus : PGAstroMajorBody
 
++(PGAstroUranus *)planetWithDate:(NSDate *)date;
+
 -(PGAstroUranus *)initWithDate:(NSDate *)date;
 
 @end
@@ -81,6 +95,8 @@
 //  Neptune class
 
 @interface PGAstroNeptune : PGAstroMajorBody
+
++(PGAstroNeptune *)planetWithDate:(NSDate *)date;
 
 -(PGAstroNeptune *)initWithDate:(NSDate *)date;
 
@@ -91,6 +107,8 @@
 
 @interface PGAstroPluto : PGAstroMajorBody
 
++(PGAstroPluto *)planetWithDate:(NSDate *)date;
+
 -(PGAstroPluto *)initWithDate:(NSDate *)date;
 
 @end
@@ -100,6 +118,8 @@
 //  should not instantiate this class.
 
 @interface PGAstroEarth : PGAstroMajorBody
+
++(PGAstroEarth *)planetWithDate:(NSDate *)date;
 
 -(PGAstroEarth *)initWithDate:(NSDate *)date;
 

@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PGAstroGeneral.h"
+#import "PGMathHelpers.h"
 
 @interface TestNormalizeDegrees : XCTestCase
 
@@ -31,25 +31,25 @@
 {
     const double accuracy = 0.00001;
     
-    double testResult = normalize_degrees(50);
+    double testResult = normalizeDegrees(50);
     XCTAssertEqualWithAccuracy(50, testResult, accuracy);
     
-    testResult = normalize_degrees(400);
+    testResult = normalizeDegrees(400);
     XCTAssertEqualWithAccuracy(40, testResult, accuracy);
     
-    testResult = normalize_degrees(-60);
+    testResult = normalizeDegrees(-60);
     XCTAssertEqualWithAccuracy(300, testResult, accuracy);
     
-    testResult = normalize_degrees(-460);
+    testResult = normalizeDegrees(-460);
     XCTAssertEqualWithAccuracy(260, testResult, accuracy);
     
-    testResult = normalize_degrees(500);
+    testResult = normalizeDegrees(500);
     XCTAssertEqualWithAccuracy(140, testResult, accuracy);
     
-    testResult = normalize_degrees(360);
+    testResult = normalizeDegrees(360);
     XCTAssertEqualWithAccuracy(0, testResult, accuracy);
     
-    testResult = normalize_degrees(0);
+    testResult = normalizeDegrees(0);
     XCTAssertEqualWithAccuracy(0, testResult, accuracy);
 }
 

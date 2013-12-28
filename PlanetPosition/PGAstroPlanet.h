@@ -13,6 +13,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PGAstroGeneral.h"
+#import "PGMathHelpers.h"
 
 
 @interface PGAstroPlanet : NSObject {
@@ -23,20 +24,23 @@
 //  Properties
 
 @property (strong, nonatomic) PGAstroOrbElem * oes;
+@property (nonatomic, readonly) double rightAscension;
+@property (nonatomic, readonly) double declination;
+@property (nonatomic, readonly) double distance;
 
 
 //  Public methods
 
 -(PGAstroPlanet *)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes;
 
--(PGAstroRectCoords *)helioOrbCoords;
--(PGAstroRectCoords *)helioEclCoords;
--(PGAstroRectCoords *)geoEclCoords;
--(PGAstroRectCoords *)geoEquCoords;
+-(PGMathRectCoords *)helioOrbCoords;
+-(PGMathRectCoords *)helioEclCoords;
+-(PGMathRectCoords *)geoEclCoords;
+-(PGMathRectCoords *)geoEquCoords;
 
--(double)rightAscension;
+/*-(double)rightAscension;
 -(double)declination;
--(double)distance;
+-(double)distance;*/
 -(NSString *)name;
 
 
