@@ -42,7 +42,7 @@
     NSNumber * julianDay = [NSNumber numberWithDouble:julian_day(date)];
     _dateStringJulian = [NSString stringWithFormat:@"%@", [nf stringFromNumber:julianDay]];
     
-    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:[PGAstroSun new].rightAscension];
+    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:[PGAstroSun planetWithDate:date].rightAscension];
     _dateStringThelemic = [NSString stringWithFormat:@"Sol in %i%@ %@, Anno %@", zInfo.zodiacDMS.degrees, @"\u00B0", zInfo.signShortName, get_thelemic_year(date)];
    
 }
