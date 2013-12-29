@@ -12,7 +12,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "PGMathHelpers.h"
+#import "PGRMathHelpers.h"
 
 
 //  Class to store information about the zodiacal position of a right ascension measurement
@@ -23,7 +23,7 @@
 @property (nonatomic) int signIndex;
 @property (strong, nonatomic) NSString * signName;
 @property (strong, nonatomic) NSString * signShortName;
-@property (strong, nonatomic) PGMathDMS * zodiacDMS;
+@property (strong, nonatomic) PGRMathDMS * zodiacDMS;
 @property (strong, nonatomic) NSString * zodiacDecan;
 
 +(PGAstroZodiacInfo *)objectWithRasc:(double)rasc;

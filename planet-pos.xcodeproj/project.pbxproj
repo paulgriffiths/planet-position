@@ -33,8 +33,8 @@
 		DA6231B0186FB7E200EAD158 /* TestPlanetDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6231AF186FB7E200EAD158 /* TestPlanetDetails.m */; };
 		DA6231B2186FBA7600EAD158 /* TestAstroDateGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6231B1186FBA7600EAD158 /* TestAstroDateGroup.m */; };
 		DAA7A328187080EC00056962 /* TestPlanetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA7A327187080EC00056962 /* TestPlanetGroup.m */; };
-		DABE3C6B186E4EE5003C93E9 /* PGMathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */; };
-		DABE3C6C186E4EE5003C93E9 /* PGMathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */; };
+		DABE3C6B186E4EE5003C93E9 /* PGRMathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C6A186E4EE5003C93E9 /* PGRMathHelpers.m */; };
+		DABE3C6C186E4EE5003C93E9 /* PGRMathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C6A186E4EE5003C93E9 /* PGRMathHelpers.m */; };
 		DABE3C71186E58D0003C93E9 /* PGDateHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C70186E58D0003C93E9 /* PGDateHelpers.m */; };
 		DABE3C72186E58D0003C93E9 /* PGDateHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C70186E58D0003C93E9 /* PGDateHelpers.m */; };
 		DABE3C76186E5F78003C93E9 /* PGPlanetDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C75186E5F78003C93E9 /* PGPlanetDetails.m */; };
@@ -102,8 +102,8 @@
 		DA6231AF186FB7E200EAD158 /* TestPlanetDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlanetDetails.m; sourceTree = "<group>"; };
 		DA6231B1186FBA7600EAD158 /* TestAstroDateGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAstroDateGroup.m; sourceTree = "<group>"; };
 		DAA7A327187080EC00056962 /* TestPlanetGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlanetGroup.m; sourceTree = "<group>"; };
-		DABE3C69186E4EE5003C93E9 /* PGMathHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMathHelpers.h; sourceTree = "<group>"; };
-		DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGMathHelpers.m; sourceTree = "<group>"; };
+		DABE3C69186E4EE5003C93E9 /* PGRMathHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGRMathHelpers.h; sourceTree = "<group>"; };
+		DABE3C6A186E4EE5003C93E9 /* PGRMathHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGRMathHelpers.m; sourceTree = "<group>"; };
 		DABE3C6F186E58D0003C93E9 /* PGDateHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDateHelpers.h; sourceTree = "<group>"; };
 		DABE3C70186E58D0003C93E9 /* PGDateHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDateHelpers.m; sourceTree = "<group>"; };
 		DABE3C74186E5F78003C93E9 /* PGPlanetDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGPlanetDetails.h; sourceTree = "<group>"; };
@@ -179,13 +179,13 @@
 			name = PGAstro;
 			sourceTree = "<group>";
 		};
-		DABE3C6D186E4EEE003C93E9 /* PGMathHelpers */ = {
+		DABE3C6D186E4EEE003C93E9 /* PGRMathHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				DABE3C69186E4EE5003C93E9 /* PGMathHelpers.h */,
-				DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */,
+				DABE3C69186E4EE5003C93E9 /* PGRMathHelpers.h */,
+				DABE3C6A186E4EE5003C93E9 /* PGRMathHelpers.m */,
 			);
-			name = PGMathHelpers;
+			name = PGRMathHelpers;
 			sourceTree = "<group>";
 		};
 		DABE3C6E186E563D003C93E9 /* View Controllers */ = {
@@ -261,7 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				DABE3C73186E58D6003C93E9 /* PGDateHelpers */,
-				DABE3C6D186E4EEE003C93E9 /* PGMathHelpers */,
+				DABE3C6D186E4EEE003C93E9 /* PGRMathHelpers */,
 				DA13CA1A186CD24400F8280A /* PGAstro */,
 				DABE3C6E186E563D003C93E9 /* View Controllers */,
 				DABE3C78186E6341003C93E9 /* Model Objects */,
@@ -425,7 +425,7 @@
 				DA13CA2A186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m in Sources */,
 				DABE3C7B186E75C6003C93E9 /* AstroDateGroup.m in Sources */,
 				DAF3C8C5186A80F800AA2E24 /* PGAstroGeneral.m in Sources */,
-				DABE3C6B186E4EE5003C93E9 /* PGMathHelpers.m in Sources */,
+				DABE3C6B186E4EE5003C93E9 /* PGRMathHelpers.m in Sources */,
 				DA0BF4FF186C79BE00EBF1AE /* PGAstroPlanets.m in Sources */,
 				DA13CA22186CE0F200F8280A /* PGAstroMoon.m in Sources */,
 				DA0CFE3D186DEC1C0031629C /* PPDateViewController.m in Sources */,
@@ -450,7 +450,7 @@
 				DA13CA2B186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m in Sources */,
 				DA13CA27186D011C00F8280A /* PlanetPositionTableViewController.m in Sources */,
 				DA0CFE3F186DFD570031629C /* TestMakeRoman.m in Sources */,
-				DABE3C6C186E4EE5003C93E9 /* PGMathHelpers.m in Sources */,
+				DABE3C6C186E4EE5003C93E9 /* PGRMathHelpers.m in Sources */,
 				DA6231B2186FBA7600EAD158 /* TestAstroDateGroup.m in Sources */,
 				DA13CA19186C8E8B00F8280A /* TestPlanetPositions.m in Sources */,
 				DAF3C8CE186A96D900AA2E24 /* TestZodiacNames.m in Sources */,
@@ -618,6 +618,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Planet Pos.app/Planet Pos";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -629,6 +630,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
 				INFOPLIST_FILE = "PlanetPositionTests/PlanetPositionTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -641,6 +644,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Planet Pos.app/Planet Pos";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -648,6 +652,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlanetPosition/PlanetPosition-Prefix.pch";
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
 				INFOPLIST_FILE = "PlanetPositionTests/PlanetPositionTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

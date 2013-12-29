@@ -13,7 +13,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PGAstroGeneral.h"
-#import "PGMathHelpers.h"
+#import "PGRMathHelpers.h"
 
 
 @interface PGAstroPlanet : NSObject {
@@ -34,10 +34,10 @@
 -(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes;
 -(instancetype)clone;
 
--(PGMathRectCoords *)helioOrbCoords;
--(PGMathRectCoords *)helioEclCoords;
--(PGMathRectCoords *)geoEclCoords;
--(PGMathRectCoords *)geoEquCoords;
+-(PGRMath3DCartCoords *)helioOrbCoords;
+-(PGRMath3DCartCoords *)helioEclCoords;
+-(PGRMath3DCartCoords *)geoEclCoords;
+-(PGRMath3DCartCoords *)geoEquCoords;
 
 -(NSString *)name;
 

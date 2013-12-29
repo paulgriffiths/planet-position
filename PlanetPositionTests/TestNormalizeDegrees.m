@@ -1,5 +1,5 @@
 //
-//  TestNormalizeDegrees.m
+//  TestPGRMathNormalizeDegrees.m
 //  PlanetPosition
 //
 //  Created by Paul Griffiths on 12/24/13.
@@ -7,13 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PGMathHelpers.h"
+#import "PGRMathHelpers.h"
 
-@interface TestNormalizeDegrees : XCTestCase
+@interface TestPGRMathNormalizeDegrees : XCTestCase
 
 @end
 
-@implementation TestNormalizeDegrees
+@implementation TestPGRMathNormalizeDegrees
 
 - (void)setUp
 {
@@ -27,29 +27,29 @@
     [super tearDown];
 }
 
-- (void)testNormalizeDegrees
+- (void)testPGRMathNormalizeDegrees
 {
     const double accuracy = 0.00001;
     
-    double testResult = normalizeDegrees(50);
+    double testResult = PGRMathNormalizeDegrees(50);
     XCTAssertEqualWithAccuracy(50, testResult, accuracy);
     
-    testResult = normalizeDegrees(400);
+    testResult = PGRMathNormalizeDegrees(400);
     XCTAssertEqualWithAccuracy(40, testResult, accuracy);
     
-    testResult = normalizeDegrees(-60);
+    testResult = PGRMathNormalizeDegrees(-60);
     XCTAssertEqualWithAccuracy(300, testResult, accuracy);
     
-    testResult = normalizeDegrees(-460);
+    testResult = PGRMathNormalizeDegrees(-460);
     XCTAssertEqualWithAccuracy(260, testResult, accuracy);
     
-    testResult = normalizeDegrees(500);
+    testResult = PGRMathNormalizeDegrees(500);
     XCTAssertEqualWithAccuracy(140, testResult, accuracy);
     
-    testResult = normalizeDegrees(360);
+    testResult = PGRMathNormalizeDegrees(360);
     XCTAssertEqualWithAccuracy(0, testResult, accuracy);
     
-    testResult = normalizeDegrees(0);
+    testResult = PGRMathNormalizeDegrees(0);
     XCTAssertEqualWithAccuracy(0, testResult, accuracy);
 }
 

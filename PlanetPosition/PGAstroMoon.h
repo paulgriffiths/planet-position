@@ -18,6 +18,12 @@
 
 @interface PGAstroMoon : PGAstroMoonBase
 
+/**
+ Creates a new moon planet object.
+ @param date the date to create it at
+ @return a new object
+ @see something for more info
+ */
 +(PGAstroMoon *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;

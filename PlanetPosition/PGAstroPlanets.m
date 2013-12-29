@@ -125,13 +125,13 @@
 //  Override methods for calculating heliocentric coordinates to return [0, 0, 0],
 //  since heliocentric coordinates for the Sun are always zero by definition.
 
-- (PGMathRectCoords *)helioOrbCoords {
-    return [PGMathRectCoords objectWithX:0 Y:0 Z:0];
+- (PGRMath3DCartCoords *)helioOrbCoords {
+    return [PGRMath3DCartCoords objectWithX:0 Y:0 Z:0];
 }
 
 
-- (PGMathRectCoords *)helioEclCoords {
-    return [PGMathRectCoords objectWithX:0 Y:0 Z:0];
+- (PGRMath3DCartCoords *)helioEclCoords {
+    return [PGRMath3DCartCoords objectWithX:0 Y:0 Z:0];
 }
 
 
@@ -418,13 +418,13 @@
 //  Override methods for calculating geocentric coordinates to return [0, 0, 0],
 //  since geocentric coordinates for the Earth are always zero by definition.
 
-- (PGMathRectCoords *)geoOrbCoords {
-    return [PGMathRectCoords objectWithX:0 Y:0 Z:0];
+- (PGRMath3DCartCoords *)geoOrbCoords {
+    return [PGRMath3DCartCoords objectWithX:0 Y:0 Z:0];
 }
 
 
-- (PGMathRectCoords *)geoEclCoords {
-    return [PGMathRectCoords objectWithX:0 Y:0 Z:0];
+- (PGRMath3DCartCoords *)geoEclCoords {
+    return [PGRMath3DCartCoords objectWithX:0 Y:0 Z:0];
 }
 
 

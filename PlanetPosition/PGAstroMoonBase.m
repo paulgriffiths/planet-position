@@ -34,10 +34,10 @@
     
     oes.sma = y2000Oes.sma + dayOes.sma * days;
     oes.ecc = y2000Oes.ecc + dayOes.ecc * days;
-    oes.inc = degToRad(y2000Oes.inc + dayOes.inc * days);
-    oes.ml = degToRad(y2000Oes.ml + dayOes.ml * days);
-    oes.lp = degToRad(y2000Oes.lp + dayOes.lp * days);
-    oes.lan = degToRad(y2000Oes.lan + dayOes.lan * days);
+    oes.inc = PGRMathDegreesToRadians(y2000Oes.inc + dayOes.inc * days);
+    oes.ml = PGRMathDegreesToRadians(y2000Oes.ml + dayOes.ml * days);
+    oes.lp = PGRMathDegreesToRadians(y2000Oes.lp + dayOes.lp * days);
+    oes.lan = PGRMathDegreesToRadians(y2000Oes.lan + dayOes.lan * days);
     oes.man = oes.ml - oes.lp;
     oes.arp = oes.lp - oes.lan;
     
@@ -57,10 +57,10 @@
 
 //  Overriden public instance method to calculate the planet's geocentric ecliptic coordinates
 
-- (PGMathRectCoords *)geoEclCoords {
-    PGMathRectCoords * hoc = [self helioOrbCoords];
-    PGMathRectCoords * hec = [self helioEclCoords];
-    PGMathRectCoords * gec = [PGMathRectCoords new];
+- (PGRMath3DCartCoords *)geoEclCoords {
+    PGRMath3DCartCoords * hoc = [self helioOrbCoords];
+    PGRMath3DCartCoords * hec = [self helioEclCoords];
+    PGRMath3DCartCoords * gec = [PGRMath3DCartCoords new];
     
     double lon = atan2(hec.y, hec.x);
     double lat = atan2(hec.z, hypot(hec.x, hec.y));
@@ -88,7 +88,7 @@
     dlon -= 0.031 * sin(self.oes.man + sunForMoon.oes.man);
     dlon -= 0.015 * sin(2 * arl - 2 * mel);
     dlon += 0.011 * sin(self.oes.man - 4 * mel);
-    lon = degToRad(dlon) + lon;
+    lon = PGRMathDegreesToRadians(dlon) + lon;
     
     //  Adjust for latitude perturbations
     
@@ -97,7 +97,7 @@
     dlat -= 0.046 * sin(self.oes.man + arl - 2 * mel);
     dlat += 0.033 * sin(arl + 2 * mel);
     dlat += 0.017 * sin(2 * self.oes.man + arl);
-    lat = degToRad(dlat) + lat;
+    lat = PGRMathDegreesToRadians(dlat) + lat;
     
     //  Adjust for rhc perturbations
     

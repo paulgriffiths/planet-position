@@ -58,6 +58,8 @@
         long row = [[self.tableView indexPathForSelectedRow] row];
         controller.planet = [_planetsGroup planetAtIndex:row];
     }
+    
+    (void)sender;       //  Avoid unused parameter warning
 }
 
 
@@ -86,6 +88,9 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
+    
+    (void)tableView;        //  Avoid unused parameter warning
+    
     return 1;
 }
 
@@ -93,6 +98,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+
+    (void)tableView;        //  Avoid unused parameter warning
+    (void)section;          //  Avoid unused parameter warning
+    
     return [_planetsGroup numPlanets];
 }
 

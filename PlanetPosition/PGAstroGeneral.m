@@ -45,9 +45,9 @@ static const char * const zodiac_signs_short[] = {
 
 - (instancetype)initWithRasc:(double)rasc {
     if ( (self = [super init]) ) {
-        self.rightAscension = normalizeDegrees(rasc);
+        self.rightAscension = PGRMathNormalizeDegrees(rasc);
         
-        self.zodiacDMS = [PGMathDMS objectWithDegrees:self.rightAscension];
+        self.zodiacDMS = [PGRMathDMS objectWithDegrees:self.rightAscension];
         self.signIndex = self.zodiacDMS.degrees / 30;
         self.zodiacDMS.degrees %= 30;
         
@@ -175,7 +175,7 @@ NSString * rasc_to_zodiac(const double rasc) {
 //  ascension supplied in degrees.
 
 NSString * rasc_string(const double rasc) {
-    PGMathHMS * hms = [PGMathHMS objectWithDegrees:rasc];
+    PGRMathHMS * hms = [PGRMathHMS objectWithDegrees:rasc];
     return [NSString stringWithFormat:@"%02ih %02im %02is", hms.hours, hms.minutes, hms.seconds];
 }
 
@@ -185,7 +185,7 @@ NSString * rasc_string(const double rasc) {
 //  supplied in degrees. Uses a degree sign instead of 'd'.
 
 NSString * decl_string(const double decl) {
-    PGMathDMS * dms = [PGMathDMS objectWithDegrees:decl];
+    PGRMathDMS * dms = [PGRMathDMS objectWithDegrees:decl];
     return [NSString stringWithFormat:@"%@%02i%@ %02im %02is",
             (dms.degrees >= 0 ? @"+" : @"-"), abs(dms.degrees), @"\u00B0", abs(dms.minutes), abs(dms.seconds)];
 }
@@ -203,7 +203,7 @@ NSString * get_thelemic_year(NSDate * date) {
     NSDateComponents * components = getUTCComponentsFromDate(date);
     long year = [components year] - 1904;
     
-    double rasc = normalizeDegrees([[PGAstroSun planetWithDate:date] rightAscension]);
+    double rasc = PGRMathNormalizeDegrees([[PGAstroSun planetWithDate:date] rightAscension]);
     if ( rasc > 270 && [components month] <= 3 ) {
         year -= 1;
     }
@@ -219,7 +219,7 @@ NSString * get_thelemic_year(NSDate * date) {
     if ( cycle == 0 ) {
         cycleString = @"";
     } else {
-        cycleString = [NSString stringWithFormat:@"%@:", makeRoman((int) cycle)];
+        cycleString = [NSString stringWithFormat:@"%@:", PGRMathMakeRoman((int) cycle)];
     }
     
     return [NSString stringWithFormat:@"%@%li", cycleString, cycle_year];

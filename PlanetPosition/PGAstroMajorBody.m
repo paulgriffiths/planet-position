@@ -33,10 +33,10 @@
     
     oes.sma = j2000Oes.sma + centOes.sma * jcents;
     oes.ecc = j2000Oes.ecc + centOes.ecc * jcents;
-    oes.inc = degToRad(j2000Oes.inc + centOes.inc * jcents);
-    oes.ml = degToRad(j2000Oes.ml + centOes.ml * jcents);
-    oes.lp = degToRad(j2000Oes.lp + centOes.lp * jcents);
-    oes.lan = degToRad(j2000Oes.lan + centOes.lan * jcents);
+    oes.inc = PGRMathDegreesToRadians(j2000Oes.inc + centOes.inc * jcents);
+    oes.ml = PGRMathDegreesToRadians(j2000Oes.ml + centOes.ml * jcents);
+    oes.lp = PGRMathDegreesToRadians(j2000Oes.lp + centOes.lp * jcents);
+    oes.lan = PGRMathDegreesToRadians(j2000Oes.lan + centOes.lan * jcents);
     oes.man = oes.ml - oes.lp;
     oes.arp = oes.lp - oes.lan;
     
@@ -57,11 +57,11 @@
 
 //  Overriden public instance method to calculate the planet's geocentric ecliptic coordinates
 
-- (PGMathRectCoords *)geoEclCoords {
+- (PGRMath3DCartCoords *)geoEclCoords {
     PGAstroEarth * earth = [PGAstroEarth planetWithDate:_calcDate];
-    PGMathRectCoords * eec = [earth helioEclCoords];
-    PGMathRectCoords * hec = [self helioEclCoords];
-    PGMathRectCoords * gec = [PGMathRectCoords new];
+    PGRMath3DCartCoords * eec = [earth helioEclCoords];
+    PGRMath3DCartCoords * hec = [self helioEclCoords];
+    PGRMath3DCartCoords * gec = [PGRMath3DCartCoords new];
     
     gec.x = hec.x - eec.x;
     gec.y = hec.y - eec.y;

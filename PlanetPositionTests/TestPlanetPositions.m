@@ -100,7 +100,7 @@
     const double di_accuracy = 0.0001;
     
     double expected_result = 180.840541666667;
-    XCTAssertEqualWithAccuracy(normalizeDegrees(mars.rightAscension), expected_result, ra_accuracy);
+    XCTAssertEqualWithAccuracy(PGRMathNormalizeDegrees(mars.rightAscension), expected_result, ra_accuracy);
     
     expected_result = 0.03566666666667;
     XCTAssertEqualWithAccuracy(mars.declination, expected_result, de_accuracy);
@@ -157,7 +157,7 @@
     const double di_accuracy = 0.01;
     
     double expected_result = 211.38025;
-    XCTAssertEqualWithAccuracy(normalizeDegrees(uranus.rightAscension), expected_result, ra_accuracy);
+    XCTAssertEqualWithAccuracy(PGRMathNormalizeDegrees(uranus.rightAscension), expected_result, ra_accuracy);
     
     expected_result = -12.21186111111110;
     XCTAssertEqualWithAccuracy(uranus.declination, expected_result, de_accuracy);
@@ -176,7 +176,7 @@
     const double di_accuracy = 0.01;
     
     double expected_result = 228.44925;
-    XCTAssertEqualWithAccuracy(normalizeDegrees(neptune.rightAscension), expected_result, ra_accuracy);
+    XCTAssertEqualWithAccuracy(PGRMathNormalizeDegrees(neptune.rightAscension), expected_result, ra_accuracy);
     
     expected_result = -16.2009444444444;
     XCTAssertEqualWithAccuracy(neptune.declination, expected_result, de_accuracy);
@@ -195,7 +195,7 @@
     const double di_accuracy = 0.01;
     
     double expected_result = 252.494583333333;
-    XCTAssertEqualWithAccuracy(normalizeDegrees(pluto.rightAscension), expected_result, ra_accuracy);
+    XCTAssertEqualWithAccuracy(PGRMathNormalizeDegrees(pluto.rightAscension), expected_result, ra_accuracy);
     
     expected_result = -12.1994722222222;
     XCTAssertEqualWithAccuracy(pluto.declination, expected_result, de_accuracy);

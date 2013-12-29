@@ -1,5 +1,5 @@
 /*
- *  PGMathHelpers.m
+ *  PGRMathHelpers.m
  *  ===============
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
@@ -11,28 +11,22 @@
  */
 
 
-#import "PGMathHelpers.h"
+#import "PGRMathHelpers.h"
 
 
-//  Class to store an hours, minutes and seconds representation
-
-@implementation PGMathHMS
+@implementation PGRMathHMS
 
 
-//  Public class method to create object with provided degrees
-
-+ (PGMathHMS *)objectWithDegrees:(double)degrees {
-    return [[PGMathHMS alloc] initWithDegrees:degrees];
++ (PGRMathHMS *)objectWithDegrees:(double)degrees {
+    return [[PGRMathHMS alloc] initWithDegrees:degrees];
 }
 
-
-//  Initialization method to initialize object with provided degrees
 
 - (instancetype)initWithDegrees:(double)degrees {
     if ( (self = [super init]) ) {
         static const int secs_in_a_day = 86400;
         static const int secs_in_an_hour = 3600;
-        const double norm_degs = normalizeDegrees(degrees);
+        const double norm_degs = PGRMathNormalizeDegrees(degrees);
         const int total_seconds = (int) floor((norm_degs / 360) * secs_in_a_day);
         
         _hours = total_seconds / secs_in_an_hour;
@@ -46,19 +40,13 @@
 @end
 
 
-//  Class to store a degrees, minutes and seconds representation
-
-@implementation PGMathDMS
+@implementation PGRMathDMS
 
 
-//  Public class method to create object with provided degrees
-
-+ (PGMathDMS *)objectWithDegrees:(double)degrees {
-    return [[PGMathDMS alloc] initWithDegrees:degrees];
++ (PGRMathDMS *)objectWithDegrees:(double)degrees {
+    return [[PGRMathDMS alloc] initWithDegrees:degrees];
 }
 
-
-//  Initialization method to initialize object with provided degrees
 
 - (instancetype)initWithDegrees:(double)degrees {
     if ( (self = [super init]) ) {
@@ -77,26 +65,18 @@
 @end
 
 
-//  Class to store spherical coordinates
-
-@implementation PGMathSphCoords
+@implementation PGRMathSphCoords
 
 @end
 
 
-//  Class to store three-dimensional rectangular coordinates
-
-@implementation PGMathRectCoords
+@implementation PGRMath3DCartCoords
 
 
-//  Public class convenience method for creating new object
-
-+ (PGMathRectCoords *)objectWithX:(double)x Y:(double)y Z:(double)z {
-    return [[PGMathRectCoords alloc] initWithX:x Y:y Z:x];
++ (PGRMath3DCartCoords *)objectWithX:(double)x Y:(double)y Z:(double)z {
+    return [[PGRMath3DCartCoords alloc] initWithX:x Y:y Z:z];
 }
 
-
-//  Initializer method
 
 - (instancetype)initWithX:(double)x Y:(double)y Z:(double)z {
     if ( (self = [super init]) ) {
@@ -109,45 +89,39 @@
 }
 
 
-//  Method to convert to spherical coordinates.
-
-- (PGMathSphCoords *)toSpherical {
-    PGMathSphCoords * scd = [PGMathSphCoords new];
+- (PGRMathSphCoords *)toSpherical {
+    PGRMathSphCoords * scd = [PGRMathSphCoords new];
     
-    scd.rightAscension = radToDeg(atan2(self.y, self.x));
-    scd.declination = radToDeg(atan(self.z / hypot(self.x, self.y)));
-    scd.distance = sqrt(pow(self.x, 2) + pow(self.y, 2) + pow(self.z, 2));
+    scd.azimuth = PGRMathRadiansToDegrees(atan2(self.y, self.x));
+    scd.inclination = PGRMathRadiansToDegrees(atan(self.z / hypot(self.x, self.y)));
+    scd.radius = sqrt(pow(self.x, 2) + pow(self.y, 2) + pow(self.z, 2));
     
     return scd;
 }
 
 
-//  Returns a double representing an angle in degrees in the
-//  range 0 <= d < 360, when the supplied angle may or may
-//  not be outside of this range.
+@end
 
-double normalizeDegrees(const double angle) {
+
+//  C function definitions
+
+
+double PGRMathNormalizeDegrees(const double angle) {
     return angle - 360 * floor(angle / 360);
 }
 
 
-//  Converts radians to degrees.
-
-double radToDeg(const double radians) {
+double PGRMathRadiansToDegrees(const double radians) {
     return radians / (M_PI / 180);
 }
 
 
-//  Converts degrees to radians.
-
-double degToRad(const double degrees) {
+double PGRMathDegreesToRadians(const double degrees) {
     return degrees * (M_PI / 180);
 }
 
 
-//  Converts a number between 0 and 4,999 inclusive to Roman numerals
-
-NSString * makeRoman(const int num) {
+NSString * PGRMathMakeRoman(const int num) {
     static const char * ones_roman[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
     static const char * tens_roman[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
     static const char * cents_roman[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
@@ -166,8 +140,3 @@ NSString * makeRoman(const int num) {
     
     return [NSString stringWithFormat:@"%s%s%s%s", thous_roman[thous], cents_roman[cents], tens_roman[tens], ones_roman[ones]];
 }
-
-
-@end
-
-
