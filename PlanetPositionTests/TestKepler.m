@@ -12,7 +12,7 @@
 //  on or around June 2, 2013.
 
 #import <XCTest/XCTest.h>
-#import "PGAstroGeneral.h"
+#import "PGRAstroGeneral.h"
 
 @interface TestKepler : XCTestCase
 

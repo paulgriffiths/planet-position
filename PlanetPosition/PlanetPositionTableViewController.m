@@ -10,7 +10,7 @@
 #import "PlanetPositionTableViewController.h"
 #import "PlanetPositionPlanetsGroup.h"
 #import "PlanetPositionPlanetListTableViewCell.h"
-#import "PGAstro.h"
+#import "PGRAstro.h"
 #import "PlanetDetailsViewController.h"
 #import "PGPlanetDetails.h"
 

@@ -13,7 +13,7 @@
 
 
 #import <XCTest/XCTest.h>
-#import "PGAstro.h"
+#import "PGRAstro.h"
 #import "PGRDateHelpers.h"
 
 @interface TestPlanetPositions : XCTestCase

@@ -1,6 +1,6 @@
 /*
- *  PGAstroPlanets.m
- *  ================
+ *  PGRAstroPlanets.m
+ *  =================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -11,7 +11,7 @@
  */
 
 
-#import "PGAstroPlanets.h"
+#import "PGRAstroPlanets.h"
 
 
 //  Mercury class

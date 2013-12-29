@@ -1,6 +1,6 @@
 /*
- *  PGAstroPlanet.h
- *  ===============
+ *  PGRAstroPlanet.h
+ *  ================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -12,7 +12,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "PGAstroGeneral.h"
+#import "PGRAstroGeneral.h"
 #import "PGRMathHelpers.h"
 
 

@@ -12,7 +12,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "PGAstro.h"
+#import "PGRAstro.h"
 
 
 @interface PGPlanetDetails : NSObject

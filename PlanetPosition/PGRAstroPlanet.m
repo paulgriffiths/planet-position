@@ -1,6 +1,6 @@
 /*
- *  PGAstroPlanet.m
- *  ===============
+ *  PGRAstroPlanet.m
+ *  ================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -11,7 +11,7 @@
  */
 
 
-#import "PGAstroPlanet.h"
+#import "PGRAstroPlanet.h"
 
 
 @implementation PGAstroPlanet

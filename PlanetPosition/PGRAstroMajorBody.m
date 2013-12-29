@@ -1,6 +1,6 @@
 /*
- *  PGAstroMajorBody.h
- *  ==================
+ *  PGRAstroMajorBody.h
+ *  ===================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -11,8 +11,8 @@
  */
 
 
-#import "PGAstroMajorBody.h"
-#import "PGAstroPlanets.h"
+#import "PGRAstroMajorBody.h"
+#import "PGRAstroPlanets.h"
 
 
 @implementation PGAstroMajorBody

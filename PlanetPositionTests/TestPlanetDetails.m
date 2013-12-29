@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "PGPlanetDetails.h"
 #import "PGRDateHelpers.h"
-#import "PGAstro.h"
+#import "PGRAstro.h"
 
 @interface TestPlanetDetails : XCTestCase
 

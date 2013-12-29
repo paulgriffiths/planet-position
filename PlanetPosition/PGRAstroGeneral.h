@@ -1,6 +1,6 @@
 /*
- *  PGAstroGeneral.h
- *  ================
+ *  PGRAstroGeneral.h
+ *  =================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *

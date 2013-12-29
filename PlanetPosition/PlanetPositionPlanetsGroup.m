@@ -12,7 +12,7 @@
 
 
 #import "PlanetPositionPlanetsGroup.h"
-#import "PGAstro.h"
+#import "PGRAstro.h"
 
 
 @implementation PlanetPositionPlanetsGroup {

@@ -8,7 +8,7 @@
 
 
 #import "PPDateViewController.h"
-#import "PGAstro.h"
+#import "PGRAstro.h"
 #import "PGRDateHelpers.h"
 #import "AstroDateGroup.h"
 

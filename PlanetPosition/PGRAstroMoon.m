@@ -1,6 +1,6 @@
 /*
- *  PGAstroMoon.m
- *  =============
+ *  PGRAstroMoon.m
+ *  ==============
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -11,7 +11,7 @@
  */
 
 
-#import "PGAstroMoon.h"
+#import "PGRAstroMoon.h"
 
 
 //  Moon class

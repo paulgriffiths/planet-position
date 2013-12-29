@@ -1,6 +1,6 @@
 /*
- *  PGAstro.h
- *  =========
+ *  PGRAstro.h
+ *  ==========
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -42,6 +42,6 @@
  */
 
 
-#import "PGAstroGeneral.h"
-#import "PGAstroPlanets.h"
-#import "PGAstroMoon.h"
+#import "PGRAstroGeneral.h"
+#import "PGRAstroPlanets.h"
+#import "PGRAstroMoon.h"

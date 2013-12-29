@@ -1,6 +1,6 @@
 /*
- *  PGAstroPlanets.h
- *  ================
+ *  PGRAstroPlanets.h
+ *  =================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -12,7 +12,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "PGAstroMajorBody.h"
+#import "PGRAstroMajorBody.h"
 
 
 //  Mercury class

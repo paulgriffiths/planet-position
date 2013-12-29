@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "PlanetPositionPlanetsGroup.h"
-#import "PGAstro.h"
+#import "PGRAstro.h"
 
 @interface TestPlanetGroup : XCTestCase
 

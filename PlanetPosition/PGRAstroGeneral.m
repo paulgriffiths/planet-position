@@ -1,6 +1,6 @@
 /*
- *  PGAstroGeneral.m
- *  ================
+ *  PGRAstroGeneral.m
+ *  =================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -11,8 +11,8 @@
  */
 
 
-#import "PGAstroGeneral.h"
-#import "PGAstroPlanets.h"
+#import "PGRAstroGeneral.h"
+#import "PGRAstroPlanets.h"
 #import "PGRDateHelpers.h"
 
 

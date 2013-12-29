@@ -1,6 +1,6 @@
 /*
- *  PGAstroMajorBody.h
- *  ==================
+ *  PGRAstroMajorBody.h
+ *  ===================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -12,7 +12,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "PGAstroPlanet.h"
+#import "PGRAstroPlanet.h"
 
 
 @interface PGAstroMajorBody : PGAstroPlanet

@@ -1,6 +1,6 @@
 /*
- *  PGAstroMoonBase.m
- *  =================
+ *  PGRAstroMoonBase.m
+ *  ==================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -11,8 +11,8 @@
  */
 
 
-#import "PGAstroMoonBase.h"
-#import "PGAstroMoon.h"
+#import "PGRAstroMoonBase.h"
+#import "PGRAstroMoon.h"
 #import "PGRDateHelpers.h"
 
 

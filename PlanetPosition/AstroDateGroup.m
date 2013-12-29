@@ -7,7 +7,7 @@
 //
 
 #import "AstroDateGroup.h"
-#import "PGAstro.h"
+#import "PGRAstro.h"
 
 @implementation AstroDateGroup
 

@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PGAstroGeneral.h"
+#import "PGRAstroGeneral.h"
 
 @interface TestZodiacNames : XCTestCase
 

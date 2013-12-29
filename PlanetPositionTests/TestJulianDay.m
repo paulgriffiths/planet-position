@@ -13,7 +13,7 @@
 
 
 #import <XCTest/XCTest.h>
-#import "PGAstroGeneral.h"
+#import "PGRAstroGeneral.h"
 #import "PGRDateHelpers.h"
 
 @interface TestJulianDay : XCTestCase
