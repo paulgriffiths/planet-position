@@ -27,7 +27,7 @@
 @property (strong, nonatomic) NSString * zodiacDecan;
 
 +(PGAstroZodiacInfo *)objectWithRasc:(double)rasc;
--(PGAstroZodiacInfo *)initWithRasc:(double)rasc;
+-(instancetype)initWithRasc:(double)rasc;
 
 
 @end
@@ -48,7 +48,7 @@
 
 +(PGAstroOrbElem *)objectWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan;
 
--(PGAstroOrbElem *)initWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan;
+-(instancetype)initWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan;
 
 @end
 

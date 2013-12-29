@@ -23,7 +23,7 @@
 @property (nonatomic) int seconds;
 
 +(PGMathHMS *)objectWithDegrees:(double)degrees;
--(PGMathHMS *)initWithDegrees:(double)degrees;
+-(instancetype)initWithDegrees:(double)degrees;
 
 
 @end
@@ -38,7 +38,7 @@
 @property (nonatomic) int seconds;
 
 +(PGMathDMS *)objectWithDegrees:(double)degrees;
--(PGMathDMS *)initWithDegrees:(double)degrees;
+-(instancetype)initWithDegrees:(double)degrees;
 
 
 @end
@@ -65,7 +65,7 @@
 
 +(PGMathRectCoords *)objectWithX:(double)x Y:(double)y Z:(double)z;
 
--(PGMathRectCoords *)initWithX:(double)x Y:(double)y Z:(double)z;
+-(instancetype)initWithX:(double)x Y:(double)y Z:(double)z;
 -(PGMathSphCoords *)toSpherical;
 
 @end

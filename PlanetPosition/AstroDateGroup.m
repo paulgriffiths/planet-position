@@ -16,7 +16,7 @@
     return [[AstroDateGroup alloc] initWithDate:date];
 }
 
-- (AstroDateGroup *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     if ( (self = [super init]) ) {
         [self updateDataWithDate:date];
     }
@@ -48,7 +48,7 @@
 }
 
 
-- (AstroDateGroup *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate date]];
 }
 

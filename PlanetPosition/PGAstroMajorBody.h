@@ -26,7 +26,7 @@
 
 //  Public instance method
 
-- (PGAstroMajorBody *)initWithDate:(NSDate *)calcDate
+- (instancetype)initWithDate:(NSDate *)calcDate
                        andJ2000OEs:(PGAstroOrbElem *)j2000Oes andCenturyOEs:(PGAstroOrbElem *)centOes;
 
 

@@ -10,6 +10,11 @@
 
 @interface PPDateViewController : UITableViewController
 
+
+/*!
+ * \brief date label property
+ */
+
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *julianDayLabel;
 @property (strong, nonatomic) IBOutlet UILabel *thelemicDateLabel;

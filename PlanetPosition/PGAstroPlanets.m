@@ -28,12 +28,12 @@
 
 //  Initialization methods
 
-- (PGAstroMercury *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroMercury *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:0.387009927 Ecc:0.20563593
                                                         Inc:7.00497902 Ml:252.25032350 Lp:77.45779628 Lan:48.33076593];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:0.00000037 Ecc:0.00001906
@@ -68,12 +68,12 @@
 
 //  Initialization methods
 
-- (PGAstroVenus *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroVenus *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:0.72333566 Ecc:0.00677672
                                                                 Inc:3.39467605 Ml:181.97909950 Lp:131.60246718 Lan:76.67984255];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:0.00000390 Ecc:-0.00004107
@@ -108,12 +108,12 @@
 
 //  Initialization methods
 
-- (PGAstroSun *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroSun *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:0 Ecc:0 Inc:0 Ml:0 Lp:0 Lan:0];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:0 Ecc:0 Inc:0 Ml:0 Lp:0 Lan:0];
     
@@ -159,12 +159,12 @@
 
 //  Initialization methods
 
-- (PGAstroMars *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroMars *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:1.52371034 Ecc:0.09339410
                                                                 Inc:1.84969142 Ml:-4.55343205 Lp:-23.94362959 Lan:49.55953891];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:0.00001847 Ecc:0.00007882
@@ -199,12 +199,12 @@
 
 //  Initialization methods
 
-- (PGAstroJupiter *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroJupiter *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:5.20288700 Ecc:0.04838624
                                                                 Inc:1.30439695 Ml:34.39644051 Lp:14.72847983 Lan:100.47390909];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:-0.00011607 Ecc:-0.00013253
@@ -239,12 +239,12 @@
 
 //  Initialization methods
 
-- (PGAstroSaturn *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroSaturn *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:9.53667594 Ecc:0.05386179
                                                                 Inc:2.48599187 Ml:49.95424423 Lp:92.59887831 Lan:113.66242448];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:-0.00125060 Ecc:-0.00050991
@@ -279,12 +279,12 @@
 
 //  Initialization methods
 
-- (PGAstroUranus *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroUranus *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:19.18916464 Ecc:0.04725744
                                                                 Inc:0.77263783 Ml:313.23810451 Lp:170.95427630 Lan:74.01692503];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:-0.00196176 Ecc:-0.00004397
@@ -319,12 +319,12 @@
 
 //  Initialization methods
 
-- (PGAstroNeptune *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroNeptune *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:30.06992276 Ecc:0.00859048
                                                                 Inc:1.77004347 Ml:-55.12002969 Lp:44.96476227 Lan:131.78422574];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:0.00026291 Ecc:0.00005105
@@ -359,12 +359,12 @@
 
 //  Initialization methods
 
-- (PGAstroPluto *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroPluto *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:39.48211675 Ecc:0.24882730
                                                                 Inc:17.14001206 Ml:238.92903833 Lp:224.06891629 Lan:110.30393684];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:-0.00031596 Ecc:0.00005170
@@ -399,12 +399,12 @@
 
 //  Initialization methods
 
-- (PGAstroEarth *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroEarth *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * j2000OEs = [PGAstroOrbElem objectWithSma:1.00000261 Ecc:0.01671123
                                  Inc:-0.00001531 Ml:100.46457166 Lp:102.93768193 Lan:0];
     PGAstroOrbElem * centOEs = [PGAstroOrbElem objectWithSma:0.00000562 Ecc:-0.00004392

@@ -20,7 +20,7 @@
 
 +(PGAstroMoon *)planetWithDate:(NSDate *)date;
 
--(PGAstroMoon *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -32,7 +32,7 @@
 
 +(PGAstroSunForMoon *)planetWithDate:(NSDate *)date;
 
--(PGAstroSunForMoon *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 

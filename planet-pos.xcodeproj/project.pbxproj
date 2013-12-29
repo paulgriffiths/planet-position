@@ -30,6 +30,8 @@
 		DA13CA2E186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */; };
 		DA13CA2F186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */; };
 		DA621AD6186D58BB0092C293 /* PlanetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA621AD5186D58BB0092C293 /* PlanetDetailsViewController.m */; };
+		DA6231B0186FB7E200EAD158 /* TestPlanetDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6231AF186FB7E200EAD158 /* TestPlanetDetails.m */; };
+		DA6231B2186FBA7600EAD158 /* TestAstroDateGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6231B1186FBA7600EAD158 /* TestAstroDateGroup.m */; };
 		DABE3C6B186E4EE5003C93E9 /* PGMathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */; };
 		DABE3C6C186E4EE5003C93E9 /* PGMathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */; };
 		DABE3C71186E58D0003C93E9 /* PGDateHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE3C70186E58D0003C93E9 /* PGDateHelpers.m */; };
@@ -97,6 +99,8 @@
 		DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionPlanetsGroup.m; sourceTree = "<group>"; };
 		DA621AD4186D58BB0092C293 /* PlanetDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetDetailsViewController.h; sourceTree = "<group>"; };
 		DA621AD5186D58BB0092C293 /* PlanetDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetDetailsViewController.m; sourceTree = "<group>"; };
+		DA6231AF186FB7E200EAD158 /* TestPlanetDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlanetDetails.m; sourceTree = "<group>"; };
+		DA6231B1186FBA7600EAD158 /* TestAstroDateGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAstroDateGroup.m; sourceTree = "<group>"; };
 		DABE3C69186E4EE5003C93E9 /* PGMathHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMathHelpers.h; sourceTree = "<group>"; };
 		DABE3C6A186E4EE5003C93E9 /* PGMathHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGMathHelpers.m; sourceTree = "<group>"; };
 		DABE3C6F186E58D0003C93E9 /* PGDateHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDateHelpers.h; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 		DAF3C8B3186A7C9700AA2E24 /* PlanetPositionTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA6231B1186FBA7600EAD158 /* TestAstroDateGroup.m */,
+				DA6231AF186FB7E200EAD158 /* TestPlanetDetails.m */,
 				DA0CFE40186E12860031629C /* TestThelemicYear.m */,
 				DA0CFE3E186DFD570031629C /* TestMakeRoman.m */,
 				DA13CA18186C8E8B00F8280A /* TestPlanetPositions.m */,
@@ -445,6 +451,7 @@
 				DA13CA27186D011C00F8280A /* PlanetPositionTableViewController.m in Sources */,
 				DA0CFE3F186DFD570031629C /* TestMakeRoman.m in Sources */,
 				DABE3C6C186E4EE5003C93E9 /* PGMathHelpers.m in Sources */,
+				DA6231B2186FBA7600EAD158 /* TestAstroDateGroup.m in Sources */,
 				DA13CA19186C8E8B00F8280A /* TestPlanetPositions.m in Sources */,
 				DAF3C8CE186A96D900AA2E24 /* TestZodiacNames.m in Sources */,
 				DAF3C8BA186A7C9700AA2E24 /* PlanetPositionTests.m in Sources */,
@@ -454,6 +461,7 @@
 				DA0BF4F8186C775D00EBF1AE /* PGAstroPlanet.m in Sources */,
 				DA13CA23186CE0F200F8280A /* PGAstroMoon.m in Sources */,
 				DABE3C7C186E75C6003C93E9 /* AstroDateGroup.m in Sources */,
+				DA6231B0186FB7E200EAD158 /* TestPlanetDetails.m in Sources */,
 				DA0BF500186C79BE00EBF1AE /* PGAstroPlanets.m in Sources */,
 				DAF3C8C6186A80F800AA2E24 /* PGAstroGeneral.m in Sources */,
 			);

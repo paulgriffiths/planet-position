@@ -43,7 +43,7 @@ static const char * const zodiac_signs_short[] = {
 
 //  Initializer method to initialize object based on provided right ascension
 
-- (PGAstroZodiacInfo *)initWithRasc:(double)rasc {
+- (instancetype)initWithRasc:(double)rasc {
     if ( (self = [super init]) ) {
         self.rightAscension = normalizeDegrees(rasc);
         
@@ -84,7 +84,7 @@ static const char * const zodiac_signs_short[] = {
 
 //  Initializer method
 
--(PGAstroOrbElem *)initWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan {
+-(instancetype)initWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan {
     if ( (self = [super init]) ) {
         self.sma = sma;
         self.ecc = ecc;

@@ -15,7 +15,7 @@
 @property (strong, nonatomic, readonly) NSString * dateStringThelemic;
 
 + (AstroDateGroup *)objectWithDate:(NSDate *)date;
-- (AstroDateGroup *)initWithDate:(NSDate *)date;
+- (instancetype)initWithDate:(NSDate *)date;
 - (void)updateDataWithDate:(NSDate *)date;
 - (void)updateData;
 

@@ -28,7 +28,7 @@
 
 //  Initialization method to initialize object with provided degrees
 
-- (PGMathHMS *)initWithDegrees:(double)degrees {
+- (instancetype)initWithDegrees:(double)degrees {
     if ( (self = [super init]) ) {
         static const int secs_in_a_day = 86400;
         static const int secs_in_an_hour = 3600;
@@ -60,7 +60,7 @@
 
 //  Initialization method to initialize object with provided degrees
 
-- (PGMathDMS *)initWithDegrees:(double)degrees {
+- (instancetype)initWithDegrees:(double)degrees {
     if ( (self = [super init]) ) {
         static const int secs_in_an_hour = 3600;
         const int total_seconds = (int) (degrees > 0 ? floor(degrees * secs_in_an_hour) :
@@ -98,7 +98,7 @@
 
 //  Initializer method
 
-- (PGMathRectCoords *)initWithX:(double)x Y:(double)y Z:(double)z {
+- (instancetype)initWithX:(double)x Y:(double)y Z:(double)z {
     if ( (self = [super init]) ) {
         self.x = x;
         self.y = y;

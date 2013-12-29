@@ -28,12 +28,12 @@
 
 //  Initialization methods
 
-- (PGAstroMoon *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroMoon *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * y2000OEs = [PGAstroOrbElem objectWithSma:60.2666 Ecc:0.0549
                                                                 Inc:5.1454 Ml:198.5516 Lp:83.1862 Lan:125.1228];
     PGAstroOrbElem * dayOEs = [PGAstroOrbElem objectWithSma:0 Ecc:0
@@ -68,12 +68,12 @@
 
 //  Initialization methods
 
-- (PGAstroSunForMoon *)init {
+- (instancetype)init {
     return [self initWithDate:[NSDate new]];
 }
 
 
-- (PGAstroSunForMoon *)initWithDate:(NSDate *)date {
+- (instancetype)initWithDate:(NSDate *)date {
     PGAstroOrbElem * y2000OEs = [PGAstroOrbElem objectWithSma:1 Ecc:0.016709
                                                                 Inc:0 Ml:278.9874 Lp:-77.0596 Lan:0];
     PGAstroOrbElem * dayOEs = [PGAstroOrbElem objectWithSma:0 Ecc:-0.000000001151

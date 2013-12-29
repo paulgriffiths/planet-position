@@ -21,7 +21,7 @@
 
 +(PGAstroMercury *)planetWithDate:(NSDate *)date;
 
--(PGAstroMercury *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -32,7 +32,7 @@
 
 +(PGAstroVenus *)planetWithDate:(NSDate *)date;
 
--(PGAstroVenus *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -43,7 +43,7 @@
 
 +(PGAstroSun *)planetWithDate:(NSDate *)date;
 
--(PGAstroSun *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -54,7 +54,7 @@
 
 +(PGAstroMars *)planetWithDate:(NSDate *)date;
 
--(PGAstroMars *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -65,7 +65,7 @@
 
 +(PGAstroJupiter *)planetWithDate:(NSDate *)date;
 
--(PGAstroJupiter *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -76,7 +76,7 @@
 
 +(PGAstroSaturn *)planetWithDate:(NSDate *)date;
 
--(PGAstroSaturn *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -87,7 +87,7 @@
 
 +(PGAstroUranus *)planetWithDate:(NSDate *)date;
 
--(PGAstroUranus *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -98,7 +98,7 @@
 
 +(PGAstroNeptune *)planetWithDate:(NSDate *)date;
 
--(PGAstroNeptune *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -109,7 +109,7 @@
 
 +(PGAstroPluto *)planetWithDate:(NSDate *)date;
 
--(PGAstroPluto *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
@@ -121,6 +121,6 @@
 
 +(PGAstroEarth *)planetWithDate:(NSDate *)date;
 
--(PGAstroEarth *)initWithDate:(NSDate *)date;
+-(instancetype)initWithDate:(NSDate *)date;
 
 @end

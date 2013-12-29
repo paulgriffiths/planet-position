@@ -31,8 +31,8 @@
 
 //  Public methods
 
--(PGAstroPlanet *)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes;
--(PGAstroPlanet *)clone;
+-(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes;
+-(instancetype)clone;
 
 -(PGMathRectCoords *)helioOrbCoords;
 -(PGMathRectCoords *)helioEclCoords;

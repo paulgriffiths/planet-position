@@ -47,7 +47,7 @@
 
 //  Public initialization method
 
-- (PGAstroMajorBody *)initWithDate:(NSDate *)calcDate
+- (instancetype)initWithDate:(NSDate *)calcDate
                        andJ2000OEs:(PGAstroOrbElem *)j2000Oes andCenturyOEs:(PGAstroOrbElem *)centOes {
     PGAstroOrbElem * oes = [PGAstroMajorBody calcOrbitalElementsForDate:calcDate andJ2000OEs:j2000Oes andCenturyOEs:centOes];
     self = [super initWithDate:calcDate andOEs:oes];

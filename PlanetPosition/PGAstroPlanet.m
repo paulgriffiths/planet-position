@@ -19,7 +19,7 @@
 
 //  Initialization method
 
--(PGAstroPlanet *)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes {
+-(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes {
     if ( (self = [super init]) ) {
         _calcDate = calcDate;
         self.oes = oes;
@@ -45,7 +45,7 @@
 
 //  Method to clone a planet with the current time
 
-- (PGAstroPlanet *)clone {
+- (instancetype)clone {
     return [[self class] new];
 }
 

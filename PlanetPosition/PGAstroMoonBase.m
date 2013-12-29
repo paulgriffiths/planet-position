@@ -47,7 +47,7 @@
 
 //  Public initialization method
 
-- (PGAstroMoonBase *)initWithDate:(NSDate *)calcDate
+- (instancetype)initWithDate:(NSDate *)calcDate
                        andY2000OEs:(PGAstroOrbElem *)y2000Oes andDayOEs:(PGAstroOrbElem *)dayOes {
     PGAstroOrbElem * oes = [PGAstroMoonBase calcOrbitalElementsForDate:calcDate andY2000OEs:y2000Oes andDayOEs:dayOes];
     self = [super initWithDate:calcDate andOEs:oes];

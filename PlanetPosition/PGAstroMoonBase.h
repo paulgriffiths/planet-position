@@ -27,7 +27,7 @@
 
 //  Public instance method
 
-- (PGAstroMoonBase *)initWithDate:(NSDate *)calcDate
+- (instancetype)initWithDate:(NSDate *)calcDate
                        andY2000OEs:(PGAstroOrbElem *)y2000Oes andDayOEs:(PGAstroOrbElem *)dayOes;
 
 

@@ -29,7 +29,7 @@
 
 //  Initialization method to initialize object with planet
 
--(PGPlanetDetails *)initWithPlanet:(PGAstroPlanet *)planet {
+-(instancetype)initWithPlanet:(PGAstroPlanet *)planet {
     if ( (self = [super init]) ) {
         _planet = planet;
         _zInfo = [PGAstroZodiacInfo objectWithRasc:_planet.rightAscension];

@@ -22,7 +22,7 @@
 
 //  Initialization method to create the array and give it its first update
 
-- (PlanetPositionPlanetsGroup *)init {
+- (instancetype)init {
     if ( (self = [super init]) ) {
         _planetsList = [NSMutableArray new];
         [self update];

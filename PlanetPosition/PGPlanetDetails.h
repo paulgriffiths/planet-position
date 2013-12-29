@@ -34,7 +34,7 @@
 //  Methods
 
 +(PGPlanetDetails *)objectWithPlanet:(PGAstroPlanet *)planet;
--(PGPlanetDetails *)initWithPlanet:(PGAstroPlanet *)planet;
+-(instancetype)initWithPlanet:(PGAstroPlanet *)planet;
 
 
 @end
