@@ -13,7 +13,7 @@
 
 #import "PGAstroGeneral.h"
 #import "PGAstroPlanets.h"
-#import "PGDateHelpers.h"
+#import "PGRDateHelpers.h"
 
 
 //  Static file-scope data
@@ -111,7 +111,7 @@ double julian_day(const NSDate * dateObject) {
     static NSDate * epochDate;
     
     if ( !epochDate ) {
-        epochDate = getUTCDate(2000, 1, 1, 12, 0, 0);
+        epochDate = PGRDateGetUTCDate(2000, 1, 1, 12, 0, 0);
     }
     
     const NSTimeInterval secondsSinceEpoch = [dateObject timeIntervalSinceDate:epochDate];
@@ -200,7 +200,7 @@ NSString * decl_string(const double decl) {
 //  April 1926 would have the Thelemic year "I:0".
 
 NSString * get_thelemic_year(NSDate * date) {
-    NSDateComponents * components = getUTCComponentsFromDate(date);
+    NSDateComponents * components = PGRDateGetUTCComponentsFromDate(date);
     long year = [components year] - 1904;
     
     double rasc = PGRMathNormalizeDegrees([[PGAstroSun planetWithDate:date] rightAscension]);

@@ -13,7 +13,7 @@
 
 #import "PGAstroMoonBase.h"
 #import "PGAstroMoon.h"
-#import "PGDateHelpers.h"
+#import "PGRDateHelpers.h"
 
 
 @implementation PGAstroMoonBase
@@ -26,7 +26,7 @@
 
 + (PGAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
                                    andY2000OEs:(PGAstroOrbElem *)y2000Oes andDayOEs:(PGAstroOrbElem *)dayOes {
-    NSDate * y2000 = getUTCDate(1999, 12, 31, 0, 0, 0);
+    NSDate * y2000 = PGRDateGetUTCDate(1999, 12, 31, 0, 0, 0);
     static const double secsInADay = 86400;
     const double days = [calcDate timeIntervalSinceDate:y2000] / secsInADay;
     

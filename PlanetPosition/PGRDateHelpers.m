@@ -1,6 +1,6 @@
 /*
- *  PGDateHelpers.m
- *  ===============
+ *  PGRDateHelpers.m
+ *  ================
  *  Copyright 2013 Paul Griffiths
  *  Email: mail@paulgriffiths.net
  *
@@ -11,13 +11,10 @@
  */
 
 
-#import "PGDateHelpers.h"
+#import "PGRDateHelpers.h"
 
 
-//  Convenience function to return an NSDate for the specified UTC time components
-//  under the Gregorian Calendar.
-
-NSDate * getUTCDate(int year, int month, int day, int hour, int minute, int second) {
+NSDate * PGRDateGetUTCDate(int year, int month, int day, int hour, int minute, int second) {
     NSDateComponents * epochComponents = [NSDateComponents new];
     epochComponents.year = year;
     epochComponents.month = month;
@@ -32,10 +29,7 @@ NSDate * getUTCDate(int year, int month, int day, int hour, int minute, int seco
 }
 
 
-//  Convenience function to return an NSDateComponents object in UTC values under the
-//  Gregorian Calendar from the specified NSDate.
-
-NSDateComponents * getUTCComponentsFromDate(NSDate * calcDate) {
+NSDateComponents * PGRDateGetUTCComponentsFromDate(NSDate * calcDate) {
     NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     [gregorian setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     

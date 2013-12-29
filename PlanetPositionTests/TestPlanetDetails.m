@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "PGPlanetDetails.h"
-#import "PGDateHelpers.h"
+#import "PGRDateHelpers.h"
 #import "PGAstro.h"
 
 @interface TestPlanetDetails : XCTestCase
@@ -31,7 +31,7 @@
 
 - (void)testPlanetDetails
 {
-    NSDate * testDate = getUTCDate(2013, 12, 29, 1, 53, 0);
+    NSDate * testDate = PGRDateGetUTCDate(2013, 12, 29, 1, 53, 0);
     PGAstroMoon * moon = [PGAstroMoon planetWithDate:testDate];
     PGPlanetDetails * planetDetails = [PGPlanetDetails objectWithPlanet:moon];
     

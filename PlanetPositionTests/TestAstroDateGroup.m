@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "AstroDateGroup.h"
-#import "PGDateHelpers.h"
+#import "PGRDateHelpers.h"
 
 
 @interface TestAstroDateGroup : XCTestCase
@@ -31,7 +31,7 @@
 
 - (void)testAstroDateGroup
 {
-    NSDate * testDate = getUTCDate(2013, 12, 29, 2, 4, 0);
+    NSDate * testDate = PGRDateGetUTCDate(2013, 12, 29, 2, 4, 0);
     AstroDateGroup * dateGroup = [AstroDateGroup objectWithDate:testDate];
     
     XCTAssertTrue([dateGroup.dateStringUTC isEqualToString:@"Dec 29, 2013, 2:04 AM"]);
