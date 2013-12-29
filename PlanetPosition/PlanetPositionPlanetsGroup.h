@@ -19,6 +19,6 @@
 
 -(void)update;
 -(NSUInteger)numPlanets;
--(PGAstroPlanet *)planetAtIndex:(long)index;
+-(PGRAstroPlanet *)planetAtIndex:(long)index;
 
 @end

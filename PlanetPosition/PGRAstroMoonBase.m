@@ -16,7 +16,7 @@
 #import "PGRDateHelpers.h"
 
 
-@implementation PGAstroMoonBase
+@implementation PGRAstroMoonBase
 
 
 //  Public class method to calculate orbital elements for:
@@ -24,13 +24,13 @@
 //   - the specified orbital elements at midnight Dec 31, 1999; and
 //   - the specified change in orbital elements per day
 
-+ (PGAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
-                                   andY2000OEs:(PGAstroOrbElem *)y2000Oes andDayOEs:(PGAstroOrbElem *)dayOes {
++ (PGRAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
+                                   andY2000OEs:(PGRAstroOrbElem *)y2000Oes andDayOEs:(PGRAstroOrbElem *)dayOes {
     NSDate * y2000 = PGRDateGetUTCDate(1999, 12, 31, 0, 0, 0);
     static const double secsInADay = 86400;
     const double days = [calcDate timeIntervalSinceDate:y2000] / secsInADay;
     
-    PGAstroOrbElem * oes = [PGAstroOrbElem new];
+    PGRAstroOrbElem * oes = [PGRAstroOrbElem new];
     
     oes.sma = y2000Oes.sma + dayOes.sma * days;
     oes.ecc = y2000Oes.ecc + dayOes.ecc * days;
@@ -48,8 +48,8 @@
 //  Public initialization method
 
 - (instancetype)initWithDate:(NSDate *)calcDate
-                       andY2000OEs:(PGAstroOrbElem *)y2000Oes andDayOEs:(PGAstroOrbElem *)dayOes {
-    PGAstroOrbElem * oes = [PGAstroMoonBase calcOrbitalElementsForDate:calcDate andY2000OEs:y2000Oes andDayOEs:dayOes];
+                       andY2000OEs:(PGRAstroOrbElem *)y2000Oes andDayOEs:(PGRAstroOrbElem *)dayOes {
+    PGRAstroOrbElem * oes = [PGRAstroMoonBase calcOrbitalElementsForDate:calcDate andY2000OEs:y2000Oes andDayOEs:dayOes];
     self = [super initWithDate:calcDate andOEs:oes];
     return self;
 }
@@ -66,7 +66,7 @@
     double lat = atan2(hec.z, hypot(hec.x, hec.y));
     double rhc = hoc.z;
     
-    PGAstroSunForMoon * sunForMoon = [[PGAstroSunForMoon alloc] initWithDate:_calcDate];
+    PGRAstroSunForMoon * sunForMoon = [[PGRAstroSunForMoon alloc] initWithDate:_calcDate];
     
     //  Calculate mean elongation and argument
     //  of latitude for the moon.

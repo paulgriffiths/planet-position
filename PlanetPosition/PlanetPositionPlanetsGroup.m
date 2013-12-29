@@ -37,16 +37,16 @@
 - (void)update {
     [_planetsList removeAllObjects];
     
-    [_planetsList addObject:[PGAstroMoon new]];
-    [_planetsList addObject:[PGAstroMercury new]];
-    [_planetsList addObject:[PGAstroVenus new]];
-    [_planetsList addObject:[PGAstroSun new]];
-    [_planetsList addObject:[PGAstroMars new]];
-    [_planetsList addObject:[PGAstroJupiter new]];
-    [_planetsList addObject:[PGAstroSaturn new]];
-    [_planetsList addObject:[PGAstroUranus new]];
-    [_planetsList addObject:[PGAstroNeptune new]];
-    [_planetsList addObject:[PGAstroPluto new]];
+    [_planetsList addObject:[PGRAstroMoon new]];
+    [_planetsList addObject:[PGRAstroMercury new]];
+    [_planetsList addObject:[PGRAstroVenus new]];
+    [_planetsList addObject:[PGRAstroSun new]];
+    [_planetsList addObject:[PGRAstroMars new]];
+    [_planetsList addObject:[PGRAstroJupiter new]];
+    [_planetsList addObject:[PGRAstroSaturn new]];
+    [_planetsList addObject:[PGRAstroUranus new]];
+    [_planetsList addObject:[PGRAstroNeptune new]];
+    [_planetsList addObject:[PGRAstroPluto new]];
 }
 
 
@@ -59,7 +59,7 @@
 
 //  Returns the planet at the specified index
 
-- (PGAstroPlanet *)planetAtIndex:(long)index {
+- (PGRAstroPlanet *)planetAtIndex:(long)index {
     return _planetsList[index];
 }
 

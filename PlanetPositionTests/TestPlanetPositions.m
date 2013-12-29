@@ -37,7 +37,7 @@
 - (void)testSun
 {
     NSDate * testDate = PGRDateGetUTCDate(2013, 6, 4, 1, 15, 0);
-    PGAstroSun * sun = [PGAstroSun planetWithDate:testDate];
+    PGRAstroSun * sun = [PGRAstroSun planetWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.0001;
@@ -56,7 +56,7 @@
 - (void)testMercury
 {
     NSDate * testDate = PGRDateGetUTCDate(1980, 5, 5, 20, 23, 0);
-    PGAstroMercury * mercury = [PGAstroMercury planetWithDate:testDate];
+    PGRAstroMercury * mercury = [PGRAstroMercury planetWithDate:testDate];
     const double ra_accuracy = 0.1;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.0001;
@@ -75,7 +75,7 @@
 - (void)testVenus
 {
     NSDate * testDate = PGRDateGetUTCDate(1982, 6, 14, 8, 30, 0);
-    PGAstroVenus * venus = [PGAstroVenus planetWithDate:testDate];
+    PGRAstroVenus * venus = [PGRAstroVenus planetWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.001;
@@ -94,7 +94,7 @@
 - (void)testMars
 {
     NSDate * testDate = PGRDateGetUTCDate(1997, 6, 21, 0, 0, 0);
-    PGAstroMars * mars = [PGAstroMars planetWithDate:testDate];
+    PGRAstroMars * mars = [PGRAstroMars planetWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.0001;
@@ -113,7 +113,7 @@
 - (void)testJupiter
 {
     NSDate * testDate = PGRDateGetUTCDate(1991, 6, 17, 0, 0, 0);
-    PGAstroJupiter * jupiter = [PGAstroJupiter planetWithDate:testDate];
+    PGRAstroJupiter * jupiter = [PGRAstroJupiter planetWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.01;
@@ -132,7 +132,7 @@
 - (void)testSaturn
 {
     NSDate * testDate = PGRDateGetUTCDate(1947, 12, 1, 12, 0, 0);
-    PGAstroSaturn * saturn = [PGAstroSaturn planetWithDate:testDate];
+    PGRAstroSaturn * saturn = [PGRAstroSaturn planetWithDate:testDate];
     const double ra_accuracy = 0.02;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.01;
@@ -151,7 +151,7 @@
 - (void)testUranus
 {
     NSDate * testDate = PGRDateGetUTCDate(1975, 10, 31, 8, 0, 0);
-    PGAstroUranus * uranus = [PGAstroUranus planetWithDate:testDate];
+    PGRAstroUranus * uranus = [PGRAstroUranus planetWithDate:testDate];
     const double ra_accuracy = 0.02;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.01;
@@ -170,7 +170,7 @@
 - (void)testNeptune
 {
     NSDate * testDate = PGRDateGetUTCDate(1966, 9, 15, 9, 0, 0);
-    PGAstroNeptune * neptune = [PGAstroNeptune planetWithDate:testDate];
+    PGRAstroNeptune * neptune = [PGRAstroNeptune planetWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.01;
@@ -189,7 +189,7 @@
 - (void)testPluto
 {
     NSDate * testDate = PGRDateGetUTCDate(2001, 9, 11, 14, 0, 0);
-    PGAstroPluto * pluto = [PGAstroPluto planetWithDate:testDate];
+    PGRAstroPluto * pluto = [PGRAstroPluto planetWithDate:testDate];
     const double ra_accuracy = 0.01;
     const double de_accuracy = 0.01;
     const double di_accuracy = 0.01;
@@ -208,7 +208,7 @@
 - (void)testMoon
 {
     NSDate * testDate = PGRDateGetUTCDate(1988, 8, 10, 0, 0, 0);
-    PGAstroMoon * moon = [PGAstroMoon planetWithDate:testDate];
+    PGRAstroMoon * moon = [PGRAstroMoon planetWithDate:testDate];
     const double ra_accuracy = 0.3;
     const double de_accuracy = 0.1;
     

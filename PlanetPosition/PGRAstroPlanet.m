@@ -14,12 +14,12 @@
 #import "PGRAstroPlanet.h"
 
 
-@implementation PGAstroPlanet
+@implementation PGRAstroPlanet
 
 
 //  Initialization method
 
--(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes {
+-(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGRAstroOrbElem *)oes {
     if ( (self = [super init]) ) {
         _calcDate = calcDate;
         self.oes = oes;
@@ -33,7 +33,7 @@
 
 -(PGRMath3DCartCoords *)helioOrbCoords {
     PGRMath3DCartCoords * hoc = [PGRMath3DCartCoords new];
-    const double eAnom = kepler(_oes.man, _oes.ecc);
+    const double eAnom = PGRAstroKepler(_oes.man, _oes.ecc);
     
     hoc.x = _oes.sma * (cos(eAnom) - _oes.ecc);
     hoc.y = _oes.sma * sqrt(1 - pow(_oes.ecc, 2)) * sin(eAnom);

@@ -15,7 +15,7 @@
 #import "PGRAstroPlanets.h"
 
 
-@implementation PGAstroMajorBody
+@implementation PGRAstroMajorBody
 
 
 //  Public class method to calculate orbital elements for:
@@ -23,13 +23,13 @@
 //   - the specified orbital elements at the J2000 epoch; and
 //   - the specified change in orbital elements per Julian century
 
-+ (PGAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
-                                      andJ2000OEs:(PGAstroOrbElem *)j2000Oes andCenturyOEs:(PGAstroOrbElem *)centOes {
++ (PGRAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
+                                      andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes {
     static const double epochJ2000 = 2451545;
     static const double jdaysPerCent = 36525;
-    const double jcents = (julian_day(calcDate) - epochJ2000) / jdaysPerCent;
+    const double jcents = (PGRAstroJulianDay(calcDate) - epochJ2000) / jdaysPerCent;
     
-    PGAstroOrbElem * oes = [PGAstroOrbElem new];
+    PGRAstroOrbElem * oes = [PGRAstroOrbElem new];
     
     oes.sma = j2000Oes.sma + centOes.sma * jcents;
     oes.ecc = j2000Oes.ecc + centOes.ecc * jcents;
@@ -48,8 +48,8 @@
 //  Public initialization method
 
 - (instancetype)initWithDate:(NSDate *)calcDate
-                       andJ2000OEs:(PGAstroOrbElem *)j2000Oes andCenturyOEs:(PGAstroOrbElem *)centOes {
-    PGAstroOrbElem * oes = [PGAstroMajorBody calcOrbitalElementsForDate:calcDate andJ2000OEs:j2000Oes andCenturyOEs:centOes];
+                       andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes {
+    PGRAstroOrbElem * oes = [PGRAstroMajorBody calcOrbitalElementsForDate:calcDate andJ2000OEs:j2000Oes andCenturyOEs:centOes];
     self = [super initWithDate:calcDate andOEs:oes];
     return self;
 }
@@ -58,7 +58,7 @@
 //  Overriden public instance method to calculate the planet's geocentric ecliptic coordinates
 
 - (PGRMath3DCartCoords *)geoEclCoords {
-    PGAstroEarth * earth = [PGAstroEarth planetWithDate:_calcDate];
+    PGRAstroEarth * earth = [PGRAstroEarth planetWithDate:_calcDate];
     PGRMath3DCartCoords * eec = [earth helioEclCoords];
     PGRMath3DCartCoords * hec = [self helioEclCoords];
     PGRMath3DCartCoords * gec = [PGRMath3DCartCoords new];

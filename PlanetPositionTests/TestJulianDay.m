@@ -38,7 +38,7 @@
 {
     const double accuracy = 0.000001;
     
-    const double jday = julian_day(PGRDateGetUTCDate(2013, 6, 2, 0, 0, 0));
+    const double jday = PGRAstroJulianDay(PGRDateGetUTCDate(2013, 6, 2, 0, 0, 0));
     XCTAssertEqualWithAccuracy(2456445.5, jday, accuracy);
 }
 
@@ -47,7 +47,7 @@
 {
     const double accuracy = 0.000001;
     
-    const double jday = julian_day(PGRDateGetUTCDate(1980, 1, 1, 0, 0, 0));
+    const double jday = PGRAstroJulianDay(PGRDateGetUTCDate(1980, 1, 1, 0, 0, 0));
     XCTAssertEqualWithAccuracy(2444239.5, jday, accuracy);
 }
 
@@ -57,7 +57,7 @@
     const double accuracy = 0.001;   //  Unknown why accuracy is lower here, other than date is more in the past,
                                      //  and result is a fraction.
     
-    const double jday = julian_day(PGRDateGetUTCDate(1918, 11, 11, 11, 11, 0));
+    const double jday = PGRAstroJulianDay(PGRDateGetUTCDate(1918, 11, 11, 11, 11, 0));
     XCTAssertEqualWithAccuracy(2421908.9661, jday, accuracy);
 }
 

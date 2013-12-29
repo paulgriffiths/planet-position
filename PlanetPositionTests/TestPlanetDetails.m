@@ -32,7 +32,7 @@
 - (void)testPlanetDetails
 {
     NSDate * testDate = PGRDateGetUTCDate(2013, 12, 29, 1, 53, 0);
-    PGAstroMoon * moon = [PGAstroMoon planetWithDate:testDate];
+    PGRAstroMoon * moon = [PGRAstroMoon planetWithDate:testDate];
     PGPlanetDetails * planetDetails = [PGPlanetDetails objectWithPlanet:moon];
     
     XCTAssertTrue([planetDetails.name isEqualToString:@"Moon"]);

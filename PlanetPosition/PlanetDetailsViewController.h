@@ -12,7 +12,7 @@
 
 @interface PlanetDetailsViewController : UITableViewController
 
-@property (strong, nonatomic) PGAstroPlanet * planet;
+@property (strong, nonatomic) PGRAstroPlanet * planet;
 
 @property (strong, nonatomic) IBOutlet UIImageView *planetImage;
 @property (strong, nonatomic) IBOutlet UILabel *planetNameLabel;

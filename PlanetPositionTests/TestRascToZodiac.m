@@ -32,23 +32,23 @@
     NSString * expectedResult;
     NSString * testResult;
     
-    testResult = rasc_to_zodiac(0);
+    testResult = PGRAstroRascToZodiac(0);
     expectedResult = @"00AR00";
     XCTAssertTrue([expectedResult isEqualToString:testResult]);
     
-    testResult = rasc_to_zodiac(30);
+    testResult = PGRAstroRascToZodiac(30);
     expectedResult = @"00TA00";
     XCTAssertTrue([expectedResult isEqualToString:testResult]);
     
-    testResult = rasc_to_zodiac(65.5);
+    testResult = PGRAstroRascToZodiac(65.5);
     expectedResult = @"05GE30";
     XCTAssertTrue([expectedResult isEqualToString:testResult]);
     
-    testResult = rasc_to_zodiac(145.7);
+    testResult = PGRAstroRascToZodiac(145.7);
     expectedResult = @"25LE42";
     XCTAssertTrue([expectedResult isEqualToString:testResult]);
     
-    testResult = rasc_to_zodiac(325.2);
+    testResult = PGRAstroRascToZodiac(325.2);
     expectedResult = @"25AQ12";
     XCTAssertTrue([expectedResult isEqualToString:testResult]);
 }

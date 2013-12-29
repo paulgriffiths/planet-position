@@ -15,24 +15,24 @@
 
 
 @implementation PGPlanetDetails {
-    PGAstroPlanet * _planet;
-    PGAstroZodiacInfo * _zInfo;
+    PGRAstroPlanet * _planet;
+    PGRAstroZodiacInfo * _zInfo;
 }
 
 
 //  Class method to create object from planet
 
-+ (PGPlanetDetails *)objectWithPlanet:(PGAstroPlanet *)planet {
++ (PGPlanetDetails *)objectWithPlanet:(PGRAstroPlanet *)planet {
     return [[PGPlanetDetails alloc] initWithPlanet:planet];
 }
 
 
 //  Initialization method to initialize object with planet
 
--(instancetype)initWithPlanet:(PGAstroPlanet *)planet {
+-(instancetype)initWithPlanet:(PGRAstroPlanet *)planet {
     if ( (self = [super init]) ) {
         _planet = planet;
-        _zInfo = [PGAstroZodiacInfo objectWithRasc:_planet.rightAscension];
+        _zInfo = [PGRAstroZodiacInfo objectWithRasc:_planet.rightAscension];
     }
     return self;
 }
@@ -62,14 +62,14 @@
 //  Returns an HMS NSString representation of the planet's right ascension
 
 - (NSString *)rascString {
-    return rasc_string(_planet.rightAscension);
+    return PGRAstroRascString(_planet.rightAscension);
 }
 
 
 //  Returns a DMS NSString representation of the planet's declination
 
 - (NSString *)declString {
-    return decl_string(_planet.declination);
+    return PGRAstroDeclString(_planet.declination);
 }
 
 
@@ -98,7 +98,7 @@
 //  Returns a string representation of the planet's zodiac coordinates
 
 - (NSString *)zodCoords {
-    return rasc_to_zodiac(_planet.rightAscension);
+    return PGRAstroRascToZodiac(_planet.rightAscension);
 }
 
 

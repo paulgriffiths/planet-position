@@ -17,9 +17,9 @@
 
 //  Mercury class
 
-@interface PGAstroMercury : PGAstroMajorBody
+@interface PGRAstroMercury : PGRAstroMajorBody
 
-+(PGAstroMercury *)planetWithDate:(NSDate *)date;
++(PGRAstroMercury *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -28,9 +28,9 @@
 
 //  Venus class
 
-@interface PGAstroVenus : PGAstroMajorBody
+@interface PGRAstroVenus : PGRAstroMajorBody
 
-+(PGAstroVenus *)planetWithDate:(NSDate *)date;
++(PGRAstroVenus *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -39,9 +39,9 @@
 
 //  Sun class
 
-@interface PGAstroSun : PGAstroMajorBody
+@interface PGRAstroSun : PGRAstroMajorBody
 
-+(PGAstroSun *)planetWithDate:(NSDate *)date;
++(PGRAstroSun *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -50,9 +50,9 @@
 
 //  Mars class
 
-@interface PGAstroMars : PGAstroMajorBody
+@interface PGRAstroMars : PGRAstroMajorBody
 
-+(PGAstroMars *)planetWithDate:(NSDate *)date;
++(PGRAstroMars *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -61,9 +61,9 @@
 
 //  Jupiter class
 
-@interface PGAstroJupiter : PGAstroMajorBody
+@interface PGRAstroJupiter : PGRAstroMajorBody
 
-+(PGAstroJupiter *)planetWithDate:(NSDate *)date;
++(PGRAstroJupiter *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -72,9 +72,9 @@
 
 //  Saturn class
 
-@interface PGAstroSaturn : PGAstroMajorBody
+@interface PGRAstroSaturn : PGRAstroMajorBody
 
-+(PGAstroSaturn *)planetWithDate:(NSDate *)date;
++(PGRAstroSaturn *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -83,9 +83,9 @@
 
 //  Uranus class
 
-@interface PGAstroUranus : PGAstroMajorBody
+@interface PGRAstroUranus : PGRAstroMajorBody
 
-+(PGAstroUranus *)planetWithDate:(NSDate *)date;
++(PGRAstroUranus *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -94,9 +94,9 @@
 
 //  Neptune class
 
-@interface PGAstroNeptune : PGAstroMajorBody
+@interface PGRAstroNeptune : PGRAstroMajorBody
 
-+(PGAstroNeptune *)planetWithDate:(NSDate *)date;
++(PGRAstroNeptune *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -105,9 +105,9 @@
 
 //  Pluto class
 
-@interface PGAstroPluto : PGAstroMajorBody
+@interface PGRAstroPluto : PGRAstroMajorBody
 
-+(PGAstroPluto *)planetWithDate:(NSDate *)date;
++(PGRAstroPluto *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -117,9 +117,9 @@
 //  Earth class, used only for calculating positions of other planets. Users
 //  should not instantiate this class.
 
-@interface PGAstroEarth : PGAstroMajorBody
+@interface PGRAstroEarth : PGRAstroMajorBody
 
-+(PGAstroEarth *)planetWithDate:(NSDate *)date;
++(PGRAstroEarth *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 

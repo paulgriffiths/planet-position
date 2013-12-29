@@ -15,19 +15,19 @@
 #import "PGRAstroPlanet.h"
 
 
-@interface PGAstroMajorBody : PGAstroPlanet
+@interface PGRAstroMajorBody : PGRAstroPlanet
 
 
 //  Public class method
 
-+ (PGAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
-                                      andJ2000OEs:(PGAstroOrbElem *)j2000Oes andCenturyOEs:(PGAstroOrbElem *)centOes;
++ (PGRAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
+                                      andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes;
 
 
 //  Public instance method
 
 - (instancetype)initWithDate:(NSDate *)calcDate
-                       andJ2000OEs:(PGAstroOrbElem *)j2000Oes andCenturyOEs:(PGAstroOrbElem *)centOes;
+                       andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes;
 
 
 @end

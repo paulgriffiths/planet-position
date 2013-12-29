@@ -34,10 +34,10 @@
 - (void)testPlanetGroup
 {
     PlanetPositionPlanetsGroup * planetGroup = [PlanetPositionPlanetsGroup new];
-    NSArray * planetClassArray = @[[PGAstroMoon class], [PGAstroMercury class], [PGAstroVenus class],
-                                   [PGAstroSun class], [PGAstroMars class], [PGAstroJupiter class],
-                                   [PGAstroSaturn class], [PGAstroUranus class], [PGAstroNeptune class],
-                                   [PGAstroPluto class]];
+    NSArray * planetClassArray = @[[PGRAstroMoon class], [PGRAstroMercury class], [PGRAstroVenus class],
+                                   [PGRAstroSun class], [PGRAstroMars class], [PGRAstroJupiter class],
+                                   [PGRAstroSaturn class], [PGRAstroUranus class], [PGRAstroNeptune class],
+                                   [PGRAstroPluto class]];
     
     NSUInteger numPlanets = [planetGroup numPlanets];
     XCTAssertEqual(numPlanets, 10U);

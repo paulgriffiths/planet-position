@@ -39,11 +39,11 @@
     NSNumberFormatter * nf = [NSNumberFormatter new];
     nf.numberStyle = NSNumberFormatterDecimalStyle;
     [nf setMaximumFractionDigits:2];
-    NSNumber * julianDay = [NSNumber numberWithDouble:julian_day(date)];
+    NSNumber * julianDay = [NSNumber numberWithDouble:PGRAstroJulianDay(date)];
     _dateStringJulian = [NSString stringWithFormat:@"%@", [nf stringFromNumber:julianDay]];
     
-    PGAstroZodiacInfo * zInfo = [PGAstroZodiacInfo objectWithRasc:[PGAstroSun planetWithDate:date].rightAscension];
-    _dateStringThelemic = [NSString stringWithFormat:@"Sol in %i%@ %@, Anno %@", zInfo.zodiacDMS.degrees, @"\u00B0", zInfo.signShortName, get_thelemic_year(date)];
+    PGRAstroZodiacInfo * zInfo = [PGRAstroZodiacInfo objectWithRasc:[PGRAstroSun planetWithDate:date].rightAscension];
+    _dateStringThelemic = [NSString stringWithFormat:@"Sol in %i%@ %@, Anno %@", zInfo.zodiacDMS.degrees, @"\u00B0", zInfo.signShortName, PGRAstroGetThelemicYear(date)];
    
 }
 

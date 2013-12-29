@@ -16,14 +16,14 @@
 #import "PGRMathHelpers.h"
 
 
-@interface PGAstroPlanet : NSObject {
+@interface PGRAstroPlanet : NSObject {
     NSDate * _calcDate;                 //  Calculation date
 }
 
 
 //  Properties
 
-@property (strong, nonatomic) PGAstroOrbElem * oes;
+@property (strong, nonatomic) PGRAstroOrbElem * oes;
 @property (nonatomic, readonly) double rightAscension;
 @property (nonatomic, readonly) double declination;
 @property (nonatomic, readonly) double distance;
@@ -31,7 +31,7 @@
 
 //  Public methods
 
--(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGAstroOrbElem *)oes;
+-(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGRAstroOrbElem *)oes;
 -(instancetype)clone;
 
 -(PGRMath3DCartCoords *)helioOrbCoords;

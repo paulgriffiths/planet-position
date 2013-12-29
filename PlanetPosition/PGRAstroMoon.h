@@ -16,7 +16,7 @@
 
 //  Moon class
 
-@interface PGAstroMoon : PGAstroMoonBase
+@interface PGRAstroMoon : PGRAstroMoonBase
 
 /**
  Creates a new moon planet object.
@@ -24,7 +24,7 @@
  @return a new object
  @see something for more info
  */
-+(PGAstroMoon *)planetWithDate:(NSDate *)date;
++(PGRAstroMoon *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 
@@ -34,9 +34,9 @@
 //  Sun for moon class, used only for calculating the positions of other
 //  the Moon. Users should not instantiate this class.
 
-@interface PGAstroSunForMoon : PGAstroMoonBase
+@interface PGRAstroSunForMoon : PGRAstroMoonBase
 
-+(PGAstroSunForMoon *)planetWithDate:(NSDate *)date;
++(PGRAstroSunForMoon *)planetWithDate:(NSDate *)date;
 
 -(instancetype)initWithDate:(NSDate *)date;
 

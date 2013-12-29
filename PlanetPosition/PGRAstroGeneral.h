@@ -17,7 +17,7 @@
 
 //  Class to store information about the zodiacal position of a right ascension measurement
 
-@interface PGAstroZodiacInfo : NSObject
+@interface PGRAstroZodiacInfo : NSObject
 
 @property (nonatomic) double rightAscension;
 @property (nonatomic) int signIndex;
@@ -26,7 +26,7 @@
 @property (strong, nonatomic) PGRMathDMS * zodiacDMS;
 @property (strong, nonatomic) NSString * zodiacDecan;
 
-+(PGAstroZodiacInfo *)objectWithRasc:(double)rasc;
++(PGRAstroZodiacInfo *)objectWithRasc:(double)rasc;
 -(instancetype)initWithRasc:(double)rasc;
 
 
@@ -35,7 +35,7 @@
 
 //  Class to store a set of Keplerian elements
 
-@interface PGAstroOrbElem : NSObject
+@interface PGRAstroOrbElem : NSObject
 
 @property (nonatomic) double sma;
 @property (nonatomic) double ecc;
@@ -46,7 +46,7 @@
 @property (nonatomic) double man;
 @property (nonatomic) double arp;
 
-+(PGAstroOrbElem *)objectWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan;
++(PGRAstroOrbElem *)objectWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan;
 
 -(instancetype)initWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan;
 
@@ -55,13 +55,13 @@
 
 //  C helper function prototypes
 
-double julian_day(const NSDate * dateObject);
-double kepler(const double m_anom, const double ecc);
-NSString * zodiac_sign(const double rasc);
-NSString * zodiac_sign_short(const double rasc);
-NSString * rasc_to_zodiac(const double rasc);
-NSString * rasc_string(const double rasc);
-NSString * decl_string(const double decl);
-NSString * get_thelemic_year(NSDate * date);
+double PGRAstroJulianDay(const NSDate * dateObject);
+double PGRAstroKepler(const double m_anom, const double ecc);
+NSString * PGRAstroZodiacSign(const double rasc);
+NSString * PGRAstroZodiacSignShort(const double rasc);
+NSString * PGRAstroRascToZodiac(const double rasc);
+NSString * PGRAstroRascString(const double rasc);
+NSString * PGRAstroDeclString(const double decl);
+NSString * PGRAstroGetThelemicYear(NSDate * date);
 
 
