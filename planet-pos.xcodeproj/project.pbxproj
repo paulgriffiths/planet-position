@@ -29,6 +29,7 @@
 		DA13CA2B186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA29186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m */; };
 		DA13CA2E186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */; };
 		DA13CA2F186D048100F8280A /* PlanetPositionPlanetsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */; };
+		DA5D53CA187119A800387883 /* TestUTCDateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5D53C9187119A800387883 /* TestUTCDateComponents.m */; };
 		DA621AD6186D58BB0092C293 /* PlanetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA621AD5186D58BB0092C293 /* PlanetDetailsViewController.m */; };
 		DA6231B0186FB7E200EAD158 /* TestPlanetDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6231AF186FB7E200EAD158 /* TestPlanetDetails.m */; };
 		DA6231B2186FBA7600EAD158 /* TestAstroDateGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6231B1186FBA7600EAD158 /* TestAstroDateGroup.m */; };
@@ -97,6 +98,7 @@
 		DA13CA29186D016E00F8280A /* PlanetPositionPlanetListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionPlanetListTableViewCell.m; sourceTree = "<group>"; };
 		DA13CA2C186D048100F8280A /* PlanetPositionPlanetsGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetPositionPlanetsGroup.h; sourceTree = "<group>"; };
 		DA13CA2D186D048100F8280A /* PlanetPositionPlanetsGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetPositionPlanetsGroup.m; sourceTree = "<group>"; };
+		DA5D53C9187119A800387883 /* TestUTCDateComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUTCDateComponents.m; sourceTree = "<group>"; };
 		DA621AD4186D58BB0092C293 /* PlanetDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetDetailsViewController.h; sourceTree = "<group>"; };
 		DA621AD5186D58BB0092C293 /* PlanetDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetDetailsViewController.m; sourceTree = "<group>"; };
 		DA6231AF186FB7E200EAD158 /* TestPlanetDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlanetDetails.m; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		DAF3C8B3186A7C9700AA2E24 /* PlanetPositionTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA5D53C9187119A800387883 /* TestUTCDateComponents.m */,
 				DAA7A327187080EC00056962 /* TestPlanetGroup.m */,
 				DA6231B1186FBA7600EAD158 /* TestAstroDateGroup.m */,
 				DA6231AF186FB7E200EAD158 /* TestPlanetDetails.m */,
@@ -460,6 +463,7 @@
 				DA0BF4F8186C775D00EBF1AE /* PGRAstroPlanet.m in Sources */,
 				DA13CA23186CE0F200F8280A /* PGRAstroMoon.m in Sources */,
 				DABE3C7C186E75C6003C93E9 /* AstroDateGroup.m in Sources */,
+				DA5D53CA187119A800387883 /* TestUTCDateComponents.m in Sources */,
 				DA6231B0186FB7E200EAD158 /* TestPlanetDetails.m in Sources */,
 				DA0BF500186C79BE00EBF1AE /* PGRAstroPlanets.m in Sources */,
 				DAF3C8C6186A80F800AA2E24 /* PGRAstroGeneral.m in Sources */,
