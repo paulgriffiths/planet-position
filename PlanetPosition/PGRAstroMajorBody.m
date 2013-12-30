@@ -18,11 +18,6 @@
 @implementation PGRAstroMajorBody
 
 
-//  Public class method to calculate orbital elements for:
-//   - the specified calculation date;
-//   - the specified orbital elements at the J2000 epoch; and
-//   - the specified change in orbital elements per Julian century
-
 + (PGRAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
                                       andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes {
     static const double epochJ2000 = 2451545;
@@ -32,9 +27,6 @@
 }
 
 
-
-//  Public initialization method
-
 - (instancetype)initWithDate:(NSDate *)calcDate
                        andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes {
     PGRAstroOrbElem * oes = [PGRAstroMajorBody calcOrbitalElementsForDate:calcDate andJ2000OEs:j2000Oes andCenturyOEs:centOes];
@@ -42,8 +34,6 @@
     return self;
 }
 
-
-//  Overriden public instance method to calculate the planet's geocentric ecliptic coordinates
 
 - (PGRMath3DCartCoords *)geoEclCoords {
     PGRAstroEarth * earth = [PGRAstroEarth planetWithDate:_calcDate];

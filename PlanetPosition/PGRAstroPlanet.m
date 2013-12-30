@@ -17,19 +17,20 @@
 @implementation PGRAstroPlanet
 
 
-//  Initialization method
-
 -(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGRAstroOrbElem *)oes {
     if ( (self = [super init]) ) {
         _calcDate = calcDate;
-        self.oes = oes;
+        _oes = oes;
     }
     
     return self;
 }
 
 
-//  Calculates the planet's heliocentric orbital coordinates
+- (instancetype)clone {
+    return [[self class] new];
+}
+
 
 -(PGRMath3DCartCoords *)helioOrbCoords {
     PGRMath3DCartCoords * hoc = [PGRMath3DCartCoords new];
@@ -42,15 +43,6 @@
     return hoc;
 }
 
-
-//  Method to clone a planet with the current time
-
-- (instancetype)clone {
-    return [[self class] new];
-}
-
-
-//  Calculates the planet's heliocentric ecliptic coordinates
 
 -(PGRMath3DCartCoords *)helioEclCoords {
     PGRMath3DCartCoords * hoc = [self helioOrbCoords];
@@ -71,15 +63,10 @@
 }
 
 
-//  Calculates the planet's geocentric ecliptic coordinates. This is a
-//  placeholder method, which subclasses should override.
-
 -(PGRMath3DCartCoords *)geoEclCoords {
     return [PGRMath3DCartCoords objectWithX:0 Y:0 Z:0];
 }
 
-
-//  Calculates the planet's geocentric equatorial coordinates.
 
 -(PGRMath3DCartCoords *)geoEquCoords {
     static const double obliquity = 0.40909261029685;
@@ -94,16 +81,12 @@
 }
 
 
-//  Calculates the planet's right ascension
-
 - (double)rightAscension {
     PGRMath3DCartCoords * gqc = [self geoEquCoords];
     PGRMathSphCoords * sph = [gqc toSpherical];
     return sph.azimuth;
 }
 
-
-//  Calculates the planet's declination
 
 -(double)declination {
     PGRMath3DCartCoords * gqc = [self geoEquCoords];
@@ -112,16 +95,12 @@
 }
 
 
-//  Calculates the planet's distance
-
 -(double)distance {
     PGRMath3DCartCoords * gqc = [self geoEquCoords];
     PGRMathSphCoords * sph = [gqc toSpherical];
     return sph.radius;
 }
 
-
-//  Returns a fake name
 
 -(NSString *)name {
     return @"Do not instantiate this!";

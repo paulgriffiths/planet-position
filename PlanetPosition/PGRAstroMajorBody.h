@@ -15,17 +15,30 @@
 #import "PGRAstroPlanet.h"
 
 
+/**
+ An abstract base class for all major solar system planets, including the Sun.
+ @attention Do not directly instantiate this class.
+ */
 @interface PGRAstroMajorBody : PGRAstroPlanet
 
 
-//  Public class method
-
+/**
+ Calculates the orbital elements at a specified date based on the J2000 epoch.
+ @param calcDate The date to use to calculate the orbital elements.
+ @param j2000Oes The orbital elements of the planet at the J2000 epoch.
+ @param centOes The change in the orbital elements of the planet per Julian Century (365.25 days).
+ @returns An orbital elements object calculated as at the specified date, based on the J2000 epoch.
+ */
 + (PGRAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
                                       andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes;
 
-
-//  Public instance method
-
+/**
+ Initializes an object with the orbital elements at a specified date based on the J2000 epoch.
+ @param calcDate The date to use to calculate the orbital elements.
+ @param j2000Oes The orbital elements of the planet at the J2000 epoch.
+ @param centOes The change in the orbital elements of the planet per Julian Century (365.25 days).
+ @returns An object initialized to be calculated as at the specified date, based on the J2000 epoch.
+ */
 - (instancetype)initWithDate:(NSDate *)calcDate
                        andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes;
 
