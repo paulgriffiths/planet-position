@@ -200,7 +200,7 @@ NSString * PGRAstroRascString(const double rasc) {
 NSString * PGRAstroDeclString(const double decl) {
     PGRMathDMS * dms = [PGRMathDMS objectWithDegrees:decl];
     return [NSString stringWithFormat:@"%@%02i%@ %02im %02is",
-            (dms.degrees >= 0 ? @"+" : @"-"), abs(dms.degrees), @"\u00B0", abs(dms.minutes), abs(dms.seconds)];
+            (decl >= 0 ? @"+" : @"-"), abs(dms.degrees), @"\u00B0", abs(dms.minutes), abs(dms.seconds)];
 }
 
 
