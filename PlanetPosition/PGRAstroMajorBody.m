@@ -28,19 +28,7 @@
     static const double epochJ2000 = 2451545;
     static const double jdaysPerCent = 36525;
     const double jcents = (PGRAstroJulianDay(calcDate) - epochJ2000) / jdaysPerCent;
-    
-    PGRAstroOrbElem * oes = [PGRAstroOrbElem new];
-    
-    oes.sma = j2000Oes.sma + centOes.sma * jcents;
-    oes.ecc = j2000Oes.ecc + centOes.ecc * jcents;
-    oes.inc = PGRMathDegreesToRadians(j2000Oes.inc + centOes.inc * jcents);
-    oes.ml = PGRMathDegreesToRadians(j2000Oes.ml + centOes.ml * jcents);
-    oes.lp = PGRMathDegreesToRadians(j2000Oes.lp + centOes.lp * jcents);
-    oes.lan = PGRMathDegreesToRadians(j2000Oes.lan + centOes.lan * jcents);
-    oes.man = oes.ml - oes.lp;
-    oes.arp = oes.lp - oes.lan;
-    
-    return oes;
+    return [PGRAstroOrbElem objectWithEpochElements:j2000Oes periodElements:centOes numberPeriods:jcents convertToRadians:YES];
 }
 
 

@@ -16,50 +16,50 @@
 #import "PGRDateHelpers.h"
 
 
-//  Static file-scope data
-
+/**
+ File-scope array of names of the signs of the zodiac.
+ */
 static const char * const zodiac_signs[] = {
     "Aries", "Taurus", "Gemini", "Cancer",
     "Leo", "Virgo", "Libra", "Scorpio",
     "Sagittarius", "Capricorn", "Aquarius", "Pisces"
 };
+
+
+/**
+ File-scope array of short-form names of the signs of the zodiac.
+ */
 static const char * const zodiac_signs_short[] = {
     "AR", "TA", "GE", "CN", "LE", "VI",
     "LI", "SC", "SG", "CP", "AQ", "PI"
 };
 
 
-//  Class to store information about the zodiacal position of a right ascension measurement
-
 @implementation PGRAstroZodiacInfo
 
-
-//  Class method to create object based on provided right ascension
 
 + (PGRAstroZodiacInfo *)objectWithRasc:(double)rasc {
     return [[PGRAstroZodiacInfo alloc] initWithRasc:rasc];
 }
 
 
-//  Initializer method to initialize object based on provided right ascension
-
 - (instancetype)initWithRasc:(double)rasc {
     if ( (self = [super init]) ) {
-        self.rightAscension = PGRMathNormalizeDegrees(rasc);
+        _rightAscension = PGRMathNormalizeDegrees(rasc);
         
-        self.zodiacDMS = [PGRMathDMS objectWithDegrees:self.rightAscension];
-        self.signIndex = self.zodiacDMS.degrees / 30;
-        self.zodiacDMS.degrees %= 30;
+        _zodiacDMS = [PGRMathDMS objectWithDegrees:_rightAscension];
+        _signIndex = _zodiacDMS.degrees / 30;
+        _zodiacDMS.degrees %= 30;
         
-        self.signName = [NSString stringWithFormat:@"%s", zodiac_signs[self.signIndex]];
-        self.signShortName = [NSString stringWithFormat:@"%s", zodiac_signs_short[self.signIndex]];
+        _signName = [NSString stringWithFormat:@"%s", zodiac_signs[self.signIndex]];
+        _signShortName = [NSString stringWithFormat:@"%s", zodiac_signs_short[self.signIndex]];
         
-        if ( self.zodiacDMS.degrees < 10 ) {
-            self.zodiacDecan = @"Ascendant";
-        } else if ( self.zodiacDMS.degrees < 20 ) {
-            self.zodiacDecan = @"Succedent";
+        if ( _zodiacDMS.degrees < 10 ) {
+            _zodiacDecan = @"Ascendant";
+        } else if ( _zodiacDMS.degrees < 20 ) {
+            _zodiacDecan = @"Succedent";
         } else {
-            self.zodiacDecan = @"Cadent";
+            _zodiacDecan = @"Cadent";
         }
     }
     
@@ -70,40 +70,55 @@ static const char * const zodiac_signs_short[] = {
 @end
 
 
-//  Class to store a set of Keplerian elements
-
 @implementation PGRAstroOrbElem
 
 
-//  Public convenience class method to instantiate an object with a date
-
-+(PGRAstroOrbElem *)objectWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan {
++ (PGRAstroOrbElem *)objectWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan {
     return [[PGRAstroOrbElem alloc] initWithSma:sma Ecc:ecc Inc:inc Ml:ml Lp:lp Lan:lan];
 }
 
 
-//  Initializer method
-
--(instancetype)initWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan {
+- (instancetype)initWithSma:(double)sma Ecc:(double)ecc Inc:(double)inc Ml:(double)ml Lp:(double)lp Lan:(double)lan {
     if ( (self = [super init]) ) {
-        self.sma = sma;
-        self.ecc = ecc;
-        self.inc = inc;
-        self.ml = ml;
-        self.lp = lp;
-        self.lan = lan;
-        self.man = self.ml - self.lp;
-        self.arp = self.lp - self.lan;
+        _sma = sma;
+        _ecc = ecc;
+        _inc = inc;
+        _ml = ml;
+        _lp = lp;
+        _lan = lan;
+        _man = _ml - _lp;
+        _arp = _lp - _lan;
     }
     
     return self;
 }
 
 
++ (instancetype)objectWithEpochElements:(PGRAstroOrbElem *)epochOEs periodElements:(PGRAstroOrbElem *)periodOEs
+                         numberPeriods:(double)numPeriods convertToRadians:(BOOL)radConvert {
+    if ( radConvert ) {
+        return [PGRAstroOrbElem objectWithSma:epochOEs.sma + periodOEs.sma * numPeriods
+                                          Ecc:epochOEs.ecc + periodOEs.ecc * numPeriods
+                                          Inc:PGRMathDegreesToRadians(epochOEs.inc + periodOEs.inc * numPeriods)
+                                           Ml:PGRMathDegreesToRadians(epochOEs.ml + periodOEs.ml * numPeriods)
+                                           Lp:PGRMathDegreesToRadians(epochOEs.lp + periodOEs.lp * numPeriods)
+                                          Lan:PGRMathDegreesToRadians(epochOEs.lan + periodOEs.lan * numPeriods)];
+    } else {
+        return [PGRAstroOrbElem objectWithSma:epochOEs.sma + periodOEs.sma * numPeriods
+                                          Ecc:epochOEs.ecc + periodOEs.ecc * numPeriods
+                                          Inc:epochOEs.inc + periodOEs.inc * numPeriods
+                                           Ml:epochOEs.ml + periodOEs.ml * numPeriods
+                                           Lp:epochOEs.lp + periodOEs.lp * numPeriods
+                                          Lan:epochOEs.lan + periodOEs.lan * numPeriods];
+    }
+}
+
+
 @end
 
 
-//  Calculates the Julian Day for the provided NSDate.
+//  C function definitions
+
 
 double PGRAstroJulianDay(const NSDate * dateObject) {
     static const double epoch_j2000 = 2451545;
@@ -120,8 +135,6 @@ double PGRAstroJulianDay(const NSDate * dateObject) {
     return epoch_j2000 + days_since_j2000;
 }
 
-
-//  Solves Kepler's equation for the provided mean anomaly and eccentricity, in radians
 
 double PGRAstroKepler(const double m_anom, const double ecc) {
     const double desired_accuracy = 1e-6;
@@ -141,18 +154,11 @@ double PGRAstroKepler(const double m_anom, const double ecc) {
 }
 
 
-//  Returns an NSString representation of the name of the zodiac
-//  sign which contains the right ascension supplied in degrees.
-
 NSString * PGRAstroZodiacSign(const double rasc) {
     PGRAstroZodiacInfo * zInfo = [PGRAstroZodiacInfo objectWithRasc:rasc];
     return zInfo.signName;
 }
 
-
-//  Returns an NSString representation of the short name of the zodiac
-//  sign which contains the right ascension supplied in degrees,
-//  e.g. "GE" for Gemini.
 
 NSString * PGRAstroZodiacSignShort(const double rasc) {
     PGRAstroZodiacInfo * zInfo = [PGRAstroZodiacInfo objectWithRasc:rasc];
@@ -160,19 +166,11 @@ NSString * PGRAstroZodiacSignShort(const double rasc) {
 }
 
 
-//  Returns an NSString containing a representation of the zodiacal coordinate
-//  of the form 20GE19 for the right ascension supplied in degrees, where 20GE19
-//  is 20 degrees and 19 minutes into the sign of Gemini.
-
 NSString * PGRAstroRascToZodiac(const double rasc) {
     PGRAstroZodiacInfo * zInfo = [PGRAstroZodiacInfo objectWithRasc:rasc];
     return [NSString stringWithFormat:@"%02i%@%02i", zInfo.zodiacDMS.degrees, zInfo.signShortName, zInfo.zodiacDMS.minutes];
 }
 
-
-//  Returns a string representation in the form "12h 10m 30s" of
-//  the hours-minutes-seconds representation of the right
-//  ascension supplied in degrees.
 
 NSString * PGRAstroRascString(const double rasc) {
     PGRMathHMS * hms = [PGRMathHMS objectWithDegrees:rasc];
@@ -180,24 +178,12 @@ NSString * PGRAstroRascString(const double rasc) {
 }
 
 
-//  Returns a string representation in the form "+12d 10m 30s" of
-//  the degrees-minutes-seconds representation of the declination
-//  supplied in degrees. Uses a degree sign instead of 'd'.
-
 NSString * PGRAstroDeclString(const double decl) {
     PGRMathDMS * dms = [PGRMathDMS objectWithDegrees:decl];
     return [NSString stringWithFormat:@"%@%02i%@ %02im %02is",
             (dms.degrees >= 0 ? @"+" : @"-"), abs(dms.degrees), @"\u00B0", abs(dms.minutes), abs(dms.seconds)];
 }
 
-
-//  Returns a string representation of the Thelemic year corresponding to a given NSDate.
-//  Thelemic years are represented in the form XX:YY, where XX is a Roman numeral equal to
-//  the number of full 22 solar year cycles between the spring equinox of 1904 and the current
-//  date (this is left blank if zero) and YY is the number of full solar years since the
-//  beginning of the current 22 year cycle. For instance, a date in May 1904 would have the
-//  Thelemic year "0", a date in August 1925 would have the Thelemic year "21", and a date in
-//  April 1926 would have the Thelemic year "I:0".
 
 NSString * PGRAstroGetThelemicYear(NSDate * date) {
     NSDateComponents * components = PGRDateGetUTCComponentsFromDate(date);

@@ -29,19 +29,7 @@
     NSDate * y2000 = PGRDateGetUTCDate(1999, 12, 31, 0, 0, 0);
     static const double secsInADay = 86400;
     const double days = [calcDate timeIntervalSinceDate:y2000] / secsInADay;
-    
-    PGRAstroOrbElem * oes = [PGRAstroOrbElem new];
-    
-    oes.sma = y2000Oes.sma + dayOes.sma * days;
-    oes.ecc = y2000Oes.ecc + dayOes.ecc * days;
-    oes.inc = PGRMathDegreesToRadians(y2000Oes.inc + dayOes.inc * days);
-    oes.ml = PGRMathDegreesToRadians(y2000Oes.ml + dayOes.ml * days);
-    oes.lp = PGRMathDegreesToRadians(y2000Oes.lp + dayOes.lp * days);
-    oes.lan = PGRMathDegreesToRadians(y2000Oes.lan + dayOes.lan * days);
-    oes.man = oes.ml - oes.lp;
-    oes.arp = oes.lp - oes.lan;
-    
-    return oes;
+    return [PGRAstroOrbElem objectWithEpochElements:y2000Oes periodElements:dayOes numberPeriods:days convertToRadians:YES];
 }
 
 
