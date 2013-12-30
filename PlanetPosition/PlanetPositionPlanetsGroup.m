@@ -16,11 +16,12 @@
 
 
 @implementation PlanetPositionPlanetsGroup {
+    /**
+     A mutable array containing the collection of planets.
+     */
     NSMutableArray * _planetsList;
 }
 
-
-//  Initialization method to create the array and give it its first update
 
 - (instancetype)init {
     if ( (self = [super init]) ) {
@@ -31,8 +32,6 @@
     return self;
 }
 
-
-//  Method to empty the list and fill it with newly-calculated planets as of the current time
 
 - (void)update {
     [_planetsList removeAllObjects];
@@ -50,14 +49,10 @@
 }
 
 
-//  Returns the number of planets in the list
-
 - (NSUInteger)numPlanets {
     return _planetsList.count;
 }
 
-
-//  Returns the planet at the specified index
 
 - (PGRAstroPlanet *)planetAtIndex:(long)index {
     return _planetsList[index];

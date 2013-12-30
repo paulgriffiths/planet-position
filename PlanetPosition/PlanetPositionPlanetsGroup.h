@@ -15,10 +15,27 @@
 #import "PGRAstro.h"
 
 
+/**
+ Class to hold a collection of all supported planets.
+ */
 @interface PlanetPositionPlanetsGroup : NSObject
 
+/**
+ Updates the collection of planets as of the current time.
+ */
 -(void)update;
+
+/**
+ Returns the number of planets in the collection.
+ @return The number of planets in the collection.
+ */
 -(NSUInteger)numPlanets;
+
+/**
+ Returns the planet at the specified index.
+ @param index The index of the requested planet.
+ @return The planet at the specified index.
+ */
 -(PGRAstroPlanet *)planetAtIndex:(long)index;
 
 @end
