@@ -16,17 +16,20 @@
 #import "PGRAstroPlanet.h"
 
 
+/**
+ An abstract base class for the Moon and helper Sun planet.
+ @attention Do not directly instantiate this class.
+ */
 @interface PGRAstroMoonBase : PGRAstroPlanet
 
 
-//  Public class method
-
-+ (PGRAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
-                                   andY2000OEs:(PGRAstroOrbElem *)y2000Oes andDayOEs:(PGRAstroOrbElem *)dayOes;
-
-
-//  Public instance method
-
+/**
+ Initializes an object with the orbital elements at a specified date based on the Y2000 epoch.
+ @param calcDate The date to use to calculate the orbital elements.
+ @param y2000Oes The orbital elements of the planet at midnight on the morning of December 31, 1999.
+ @param dayOes The change in the orbital elements of the planet per day.
+ @returns An object initialized to be calculated as at the specified date, based on the Y2000 epoch.
+ */
 - (instancetype)initWithDate:(NSDate *)calcDate
                        andY2000OEs:(PGRAstroOrbElem *)y2000Oes andDayOEs:(PGRAstroOrbElem *)dayOes;
 

@@ -19,31 +19,13 @@
 @implementation PGRAstroMoonBase
 
 
-//  Public class method to calculate orbital elements for:
-//   - the specified calculation date;
-//   - the specified orbital elements at midnight Dec 31, 1999; and
-//   - the specified change in orbital elements per day
-
-+ (PGRAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
-                                   andY2000OEs:(PGRAstroOrbElem *)y2000Oes andDayOEs:(PGRAstroOrbElem *)dayOes {
-    NSDate * y2000 = PGRDateGetUTCDate(1999, 12, 31, 0, 0, 0);
-    static const double secsInADay = 86400;
-    const double days = [calcDate timeIntervalSinceDate:y2000] / secsInADay;
-    return [PGRAstroOrbElem objectWithEpochElements:y2000Oes periodElements:dayOes numberPeriods:days convertToRadians:YES];
-}
-
-
-//  Public initialization method
-
 - (instancetype)initWithDate:(NSDate *)calcDate
                        andY2000OEs:(PGRAstroOrbElem *)y2000Oes andDayOEs:(PGRAstroOrbElem *)dayOes {
-    PGRAstroOrbElem * oes = [PGRAstroMoonBase calcOrbitalElementsForDate:calcDate andY2000OEs:y2000Oes andDayOEs:dayOes];
+    PGRAstroOrbElem * oes = [PGRAstroOrbElem objectWithY2000EpochElements:y2000Oes dayElements:dayOes atDate:calcDate convertToRadians:YES];
     self = [super initWithDate:calcDate andOEs:oes];
     return self;
 }
 
-
-//  Overriden public instance method to calculate the planet's geocentric ecliptic coordinates
 
 - (PGRMath3DCartCoords *)geoEclCoords {
     PGRMath3DCartCoords * hoc = [self helioOrbCoords];

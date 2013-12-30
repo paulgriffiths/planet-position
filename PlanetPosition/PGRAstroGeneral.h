@@ -153,6 +153,31 @@
 +(instancetype)objectWithEpochElements:(PGRAstroOrbElem *)epochOEs periodElements:(PGRAstroOrbElem *)periodOEs
                          numberPeriods:(double)numPeriods convertToRadians:(BOOL)radConvert;
 
+/**
+ Returns an orbital elements object created at a specified date using J2000 epoch elements.
+ @param j2000OEs The orbital elements at the J2000 epoch.
+ @param jcentOEs The change in orbital elements per Julian century (365.25 days).
+ @param calcDate The date for which to calculate.
+ @param radConvert Set to @c YES if @c j2000OEs and @c jcentOEs are measured in degrees, and the returned
+ objected should be measured in radians. Set to @c NO to preserve the units in @c j2000OEs and @c jcentOEs.
+ @return An orbital elements object created for the specified date using the J2000 epoch.
+ */
++(instancetype)objectWithJ2000EpochElements:(PGRAstroOrbElem *)j2000OEs julianCenturyElements:(PGRAstroOrbElem *)jcentOEs
+                         atDate:(NSDate *)calcDate convertToRadians:(BOOL)radConvert;
+
+/**
+ Returns an orbital elements object created at a specified date using Y2000 epoch elements.
+ @param y2000OEs The orbital elements at the midnight on the morning of December 31, 1999.
+ @param dayOEs The change in orbital elements per day.
+ @param calcDate The date for which to calculate.
+ @param radConvert Set to @c YES if @c y2000OEs and @c dayOEs are measured in degrees, and the returned
+ objected should be measured in radians. Set to @c NO to preserve the units in @c y2000OEs and @c dayOEs.
+ @return An orbital elements object created for the specified date using the Y2000 epoch.
+ */
++(instancetype)objectWithY2000EpochElements:(PGRAstroOrbElem *)y2000OEs dayElements:(PGRAstroOrbElem *)dayOEs
+                                     atDate:(NSDate *)calcDate convertToRadians:(BOOL)radConvert;
+
+
 @end
 
 

@@ -114,6 +114,24 @@ static const char * const zodiac_signs_short[] = {
 }
 
 
++(instancetype)objectWithJ2000EpochElements:(PGRAstroOrbElem *)j2000OEs julianCenturyElements:(PGRAstroOrbElem *)jcentOEs
+                                     atDate:(NSDate *)calcDate convertToRadians:(BOOL)radConvert {
+    static const double epochJ2000 = 2451545;
+    static const double jdaysPerCent = 36525;
+    const double jcents = (PGRAstroJulianDay(calcDate) - epochJ2000) / jdaysPerCent;
+    return [PGRAstroOrbElem objectWithEpochElements:j2000OEs periodElements:jcentOEs
+                                      numberPeriods:jcents convertToRadians:radConvert];
+}
+
+
++(instancetype)objectWithY2000EpochElements:(PGRAstroOrbElem *)y2000OEs dayElements:(PGRAstroOrbElem *)dayOEs
+                                     atDate:(NSDate *)calcDate convertToRadians:(BOOL)radConvert {
+    NSDate * y2000 = PGRDateGetUTCDate(1999, 12, 31, 0, 0, 0);
+    static const double secsInADay = 86400;
+    const double days = [calcDate timeIntervalSinceDate:y2000] / secsInADay;
+    return [PGRAstroOrbElem objectWithEpochElements:y2000OEs periodElements:dayOEs numberPeriods:days convertToRadians:radConvert];
+}
+
 @end
 
 

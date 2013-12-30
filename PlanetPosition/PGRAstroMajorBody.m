@@ -18,18 +18,10 @@
 @implementation PGRAstroMajorBody
 
 
-+ (PGRAstroOrbElem *)calcOrbitalElementsForDate:(NSDate *)calcDate
-                                      andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes {
-    static const double epochJ2000 = 2451545;
-    static const double jdaysPerCent = 36525;
-    const double jcents = (PGRAstroJulianDay(calcDate) - epochJ2000) / jdaysPerCent;
-    return [PGRAstroOrbElem objectWithEpochElements:j2000Oes periodElements:centOes numberPeriods:jcents convertToRadians:YES];
-}
-
-
 - (instancetype)initWithDate:(NSDate *)calcDate
                        andJ2000OEs:(PGRAstroOrbElem *)j2000Oes andCenturyOEs:(PGRAstroOrbElem *)centOes {
-    PGRAstroOrbElem * oes = [PGRAstroMajorBody calcOrbitalElementsForDate:calcDate andJ2000OEs:j2000Oes andCenturyOEs:centOes];
+    PGRAstroOrbElem * oes = [PGRAstroOrbElem objectWithJ2000EpochElements:j2000Oes julianCenturyElements:centOes
+                                                                   atDate:calcDate convertToRadians:YES];
     self = [super initWithDate:calcDate andOEs:oes];
     return self;
 }
