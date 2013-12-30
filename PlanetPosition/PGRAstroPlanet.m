@@ -17,7 +17,7 @@
 @implementation PGRAstroPlanet
 
 
--(instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGRAstroOrbElem *)oes {
+- (instancetype)initWithDate:(NSDate *)calcDate andOEs:(PGRAstroOrbElem *)oes {
     if ( (self = [super init]) ) {
         _calcDate = calcDate;
         _oes = oes;
@@ -27,12 +27,18 @@
 }
 
 
+- (id)copyWithZone:(NSZone *)zone {
+    id copy = [[[self class] allocWithZone:zone] initWithDate:_calcDate andOEs:_oes];
+    return copy;
+}
+
+
 - (instancetype)clone {
     return [[self class] new];
 }
 
 
--(PGRMath3DCartCoords *)helioOrbCoords {
+- (PGRMath3DCartCoords *)helioOrbCoords {
     PGRMath3DCartCoords * hoc = [PGRMath3DCartCoords new];
     const double eAnom = PGRAstroKepler(_oes.man, _oes.ecc);
     
@@ -44,7 +50,7 @@
 }
 
 
--(PGRMath3DCartCoords *)helioEclCoords {
+- (PGRMath3DCartCoords *)helioEclCoords {
     PGRMath3DCartCoords * hoc = [self helioOrbCoords];
     PGRMath3DCartCoords * hec = [PGRMath3DCartCoords new];
     
@@ -63,12 +69,12 @@
 }
 
 
--(PGRMath3DCartCoords *)geoEclCoords {
+- (PGRMath3DCartCoords *)geoEclCoords {
     return [PGRMath3DCartCoords objectWithX:0 Y:0 Z:0];
 }
 
 
--(PGRMath3DCartCoords *)geoEquCoords {
+- (PGRMath3DCartCoords *)geoEquCoords {
     static const double obliquity = 0.40909261029685;
     PGRMath3DCartCoords * gec = [self geoEclCoords];
     PGRMath3DCartCoords * gqc = [PGRMath3DCartCoords new];
@@ -88,21 +94,21 @@
 }
 
 
--(double)declination {
+- (double)declination {
     PGRMath3DCartCoords * gqc = [self geoEquCoords];
     PGRMathSphCoords * sph = [gqc toSpherical];
     return sph.inclination;
 }
 
 
--(double)distance {
+- (double)distance {
     PGRMath3DCartCoords * gqc = [self geoEquCoords];
     PGRMathSphCoords * sph = [gqc toSpherical];
     return sph.radius;
 }
 
 
--(NSString *)name {
+- (NSString *)name {
     return @"Do not instantiate this!";
 }
 

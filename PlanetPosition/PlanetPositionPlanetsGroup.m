@@ -55,7 +55,7 @@
 
 
 - (PGRAstroPlanet *)planetAtIndex:(long)index {
-    return _planetsList[index];
+    return [_planetsList[index] copy];
 }
 
 @end

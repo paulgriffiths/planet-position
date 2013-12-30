@@ -20,7 +20,8 @@
  An abstract base class for all PGRAstro planets.
  @attention Do not directly instantiate this class.
  */
-@interface PGRAstroPlanet : NSObject {
+@interface PGRAstroPlanet : NSObject <NSCopying>
+{
     /**
      The date used for all planetary calculations.
      */
