@@ -5,7 +5,8 @@ What is it?
 -----------
 
 **Planet Position** is an iOS7 iPhone app for showing the current approximate
-positions of the solar system planets.
+positions of the solar system planets, information about their positions in
+the zodiac, and for showing the current Julian Day and Thelemic date.
 
 The project also includes an Objective C library with the following functionality:
 * Calculating the following for all the majory planetary bodies at any
