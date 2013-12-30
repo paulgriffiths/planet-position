@@ -14,19 +14,13 @@
 #import "PGRAstroMoon.h"
 
 
-//  Moon class
-
 @implementation PGRAstroMoon
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroMoon *)planetWithDate:(NSDate *)date {
     return [[PGRAstroMoon alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -44,8 +38,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Moon";
 }
@@ -54,19 +46,13 @@
 @end
 
 
-//  Sun for Moon class
-
 @implementation PGRAstroSunForMoon
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroSunForMoon *)planetWithDate:(NSDate *)date {
     return [PGRAstroSunForMoon planetWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];

@@ -14,19 +14,13 @@
 #import "PGRAstroPlanets.h"
 
 
-//  Mercury class
-
 @implementation PGRAstroMercury
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroMercury *)planetWithDate:(NSDate *)date {
     return [[PGRAstroMercury alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -44,8 +38,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Mercury";
 }
@@ -54,19 +46,13 @@
 @end
 
 
-//  Venus class
-
 @implementation PGRAstroVenus
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroVenus *)planetWithDate:(NSDate *)date {
     return [[PGRAstroVenus alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -84,8 +70,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Venus";
 }
@@ -94,19 +78,13 @@
 @end
 
 
-//  Sun class
-
 @implementation PGRAstroSun
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroSun *)planetWithDate:(NSDate *)date {
     return [[PGRAstroSun alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -135,8 +113,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Sun";
 }
@@ -145,19 +121,13 @@
 @end
 
 
-//  Mars class
-
 @implementation PGRAstroMars
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroMars *)planetWithDate:(NSDate *)date {
     return [[PGRAstroMars alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -175,8 +145,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Mars";
 }
@@ -185,19 +153,13 @@
 @end
 
 
-//  Jupiter class
-
 @implementation PGRAstroJupiter
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroJupiter *)planetWithDate:(NSDate *)date {
     return [[PGRAstroJupiter alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -215,8 +177,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Jupiter";
 }
@@ -225,19 +185,13 @@
 @end
 
 
-//  Saturn class
-
 @implementation PGRAstroSaturn
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroSaturn *)planetWithDate:(NSDate *)date {
     return [[PGRAstroSaturn alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -255,8 +209,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Saturn";
 }
@@ -265,19 +217,13 @@
 @end
 
 
-//  Uranus class
-
 @implementation PGRAstroUranus
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroUranus *)planetWithDate:(NSDate *)date {
     return [[PGRAstroUranus alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -295,8 +241,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Uranus";
 }
@@ -305,19 +249,13 @@
 @end
 
 
-//  Neptune class
-
 @implementation PGRAstroNeptune
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroNeptune *)planetWithDate:(NSDate *)date {
     return [[PGRAstroNeptune alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -335,8 +273,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Neptune";
 }
@@ -345,19 +281,13 @@
 @end
 
 
-//  Pluto class
-
 @implementation PGRAstroPluto
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroPluto *)planetWithDate:(NSDate *)date {
     return [[PGRAstroPluto alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];
@@ -375,8 +305,6 @@
 }
 
 
-//  Method returns the name of the planet
-
 -(NSString *)name {
     return @"Pluto";
 }
@@ -385,19 +313,13 @@
 @end
 
 
-//  Earth class
-
 @implementation PGRAstroEarth
 
-
-//  Public convenience class method to instantiate an object with a date
 
 + (PGRAstroEarth *)planetWithDate:(NSDate *)date {
     return [[PGRAstroEarth alloc] initWithDate:date];
 }
 
-
-//  Initialization methods
 
 - (instancetype)init {
     return [self initWithDate:[NSDate new]];

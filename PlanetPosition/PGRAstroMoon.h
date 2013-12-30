@@ -14,30 +14,47 @@
 #import "PGRAstroMoonBase.h"
 
 
-//  Moon class
-
+/**
+ A class to calculation astronomical information about the planet Mercury.
+ */
 @interface PGRAstroMoon : PGRAstroMoonBase
 
 /**
- Creates a new moon planet object.
- @param date the date to create it at
- @return a new object
- @see something for more info
+ Returns a planet object created with calculations as at a specified date.
+ @param date The date for which to perform the planetary calculations.
+ @return A planet object created with calculations as at the specified date.
  */
 +(PGRAstroMoon *)planetWithDate:(NSDate *)date;
 
+/**
+ Returns a planet object initialized with calculations as at a specified date.
+ @param date The date for which to perform the planetary calculations.
+ @return A planet object initialized with calculations as at the specified date.
+ */
 -(instancetype)initWithDate:(NSDate *)date;
 
 @end
 
 
-//  Sun for moon class, used only for calculating the positions of other
-//  the Moon. Users should not instantiate this class.
-
+/**
+ A class to calculation astronomical information about the Sun.
+ @attention This class is used only in the calculations for the Moon. Do not directly
+ instantiate this class.
+ */
 @interface PGRAstroSunForMoon : PGRAstroMoonBase
 
+/**
+ Returns a planet object created with calculations as at a specified date.
+ @param date The date for which to perform the planetary calculations.
+ @return A planet object created with calculations as at the specified date.
+ */
 +(PGRAstroSunForMoon *)planetWithDate:(NSDate *)date;
 
+/**
+ Returns a planet object initialized with calculations as at a specified date.
+ @param date The date for which to perform the planetary calculations.
+ @return A planet object initialized with calculations as at the specified date.
+ */
 -(instancetype)initWithDate:(NSDate *)date;
 
 @end
