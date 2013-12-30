@@ -1,10 +1,10 @@
-Planet Position
-===============
+Planet Pos
+==========
 
 What is it?
 -----------
 
-**Planet Position** is an iOS7 iPhone app for showing the current approximate
+**Planet Pos** is an iOS7 iPhone app for showing the current approximate
 positions of the solar system planets, information about their positions in
 the zodiac, and for showing the current Julian Day and Thelemic date.
 
@@ -26,7 +26,7 @@ given UTC date:
 
 Who maintains it?
 -----------------
-**Planet Position** is written and maintained by Paul Griffiths.
+**Planet Pos** is written and maintained by Paul Griffiths.
 
 The latest version
 ------------------
@@ -38,10 +38,9 @@ Documentation
 Up-to-date documentation can be found at
 <https://github.com/paulgriffiths/planet-position/wiki>.
 
-
 Installation
 ------------
-**Planet Position** is written in Objective C, and is provided as an
+**Planet Pos** is written in Objective C, and is provided as an
 Xcode 5 project.
 
 Licensing
@@ -50,5 +49,7 @@ Please see the file called LICENSE.
 
 Contacts
 --------
-* If you have a concrete bug report for **Planet Position** please go to the GitHub
-issue tracker at <https://github.com/paulgriffiths/planet-position/issues>.
+* If you have a concrete bug report for **Planet Pos** please go to the GitHub
+issue tracker at <https://github.com/paulgriffiths/planet-position/issues>, or
+email me at <mailto:mail@paulgriffiths.net>. You can also email me to provide
+feedback, ask questions, or request new features.
